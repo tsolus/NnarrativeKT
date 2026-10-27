@@ -9,8 +9,9 @@ import { RosterTab } from './RosterTab';
 import { PhaseTab } from './PhaseTab';
 import { ArsenalTab } from './ArsenalTab';
 import { LogTab } from './LogTab';
+import { SheetTab } from './SheetTab';
 
-const TABS: [BandTab, string][] = [['roster', 'Registre'], ['phase', 'Phase de campagne'], ['arsenal', 'Arsenal et reliques'], ['log', 'Trésorerie et journal']];
+const TABS: [BandTab, string][] = [['roster', 'Registre'], ['sheet', 'Fiche technique'], ['phase', 'Phase de campagne'], ['arsenal', 'Arsenal et reliques'], ['log', 'Trésorerie et journal']];
 const FACTIONS = factions(rules);
 
 export function BandView({ id, tab }: { id: string; tab: BandTab }) {
@@ -44,7 +45,7 @@ export function BandView({ id, tab }: { id: string; tab: BandTab }) {
       <div class="tabs" role="tablist">
         {TABS.map(([k, l]) => <button type="button" role="tab" key={k} class={tab === k ? 'on' : ''} onClick={() => (route.value = { view: 'band', id, tab: k })}>{l}</button>)}
       </div>
-      {tab === 'roster' ? <RosterTab band={band} /> : tab === 'phase' ? <PhaseTab band={band} /> : tab === 'arsenal' ? <ArsenalTab band={band} /> : <LogTab band={band} />}
+      {tab === 'roster' ? <RosterTab band={band} /> : tab === 'sheet' ? <SheetTab band={band} /> : tab === 'phase' ? <PhaseTab band={band} /> : tab === 'arsenal' ? <ArsenalTab band={band} /> : <LogTab band={band} />}
     </>
   );
 }

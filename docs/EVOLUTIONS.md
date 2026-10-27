@@ -54,6 +54,13 @@ Dans `data/rules/exploration.json`, un lieu peut porter `rewards` : une liste de
 
 `relic.maxGlory: null` = n'importe quelle relique. Un lieu sans `rewards` affiche seulement sa découverte, à appliquer à la main. La Gloire par exploit est dans `data/campaign.json` (`rewards.gloryPerExploit`), celle des rangs dans `data/rules/ranks.json` (`glory`).
 
+## Fiches techniques
+
+- `data/sheets/killteams.json` (profils Kill Team) et `public/sheets-40k/` (unités 40k, chargées à la demande) sont **générés** : ne pas les éditer. Cloner [BSData/wh40k-killteam](https://github.com/BSData/wh40k-killteam) et [BSData/wh40k-10e](https://github.com/BSData/wh40k-10e) à côté du projet, puis `npm run data:sheets`.
+- Options d'armes : `data/sheets/loadouts-killteams.json`, recopiées des règles d'équipe officielles. Un groupe = un menu déroulant (ex. « Tir » et « Mêlée ») ; une option = une liste de noms d'armes (« Plasma pistol » couvre ses profils « (standard) » et « (supercharge) ») ; `fixed` = armes toujours portées.
+- Écart entre BSData et une mise à jour officielle : ajouter une entrée dans `data/sheets/corrections-killteams.json`.
+- Une nouvelle kill team dans `data/killteams.json` doit avoir sa fiche : `npm run data:check` le vérifie.
+
 ## Ajouter une règle ou une action
 
 1. Écrire la fonction dans `src/domain/` (une action de bande va dans `actions.ts` et passe par `edit()`, qui gère la copie et le journal).
@@ -61,6 +68,8 @@ Dans `data/rules/exploration.json`, un lieu peut porter `rewards` : une liste de
 3. L'appeler depuis l'écran avec `act(band, (c, b) => A.maFonction(c, b, …))`.
 
 ## Changer le format des données enregistrées
+
+Un champ ajouté avec une valeur par défaut (ex. `loadout` des opérateurs) se lit sur les anciens documents sans migration. Pour tout autre changement :
 
 1. Monter `SCHEMA_VERSION` dans `src/domain/model.ts` et modifier les schémas.
 2. Ajouter dans `src/domain/migrations.ts` une étape de la version précédente vers la nouvelle (ne jamais modifier une étape existante).

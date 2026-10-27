@@ -49,6 +49,7 @@ Le build produit `dist/index.html`, un fichier autonome à publier.
 | Modifier une table (séquelles, honneurs, exploration, reliques…) | `data/rules/*.json` |
 | Changer une règle de calcul | `src/domain/` (+ un test dans `tests/`) |
 | Changer un écran | `src/ui/` |
+| Corriger un profil ou une option d'armes | `data/sheets/corrections-killteams.json`, `data/sheets/loadouts-killteams.json` puis `npm run data:sheets` |
 
 Le détail est dans [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md), l'organisation du code dans [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
@@ -56,4 +57,5 @@ Le détail est dans [docs/EVOLUTIONS.md](docs/EVOLUTIONS.md), l'organisation du 
 
 - Règles de campagne : livret « Kill Team – Campagne narrative » (adaptation de la phase de campagne de Trench Crusade).
 - Fiches des kill teams : règles d'équipe Games Workshop.
-- Points Warhammer 40k par figurine : jeu de données communautaire [BSData wh40k-10e](https://github.com/BSData/wh40k-10e).
+- Points Warhammer 40k par figurine et fiches des unités : jeu de données communautaire [BSData wh40k-10e](https://github.com/BSData/wh40k-10e).
+- Profils des opérateurs Kill Team : [BSData wh40k-killteam](https://github.com/BSData/wh40k-killteam) (édition 2024), vérifiés contre les règles d'équipe officielles ; options d'armes recopiées de ces règles.

@@ -7,6 +7,7 @@ import { rankOf } from '../../domain/phase';
 import { isAgent, killteamOf, profileLabel } from '../../domain/roster';
 import { Btn, Chip, Confirm, Notes, Select, Stepper, Tag, TextField } from '../components/ui';
 import { RecruitModal } from '../modals/RecruitModal';
+import { LoadoutPicker } from '../components/Loadout';
 import { UpgradeModal } from '../modals/UpgradeModal';
 
 export function RosterTab({ band }: { band: Band }) {
@@ -94,6 +95,7 @@ function OperativeCard({ band, o }: { band: Band; o: Operative }) {
         {profileLabel(o.profile)}{o.profile.pts40k != null && ` · ${o.profile.pts40k} pts 40k`} · {{ start: 'départ', recruit: 'recrue', agent: 'agent' }[o.origin]}
         {o.cost > 0 && ` ${o.cost} RQ`}{value != null && ` · valeur de renfort ${value} RQ`}
       </div>
+      {!off && <LoadoutPicker profile={o.profile} loadout={o.loadout} onChange={(l) => run((c, b) => A.updateOperative(c, b, o.id, { loadout: l }))} />}
       <div class="row small"><span class="lbl">Statut</span>
         <Select value={o.status} options={STATUSES} onChange={(v) => run((c, b) => A.updateOperative(c, b, o.id, { status: v }))} />
       </div>
@@ -127,7 +129,7 @@ function OperativeCard({ band, o }: { band: Band; o: Operative }) {
       <div class="row small"><span class="lbl">Relique</span>
         <Select value={o.relic} options={[['', '—'], ...band.relics.map((r) => [r, r] as [string, string])]} onChange={(v) => run((c, b) => A.updateOperative(c, b, o.id, { relic: v }))} />
       </div>
-      <TextField placeholder="Notes (options d'armes, rancunes…)" value={o.notes} onCommit={(v) => run((c, b) => A.updateOperative(c, b, o.id, { notes: v }))} />
+      <TextField placeholder="Notes (rancunes, surnoms…)" value={o.notes} onCommit={(v) => run((c, b) => A.updateOperative(c, b, o.id, { notes: v }))} />
       <div class="row">
         {!o.profile.noUpgrades && !off && <Btn small onClick={() => run((c, b) => A.setElite(c, b, o.id, !o.elite))}>{o.elite ? 'Repasser troupe' : 'Promouvoir Élite'}</Btn>}
         <span class="sp" />

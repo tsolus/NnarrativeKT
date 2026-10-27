@@ -85,6 +85,17 @@ const v1 = { bands: { b1: { name: 'Ancienne', kt: 'Warpcoven', faction: 'Thousan
     await p.getByText('Correction : Rançon reçue').waitFor();
   });
   await p.screenshot({ path: 'smoke-journal.png' });
+  await step('fiche technique : armes choisies et infobulles', async () => {
+    await p.getByRole('tab', { name: 'Registre' }).click();
+    await p.getByLabel('Armes de Visionary').first().selectOption('Plasma pistol; Nostraman chainblade');
+    await p.getByRole('tab', { name: 'Fiche technique' }).click();
+    await p.getByLabel('Opérateurs affichés').selectOption('all');
+    const card = p.locator('.sheet-card', { hasText: 'Nostraman chainblade' });
+    await card.waitFor();
+    if (await card.getByText('Power fist').count()) throw new Error('arme non choisie affichée');
+    await card.locator('.wr-col .tip', { hasText: 'Rending' }).hover();
+    await p.locator('.tip-box', { hasText: 'critical successes' }).waitFor();
+  });
   await p.setViewportSize({ width: 390, height: 844 });
   await p.getByRole('tab', { name: 'Registre' }).click();
   const overflow = await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);

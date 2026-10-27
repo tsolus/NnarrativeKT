@@ -5,6 +5,7 @@ import { recruitCost } from '../../domain/costs';
 import type { Profile } from '../../domain/model';
 import { catalogue, factions, freeName, isAgent, sameProfile, type CatalogueQuery } from '../../domain/roster';
 import { Btn, Modal, Select, Tag } from '../components/ui';
+import { LoadoutPicker } from '../components/Loadout';
 
 const FACTIONS = factions(rules);
 const SHOWN = 250;
@@ -17,13 +18,14 @@ export function RecruitModal({ bandId }: { bandId: string }) {
   const [sel, setSel] = useState<Profile | null>(null);
   const [name, setName] = useState('');
   const [free, setFree] = useState(false);
+  const [loadout, setLoadout] = useState<string[]>([]);
   const list = useMemo(() => (band ? catalogue(rules, band, { text, faction, source }) : []), [band?.killteam, band?.faction, text, faction, source]);
   if (!band) return null;
   const alliance = rules.killteams.find((k) => k.name === band.killteam)?.alliance ?? '?';
   const cost = sel ? recruitCost(rules, band, sel) : null;
   const agent = sel ? isAgent(band, { profile: sel }) : false;
-  const pick = (p: Profile) => { setSel(p); setName(freeName(band, p.name)); };
-  const confirm = () => { if (sel && act(bandId, (c, b) => A.recruit(c, b, sel, name, free), `${name || sel.name} rejoint la bande.`)) closeModal(); };
+  const pick = (p: Profile) => { setSel(p); setName(freeName(band, p.name)); setLoadout([]); };
+  const confirm = () => { if (sel && act(bandId, (c, b) => A.recruit(c, b, sel, name, free, loadout), `${name || sel.name} rejoint la bande.`)) closeModal(); };
 
   return (
     <Modal title="Recruter" footer={<><span class="sp tiny muted">Cochez « Gratuit » pour une découverte (Spécialiste égaré) ou des renforts.</span><Btn onClick={closeModal}>Fermer</Btn></>}>
@@ -52,6 +54,7 @@ export function RecruitModal({ bandId }: { bandId: string }) {
         <div class="res">
           <div class="row"><b class="sp">{sel.name}</b>{agent ? <Tag>Agent</Tag> : <Tag tone="gold">Recrue</Tag>}</div>
           {agent && sel.faction !== band.faction && <div class="tiny" style="margin:4px 0">Hors de la faction {band.faction} : à valider avec vos adversaires (un agent doit partager un mot-clé de faction).</div>}
+          <LoadoutPicker profile={sel} loadout={loadout} onChange={setLoadout} />
           <div class="row" style="margin-top:6px">
             <input type="text" class="sp" aria-label="Nom de l'opérateur" value={name} onInput={(e) => setName((e.target as HTMLInputElement).value)} />
             <label class="small row" style="gap:4px"><input type="checkbox" checked={free} onChange={(e) => setFree((e.target as HTMLInputElement).checked)} />Gratuit</label>

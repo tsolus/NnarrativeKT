@@ -1,0 +1,612 @@
+{
+ "$comment": "Options d'armes des opérateurs, recopiées des règles d'équipe officielles (PDF Games Workshop du projet). Remplacent les options de BSData dans scripts/import_bsdata_killteam.py. Un nom d'arme désigne aussi ses profils « Nom (…) ». Un opérateur absent garde toutes ses armes.",
+ "operatives": [
+  {
+   "killteam": "Nemesis Claw",
+   "operative": "Visionary",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Bolt pistol",
+       "Power fist"
+      ],
+      [
+       "Bolt pistol",
+       "Power maul"
+      ],
+      [
+       "Bolt pistol",
+       "Power weapon"
+      ],
+      [
+       "Plasma pistol",
+       "Nostraman chainblade"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Nemesis Claw",
+   "operative": "Gunner",
+   "fixed": [
+    "Bolt pistol",
+    "Fists"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Flamer"
+      ],
+      [
+       "Meltagun"
+      ],
+      [
+       "Plasma gun"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Nemesis Claw",
+   "operative": "Heavy Gunner",
+   "fixed": [
+    "Bolt pistol",
+    "Fists"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Heavy bolter"
+      ],
+      [
+       "Missile launcher"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Nemesis Claw",
+   "operative": "Warrior",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Bolt pistol",
+       "Chainsword"
+      ],
+      [
+       "Boltgun",
+       "Fists"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Void-Dancer Troupe",
+   "operative": "Lead Player",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Tir",
+     "options": [
+      [
+       "Fusion pistol"
+      ],
+      [
+       "Neuro disruptor"
+      ],
+      [
+       "Shuriken pistol"
+      ]
+     ]
+    },
+    {
+     "name": "Mêlée",
+     "options": [
+      [
+       "Blade"
+      ],
+      [
+       "Caress"
+      ],
+      [
+       "Embrace"
+      ],
+      [
+       "Kiss"
+      ],
+      [
+       "Power weapon"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Void-Dancer Troupe",
+   "operative": "Player",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Tir",
+     "options": [
+      [
+       "Fusion pistol"
+      ],
+      [
+       "Neuro disruptor"
+      ],
+      [
+       "Shuriken pistol"
+      ]
+     ]
+    },
+    {
+     "name": "Mêlée",
+     "options": [
+      [
+       "Blade"
+      ],
+      [
+       "Caress"
+      ],
+      [
+       "Embrace"
+      ],
+      [
+       "Kiss"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Void-Dancer Troupe",
+   "operative": "Shadowseer",
+   "fixed": [
+    "Hallucinogen grenade",
+    "Miststave"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Neuro disruptor"
+      ],
+      [
+       "Shuriken pistol"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Wrecka Krew",
+   "operative": "Boss Nob",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Rokkit pistol",
+       "Smash hammer"
+      ],
+      [
+       "Two rokkit pistols",
+       "Choppa"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Wrecka Krew",
+   "operative": "Tankbusta Gunner",
+   "fixed": [
+    "Fists"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "'Eavy rokkit launcha"
+      ],
+      [
+       "Rokkit launcha"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Wrecka Krew",
+   "operative": "Tankbusta Rokkiteer",
+   "fixed": [
+    "Rokkit launcha",
+    "Fists"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Pulsa rokkit"
+      ],
+      [
+       "Rokkit rack"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Scout Squad",
+   "operative": "Sergeant",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Astartes shotgun",
+       "Fists"
+      ],
+      [
+       "Boltgun",
+       "Fists"
+      ],
+      [
+       "Bolt pistol",
+       "Chainsword"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Scout Squad",
+   "operative": "Heavy Gunner (heavy bolter)",
+   "fixed": [
+    "Bolt pistol",
+    "Heavy bolter",
+    "Fists"
+   ],
+   "groups": []
+  },
+  {
+   "killteam": "Scout Squad",
+   "operative": "Heavy Gunner (missile launcher)",
+   "fixed": [
+    "Bolt pistol",
+    "Missile launcher",
+    "Fists"
+   ],
+   "groups": []
+  },
+  {
+   "killteam": "Scout Squad",
+   "operative": "Warrior",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Astartes shotgun",
+       "Fists"
+      ],
+      [
+       "Boltgun",
+       "Fists"
+      ],
+      [
+       "Bolt pistol",
+       "Combat blade"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Warpcoven",
+   "operative": "Sorcerer of Destiny",
+   "fixed": [
+    "Force stave",
+    "Doombolt"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Inferno bolt pistol"
+      ],
+      [
+       "Prosperine khopesh"
+      ],
+      [
+       "Warpflame pistol"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Warpcoven",
+   "operative": "Sorcerer of Tempyrion",
+   "fixed": [
+    "Force stave",
+    "Fluxblast"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Inferno bolt pistol"
+      ],
+      [
+       "Prosperine khopesh"
+      ],
+      [
+       "Warpflame pistol"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Warpcoven",
+   "operative": "Sorcerer of Warpfire",
+   "fixed": [
+    "Force stave",
+    "Firestorm",
+    "Mindburn"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Inferno bolt pistol"
+      ],
+      [
+       "Prosperine khopesh"
+      ],
+      [
+       "Warpflame pistol"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Warpcoven",
+   "operative": "Rubric Marine Gunner",
+   "fixed": [
+    "Fists"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Warpflamer"
+      ],
+      [
+       "Soulreaper cannon"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Warpcoven",
+   "operative": "Tzaangor Champion",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Greataxe"
+      ],
+      [
+       "Greatblade"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Warpcoven",
+   "operative": "Tzaangor Warrior",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Tzaangor blades"
+      ],
+      [
+       "Tzaangor blade & shield"
+      ],
+      [
+       "Autopistol",
+       "Chainsword"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Canoptek Circle",
+   "operative": "Tomb Crawler",
+   "fixed": [
+    "Claws"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Twin gauss reapers"
+      ],
+      [
+       "Transdimensional isolator"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Canoptek Circle",
+   "operative": "Warrior",
+   "fixed": [
+    "Claws & tail"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Gauss scalpel"
+      ],
+      [
+       "Tesla caster"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Murderwing",
+   "operative": "Chaos Lord",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Bolt pistol",
+       "Lightning claw"
+      ],
+      [
+       "Bolt pistol",
+       "Power fist"
+      ],
+      [
+       "Bolt pistol",
+       "Power weapon"
+      ],
+      [
+       "Plasma pistol",
+       "Lightning claw"
+      ],
+      [
+       "Plasma pistol",
+       "Power fist"
+      ],
+      [
+       "Plasma pistol",
+       "Power weapon"
+      ],
+      [
+       "Relic lightning claws"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Murderwing",
+   "operative": "Champion",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Tir",
+     "options": [
+      [
+       "Plasma pistol"
+      ],
+      [
+       "Bolt pistol"
+      ]
+     ]
+    },
+    {
+     "name": "Mêlée",
+     "options": [
+      [
+       "Power fist"
+      ],
+      [
+       "Power weapon"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Murderwing",
+   "operative": "Raptor",
+   "fixed": [],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Bolt pistol",
+       "Chainsword"
+      ],
+      [
+       "Plasma pistol",
+       "Chainsword"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "killteam": "Murderwing",
+   "operative": "Skysear",
+   "fixed": [
+    "Bolt pistol",
+    "Fists"
+   ],
+   "groups": [
+    {
+     "name": "Armes",
+     "options": [
+      [
+       "Flamer"
+      ],
+      [
+       "Meltagun"
+      ],
+      [
+       "Plasma gun"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

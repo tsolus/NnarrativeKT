@@ -1,0 +1,9 @@
+{
+  "$comment": "Corrections appliquées par scripts/import_bsdata_killteam.py aux données BSData, d'après les règles d'équipe officielles (PDF Games Workshop du projet). Chaque entrée remplace des champs de l'arme nommée, pour tous les opérateurs de la kill team.",
+  "weapons": [
+    { "killteam": "Nemesis Claw", "weapon": "Plasma gun (standard)", "set": { "dmg": "4/6" }, "source": "Team rules Nemesis Claw, mise à jour 17/06" },
+    { "killteam": "Nemesis Claw", "weapon": "Plasma gun (supercharge)", "set": { "dmg": "5/6" }, "source": "Team rules Nemesis Claw, mise à jour 17/06" },
+    { "killteam": "Warpcoven", "weapon": "Prosperine kopesh", "set": { "name": "Prosperine khopesh" }, "source": "orthographe officielle" },
+    { "killteam": "Wrecka Krew", "weapon": "Knuclebustas", "set": { "name": "Knucklebustas" }, "source": "orthographe officielle" }
+  ]
+}

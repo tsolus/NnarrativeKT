@@ -48,6 +48,10 @@ En ligne (Firebase), chaque campagne est rangée sous `campaigns/{code}/` ; le c
 
 Dans la campagne : deux collections, `bands/{id}` et `games/{id}`. Une bande est un seul document (registre, arsenal, journal inclus). Si deux joueurs modifient la même bande à la même seconde, la dernière écriture gagne. Chacun gérant sa propre bande, le risque est faible.
 
+## Fiches techniques
+
+`src/data/sheets.ts` charge les profils Kill Team avec l'appli et les fiches 40k à la demande (un fichier par catalogue, `fetch` relatif à la page). `src/domain/sheets.ts` choisit les armes selon `operative.loadout` (une option par groupe, la première par défaut) et retrouve la définition d'une règle d'arme (« Lethal 5+ » → « Lethal x+ »). `src/ui/components/Tip.tsx` affiche une seule infobulle à la fois, en position fixe, gardée dans l'écran.
+
 ## Tests
 
 - `tests/domain.test.ts` : coûts, sélection de base de chaque kill team, contrôles du registre, seuil de renforts, points et classement, traumatismes, exploration, catalogue de recrutement.

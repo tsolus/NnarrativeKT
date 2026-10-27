@@ -49,7 +49,8 @@ const server = http.createServer((_, res) => { res.setHeader('content-type', 'te
     await b.goto(url);
     await b.getByLabel('Lien ou code de campagne').fill(link);
     await b.getByRole('button', { name: 'Rejoindre' }).click();
-    await b.getByText('Les Griffes').waitFor();
+    // premier chargement parfois lent contre l'émulateur (le SDK cherche son mode de connexion)
+    await b.getByText('Les Griffes').waitFor({ timeout: 30000 });
     if (await b.getByText('Ma bande').count()) throw new Error('la bande de A est marquée comme celle de B');
   });
   await step('modifications visibles en direct chez l’autre', async () => {

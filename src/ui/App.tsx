@@ -2,6 +2,7 @@ import { useEffect } from 'preact/hooks';
 import { campaign, modal, openModal, route, storeKind, toast, unreadable, type Route } from '../state/app';
 import { InviteModal } from './modals/InviteModal';
 import { JoinView } from './views/JoinView';
+import { TipLayer } from './components/Tip';
 import { BandsView } from './views/BandsView';
 import { BandView } from './views/BandView';
 import { GamesView } from './views/GamesView';
@@ -36,6 +37,7 @@ export function App() {
           : <BandsView />}
       </main>
       {modal.value}
+      <TipLayer />
       <Toast />
     </>
   );

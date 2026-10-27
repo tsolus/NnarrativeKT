@@ -1,0 +1,4826 @@
+{
+ "$comment": "Généré par scripts/import_bsdata_killteam.py depuis BSData/wh40k-killteam (édition 2024). Ne pas éditer à la main.",
+ "weaponRules": {
+  "Devastating x": "Each retained critical success immediately inflicts *x* damage on the operative this weapon is being used against, e.g. Devastating 3. If the rule starts with a distance (e.g. 1\" Devastating *x*), inflict *x* damage on that operative and each other operative visible to and within that distance of it. Note that success isn't discarded after doing so — it can still be resolved later in the sequence.",
+  "Piercing x": "The defender collects *x* less defence dice, e.g. Piercing 1. If the rule is Piercing Crits *x*, this only comes into effect if you retain any critical successes.",
+  "Blast x": "The target you select is the primary target. After shooting the primary target, shoot with this weapon against each secondary target in an order of your choice (roll each sequence separately). Secondary targets are other operatives visible to and within *x* of the primary target, e.g. Blast 2\" (they are all valid targets, regardless of a conceal order). Secondary targets are in cover and obscured if the primary target was.",
+  "Ceaseless": "You can re-roll any of your attack dice results of one result (e.g. results of 2).",
+  "Range x": "Only operatives within *x* of the active operative can be valid targets, e.g. Range 9\".",
+  "Balanced": "You can re-roll one of your attack dice.",
+  "Saturate": "The defender cannot retain cover saves.",
+  "Accurate x": "You can retain up to *x* attack dice as normal successes without rolling them. If a weapon has more than one instance of Accurate *x*, you can treat it as one instance of Accurate 2 instead (this takes precedence over *x* rules above).",
+  "Brutal": "Your opponent can only block with critical successes.",
+  "Heavy": "An operative cannot use this weapon in an activation or counteraction in which it moved, and it cannot move in an activation or counteraction in which it used this weapon. If the rule is Heavy (***x*** only), where ***x*** is a move action, only that move is allowed, e.g. Heavy (**Dash** only). This weapon rule has no effect on preventing the **Guard** action.",
+  "Hot": "After an operative uses this weapon, roll one D6. If the result is less than the weapon's Hit stat, inflict damage on that operative equal to the result multiplied by two. If it's used multiple times in one action (e.g. Blast), still only roll one D6.",
+  "Lethal x+": "Your successes equal to or greater than *x* are critical successes, e.g. Lethal 5+.",
+  "Limited x": "After an operative uses this weapon a number of times in the battle equal to *x*, they no longer have it. If it's used multiple times in one action (e.g. Blast), treat this as one use.",
+  "Punishing": "If you retain any critical successes, you can retain one of your fails as a normal success instead of discarding it.",
+  "Relentless": "You can re-roll any of your attack dice.",
+  "Rending": "If you retain any critical successes, you can retain one of your normal successes as a critical success instead.",
+  "Seek": "When selecting a valid target, operatives cannot use terrain for cover. If the rule is Seek Light, operatives cannot use Light terrain for cover. Whist this can allow such operatives to be targeted (assuming they're visible), it doesn't remove their cover save (if any).",
+  "Severe": "If you don't retain any critical successes, you can change one of your normal successes to a critical success. The Devastating and Piercing Crits weapon rules still take effect, but Punishing and Rending don't.",
+  "Shock": "The first time you strike with a critical success in each sequence, also discard one of your opponent's unresolved normal successes (or a critical success if there are none).",
+  "Silent": "An operative can perform the **Shoot** action with this weapon while it has a Conceal order.",
+  "Stun": "If you retain any critical successes, subtract 1 from the APL stat of the operative this weapon is being used against until the end of its next activation.",
+  "Torrent x": "Select a valid target as normal as the primary target, then select any number of other valid targets within *x* of the first valid target as secondary targets, e.g. Torrent 2\". Shoot with this weapon against all of them in an order of your choice (roll each sequence separately).",
+  "Obstructing terrain": "Whenever an operative would cross over this terrain feature within 1\" of it, treat the distance as an additional 1\".",
+  "Protective": "While an operative is in cover from this terrain feature, improve its Save stat by 1 (to a maximum of 2+).",
+  "Portable": "This terrain feature only provides cover while an operative is connected to it and if the shield is intervening (ignore its feet). Operatives connected to the inside of it can perform the \"Move with Barricade\" unique action during the battle."
+ },
+ "universalEquipment": [
+  {
+   "name": "Ammo Cache",
+   "text": "Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the \"Ammo Resupply\" mission action during the battle."
+  },
+  {
+   "name": "Razor Wire",
+   "text": "Razor wire is Exposed and Obstructing terrain. Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features, access points and Accessible terrain."
+  },
+  {
+   "name": "Comms Device",
+   "text": "Before the battle, you can set up one of your Comms Device markers wholly within your territory. While a friendly operative controls this marker, add 3\" to the distance requirements of its **SUPPORT** rules that refer to friendly operatives (e.g. 'select a friendly operative within 6\" would be 9\" instead). Note that you cannot benefit from your opponent's Comms Device markers."
+  },
+  {
+   "name": "Mines",
+   "text": "Before the battle, you can set up one of your Mines markers wholly within your territory and more than 2\" from other markers, access points and Accessible terrain. The first time that marker is within an operative's control range, remove that marker and inflict D3+3 damage on that operative."
+  },
+  {
+   "name": "Light Barricades",
+   "text": "Light barricades are Light terrain, except the feet, which are Insignificant and Exposed. Before the battle, you can set up any of them wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features, access points and Accessible terrain."
+  },
+  {
+   "name": "Heavy Barricade",
+   "text": "A heavy barricade is Heavy terrain. Before the battle, you can set it up wholly within 4\" of your drop zone, on the killzone floor and more than 2\" from other equipment terrain features, access points and Accessible terrain."
+  },
+  {
+   "name": "Ladders",
+   "text": "Ladders are Insignificant and Exposed terrain. Before the battle, you can set up any of them as follows:\n- Wholly within your territory.\n- Upright against terrain that's at least 2\" tall.\n- More than 2\" from other equipment terrain features.\n- More than 1\" from doors and access points.\nOnce per action, whenever an operative is climbing the terrain feature a ladder is placed against, treat the vertical distance as 1\" if the ladder is within that operative's control range during that entire climb."
+  },
+  {
+   "name": "Utility Grenades",
+   "text": "When you select this equipment, select two utility grenades (2 smoke, 2 stun, or 1 smoke and 1 stun). Each selection is a unique action your operatives can perform, but your kill team can only perform that action a total number of times during the battle equal to your selection."
+  },
+  {
+   "name": "Explosive Grenades",
+   "text": "When you select this equipment, select two explosive grenades (2 frag, 2 krak, or 1 frag and 1 krak). Each selection is a ranged weapon your operatives can use, but your kill team can only use that weapon a total number of times during the battle equal to your selection."
+  },
+  {
+   "name": "Breaching Charge",
+   "text": "Once per battle, when a friendly operative performs the **Breach** action, you can use this rule. If you do, that operative can perform that action for 1 less AP (to a minimum of 1AP) as though it had the word ‘breach marker’ on its datacard."
+  }
+ ],
+ "killteams": {
+  "Canoptek Circle": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Geomancer": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Leader",
+      "Canoptek Circle",
+      "Necron",
+      "Geomancer",
+      "Cryptek"
+     ],
+     "abilities": [
+      {
+       "name": "Obelisk Node Control",
+       "text": "Whenever this operative would perform a mission action (excluding **Pick up Marker** or **Retrieve**, Approved Ops 2025), if it requires this operative to control and objective marker, you can instead determine control from one of your **OBELISK NODE** markers (see Obelisk Node Matrix faction rule). Whenever this operative would perform the **Operate Hatch** action, you can open or close a hatchway thats access point is within 1\" of one of your **OBELISK NODE** markers instead. Note that you must still fulfil the **Operate Hatch** action's conditions."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Molecular Breach (1AP)",
+       "text": "▶ **SUPPORT**. Select one friendly CANOPTEK CIRCLE operative visible to and within 6\" of this operative. Alternatively, you can select one friendly CANOPTEK CIRCLE operative visible to this operative and within your **OBELISK NODE MATRIX** (**SUPPORT** doesn't apply to this selection).\n\n\n▶ The next time the selected operative performs an action in which it moves, don't move it. Instead, remove it from the killzone and set it back up wholly within a distance equal to its Move stat (or 3\" if it was a **Dash**) of its original location, measuring the horizontal distance only (in a killzone that uses the close quarters rules, e.g. Killzone: Tomb World, this distance can be measured over and through Wall terrain and the operative can be set up on the other side). Note that it gains no additional distance when performing the **Charge** action. It must be set up in a location it can be placed, and unless it's the **Charge** action, it cannot be set up within control range of an enemy operative.\n\n\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      },
+      {
+       "name": "Canoptek Control (1AP)",
+       "text": "▶ **SUPPORT**. Select one friendly CANOPTEK CIRCLE CANOPTEK operative visible to and within 6\" of this operative. Alternatively, you can select one friendly CANOPTEK CIRCLE CANOPTEK operative that's visible to this operative and within your **OBELISK NODE MATRIX** (**SUPPORT** doesn't apply to this selection). That selected operative can immediately perform a 1AP action for free; during that action, it cannot move more than 2\" or must be set up wholly within 2\" if it's removed and set up again.\n\n\n◆ This operative cannot perform this action while within control range of an enemy operative, or while counteracting."
+      },
+      {
+       "name": "Geomantic Disturbance (1AP)",
+       "text": "▶ **SUPPORT**. Select a point on a terrain feature; that point must be visible to and within 8\" of this operative. Separately roll 2D6 for each operative within 2\" of that point. If the result is higher than that operative's remaining wounds, inflict damage on it equal to the difference.\n\n\n◆ This operative cannot perform this action while it has a Conceal order, or while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Tremorglaive (part matter)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Piercing 1, Piercing Crits 2"
+      },
+      {
+       "name": "Tremorglaive (quake)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "1/2",
+       "wr": "Blast 2\", Seek Light, Stun"
+      },
+      {
+       "name": "Tremorglaive (sweep)",
+       "type": "melee",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "4/5",
+       "wr": "Severe, Shock, Stun"
+      }
+     ],
+     "source": "Geomancer"
+    },
+    "Tomb Crawler": {
+     "stats": {
+      "APL": "2",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "18"
+     },
+     "keywords": [
+      "Canoptek Circle",
+      "Necron",
+      "Tomb Crawler",
+      "Operative",
+      "Canoptek"
+     ],
+     "abilities": [
+      {
+       "name": "Weapon Sentinel",
+       "text": "Whenever your opponent is selecting a valid target, if this operative has a Conceal order, it cannot use Light terrain for cover. While this can allow this operative to be targeted (assuming it's visible), it doesn't remove its cover save (if any)."
+      },
+      {
+       "name": "Steadfast",
+       "text": "Whenever determining control of a marker, you can treat this operative's APL stat as 3. If you do, this takes precedence over all other rules, meaning any changes to its APL stat are ignored for this."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Twin gauss reapers",
+         "weapons": [
+          {
+           "name": "Twin gauss reapers (sweeping)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "4/5",
+           "wr": "Piercing 1, Severe, Torrent 1\""
+          },
+          {
+           "name": "Twin gauss reapers (focused)",
+           "type": "ranged",
+           "atk": "5",
+           "hit": "4+",
+           "dmg": "4/5",
+           "wr": "Piercing 1, Severe"
+          }
+         ]
+        },
+        {
+         "name": "Transdimensional isolator",
+         "weapons": [
+          {
+           "name": "Transdimensional isolator",
+           "type": "ranged",
+           "atk": "5",
+           "hit": "4+",
+           "dmg": "5/6",
+           "wr": "Dimensional Banishment*"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "4/4",
+       "wr": ""
+      }
+     ],
+     "source": "Tomb Crawler"
+    },
+    "Accelerator": {
+     "stats": {
+      "APL": "2",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "7"
+     },
+     "keywords": [
+      "Canoptek Circle",
+      "Necron",
+      "Accelerator",
+      "Operative",
+      "Canoptek",
+      "Macrocyte"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Overcharge (1AP)",
+       "text": "▶ Select one other friendly CANOPTEK CIRCLE CANOPTEK operative visible to and within 3\" of this operative. Alternatively, if this operative is within your **OBELISK NODE MATRIX**, you can select one other friendly CANOPTEK CIRCLE CANOPTEK operative within your **OBELISK NODE MATRIX**. Until the end of that selected operative's next activation, add 1 to its APL stat.\n\n\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      },
+      {
+       "name": "Cranial Overload (1AP)",
+       "text": "▶ Select one enemy operative visible to and within 3\" of this operative. Alternatively, if this operative is within your **OBELISK NODE MATRIX**, you can select one enemy operative within your **OBELISK NODE MATRIX**. Until the end of that enemy operative's next activation, subtract 1 from its APL stat.\n\n\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Spark",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "2/3",
+       "wr": "Range 4\", Piercing 1"
+      },
+      {
+       "name": "Claws & spark",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": "Lethal 5+, Stun"
+      }
+     ],
+     "source": "Macrocyte Accelerator"
+    },
+    "Reanimator": {
+     "stats": {
+      "APL": "2",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "7"
+     },
+     "keywords": [
+      "Canoptek Circle",
+      "Necron",
+      "Operative",
+      "Reanimator",
+      "Canoptek",
+      "Macrocyte"
+     ],
+     "abilities": [
+      {
+       "name": "Reanimate",
+       "text": "Once per turning point, when another friendly CANOPTEK CIRCLE operative would be removed from the killzone as incapacitated, if that operative is visible to and within 6\" of this operative, or if this and that operative are within your **OBELISK NODE MATRIX**, you can use this rule, providing neither this nor that operative is within control range of an enemy operative. If you do, that friendly operative isn't incapacitated and has 1 wound remaining. That friendly operative can then immediately perform a free **Dash** action. If this rule was used during that friendly operative's activation, that activation ends. You cannot use this rule if this operative is incapacitated."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Nanoscarab Beam (1AP)",
+       "text": "▶ Select one friendly CANOPTEK CIRCLE operative visible to and within 6\" of this operative. Alternatively, if this operative is within your **OBELISK NODE MATRIX**, you can select one other friendly CANOPTEK CIRCLE operative within your **OBELISK NODE MATRIX**. The selected operative regains up to 3D3 lost wounds. It cannot be an operative that the Reanimate rule was used on during this turning point.\n\n\n◆ This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Atomiser beam",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": "Range 6\", Lethal 5+"
+      },
+      {
+       "name": "Claws & tail",
+       "type": "melee",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Macrocyte Reanimator"
+    },
+    "Warrior": {
+     "stats": {
+      "APL": "2",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "7"
+     },
+     "keywords": [
+      "Canoptek Circle",
+      "Necron",
+      "Operative",
+      "Warrior",
+      "Canoptek",
+      "Macrocyte"
+     ],
+     "abilities": [
+      {
+       "name": "Expendable Construct",
+       "text": "This operative is ignored for your opponent's kill/elimination op (when it's incapacitated, and when determining your starting number of operatives). It's also ignored for victory conditions that require operatives to 'escape', 'survive' or be incapacitated (if it escapes/survives/is incapacitated, determining how many operatives must escape/survive/be incapacitated, etc.)."
+      },
+      {
+       "name": "A Ceaseless Scuttling",
+       "text": "As a **STRATEGIC GAMBIT** in each turning point after the first, if you have less than three non-incapacitated friendly CANOPTEK CIRCLE WARRIOR operatives, you can set up another one ready and with a Conceal order wholly within your drop zone (you can select its weapon options as normal)."
+      },
+      {
+       "name": "Aggressive Defence",
+       "text": "If this operative is incapacitated by an enemy operative within 2\" of it, roll one D3; on a 2+, inflict 1 damage on that enemy operative."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Gauss scalpel",
+         "weapons": [
+          {
+           "name": "Gauss scalpel",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "2/3",
+           "wr": "Piercing 1"
+          }
+         ]
+        },
+        {
+         "name": "Tesla caster",
+         "weapons": [
+          {
+           "name": "Tesla caster (focused)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "2/3",
+           "wr": ""
+          },
+          {
+           "name": "Tesla caster (living lightning)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "2/3",
+           "wr": "Blast 2\""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Claws & tail",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Macrocyte Warrior"
+    }
+   }
+  },
+  "Deathwatch": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Watch Sergeant": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Deathwatch",
+      "Imperium",
+      "Adeptus Astartes",
+      "Watch Sergeant",
+      "Operative",
+      "Leader"
+     ],
+     "abilities": [
+      {
+       "name": "Adaptable Armoury",
+       "text": "You can select one additional equipment option."
+      },
+      {
+       "name": "Strategic Command",
+       "text": "You can do each of the following once per battle if this operative is in the killzone:\n- Use a DEATHWATCH strategy ploy for 0CP.\n- Use a DEATHWATCH firefight ploy for 0CP."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Plasma pistol (standard)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/5",
+       "wr": "Range 8\", Piercing 1"
+      },
+      {
+       "name": "Plasma pistol (supercharge)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Range 8\", Hot, Lethal 5+, Piercing 1"
+      },
+      {
+       "name": "Power weapon",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Lethal 5+"
+      }
+     ],
+     "source": "Watch Sergeant"
+    },
+    "Aegis": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "2+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Aegis"
+     ],
+     "abilities": [
+      {
+       "name": "Storm Shield",
+       "text": "Whenever an operative is shooting this operative, worsen the x of the Piercing weapon rule by 1 (if any). Note that Piercing 1 would therefore be ignored."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Power maul & storm shield",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Shock, Shield*"
+      },
+      {
+       "name": "Bolt Pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Aegis Veteran"
+    },
+    "Blademaster": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Blademaster"
+     ],
+     "abilities": [
+      {
+       "name": "Adaptive Swordsmanship",
+       "text": "You can ignore any changes to the Hit stat of this operative's xenophase blade. Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order. If you do, that success must be used to block."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Xenophase blade (duel)",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Brutal, Lethal 5+"
+      },
+      {
+       "name": "Xenophase blade (phase sweep)",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Brutal, Lethal 5+, Phase Sweep*"
+      },
+      {
+       "name": "Special issue bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\", Piercing 1"
+      }
+     ],
+     "source": "Blademaster Veteran"
+    },
+    "Bombard": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "18"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Gravis",
+      "Bombard"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Frag cannon (shell)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "5/7",
+       "wr": "Piercing 1"
+      },
+      {
+       "name": "Frag cannon (shrapnel)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Torrent 2\""
+      },
+      {
+       "name": "Bolt Pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Bombard Veteran"
+    },
+    "Breacher": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "18"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Gravis",
+      "Breacher"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Auxiliary grenade launcher (frag)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "2/4",
+       "wr": "Blast 2\""
+      },
+      {
+       "name": "Auxiliary grenade launcher (krak)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Piercing 1"
+      },
+      {
+       "name": "Hellstorm bolt rifle",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Torrent 1\""
+      },
+      {
+       "name": "Melta bomb",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "5/3",
+       "wr": "Range 3\", Devastating 3, Heavy (Reposition only), Limited 1, Piercing 2"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Breacher Veteran"
+    },
+    "Demolisher": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Demolisher"
+     ],
+     "abilities": [
+      {
+       "name": "Aggressive Force",
+       "text": "Whenever this operative is fighting or retaliating, Normal and Critical Dmg of 3 or more inflicts 1 less damage on it. This isn't cumulative with the Shield that Slays strategy ploy."
+      },
+      {
+       "name": "Brutal Assault",
+       "text": "Whenever this operative is fighting, its heavy thunder hammer has the Brutal weapon rule. Whenever this operative performs the **Charge** action, its heavy thunder hammer has the Ceaseless weapon rule until the end of the activation/counteraction."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Heavy thunder hammer",
+       "type": "melee",
+       "atk": "5",
+       "hit": "4+",
+       "dmg": "6/7",
+       "wr": "Shock, Stun"
+      },
+      {
+       "name": "Bolt Pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Demolisher Veteran"
+    },
+    "Disruptor": {
+     "stats": {
+      "APL": "3",
+      "Move": "7\"",
+      "Save": "3+",
+      "Wounds": "13"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Disruptor"
+     ],
+     "abilities": [
+      {
+       "name": "Advanced Omni-Scrambler",
+       "text": "**STRATEGIC GAMBIT**. Select one enemy operative visible to or within 6\" of this operative, then roll one D6. In the following Firefight phase, that enemy operative cannot be activated or perform actions until one of the following is true:\n- Your opponent has activated a number of enemy operatives equal to the result of the D6.\n- It's the last enemy operative to be activated."
+      },
+      {
+       "name": "Auspex Triangulation",
+       "text": "The Advanced Auspex Scan firefight ploy costs you 0CP when the following are true:\n- This operative isn't within control range of enemy operatives.\n- The target of that **Shoot** action (primary target, if relevant) is visible to this operative.\n\n\nNote that it doesn't have to be this operative performing the **Shoot** action, and that any subsequent **Shoot** actions during that activation/counteraction must meet these same requirements (or that ploy has no effect on those subsequent **Shoot** actions)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Marksman bolt carbine",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Lethal 5+"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Disruptor Veteran"
+    },
+    "Gunner": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Gunner"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Heavy plasma incinerator (standard)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Piercing 1"
+      },
+      {
+       "name": "Heavy plasma incinerator (supercharge)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "5/6",
+       "wr": "Hot, Lethal 5+, Piercing 1"
+      },
+      {
+       "name": "Bolt Pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Gunner Veteran"
+    },
+    "Headtaker": {
+     "stats": {
+      "APL": "3",
+      "Move": "7\"",
+      "Save": "3+",
+      "Wounds": "13"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Headtaker"
+     ],
+     "abilities": [
+      {
+       "name": "Grav-chute and Grapnel Launcher",
+       "text": "Whenever this operative is climbing, treat the vertical distance as 2\" (regardless of how far the operative actually moves vertically). Whenever this operative is dropping, ignore the vertical distance."
+      },
+      {
+       "name": "Clandestine Headtaker",
+       "text": "This operative can perform the **Charge** action while it has a Conceal order. Whenever this operative is fighting against an operative it wasn't visible to at the start of the activation/counteraction, the first time you strike during that sequence, you can immediately resolve another of your successes as a strike (before your opponent)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Combat knives",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": ""
+      },
+      {
+       "name": "Special issue bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\", Piercing 1"
+      }
+     ],
+     "source": "Headtaker Veteran"
+    },
+    "Horde-slayer": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "18"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Horde-slayer",
+      "Gravis"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Infernus heavy bolter (flame)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "2+",
+       "dmg": "3/3",
+       "wr": "Range 8\", Saturate, Torrent 2\""
+      },
+      {
+       "name": "Infernus heavy bolter (focused bolt)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Piercing Crits 1"
+      },
+      {
+       "name": "Infernus heavy bolter (sweeping bolt)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Piercing Crits 1, Torrent 1\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Bolt Pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Horde-slayer Veteran"
+    },
+    "Marksman": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Deathwatch",
+      "Marksman"
+     ],
+     "abilities": [
+      {
+       "name": "Vigilant Marksman",
+       "text": "This operative can perform the **Guard** action (see close quarters rules) in any killzone.\n\n\nWhen using the close quarters rules, once per turning point, after this operative performs a free **Shoot** action on guard, it can immediately perform a free **Guard** action. However, if it does, it cannot counteract (nor **Guard** twice if it's counteracted)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Stalker bolt rifle (mobile)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Stalker bolt rifle (heavy)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "2+",
+       "dmg": "3/5",
+       "wr": "Heavy (Dash only), Lethal 5+, Piercing Crits 1"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Marksman Veteran"
+    }
+   }
+  },
+  "Murderwing": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Chaos Lord": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Heretic Astartes",
+      "Leader",
+      "Lord",
+      "Chaos"
+     ],
+     "abilities": [
+      {
+       "name": "Path to Damnation",
+       "text": "This operative starts the battle with 1 Damnation point. Once per action, you can attempt to use one Boon of Damnation when it specifies (see Boons of Damnation). If you do, roll one D6 and compare the result to the number of Damnation points this operative has; if the result is:\n- Higher: Resolve the rule, then this operative gains 1 Damnation point.\n- Equal: Do not resolve the rule.\n- Less: Inflict damage on this operative equal to its number of Damnation points and do not resolve the rule.\n\n\nIf this operative as 6 Damnation points, resolve the rule without rolling. Note that you cannot make an attempt more than once per action, regardless of the D6 result."
+      },
+      {
+       "name": "Boons of Damnation",
+       "text": "Boons of Damnation are as follows (resolved with a D6 roll, see Path to Damnation):\n- When an attack dice inflicts damage of 3 or more on this operative, you can ignore an amount of damage equal to this operative's Damnation points.\n- When this operative is fighting or retaliating and you strike with an attack dice, you can inflict an amount of additional damage equal to this operative's Damnation points."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Bolt pistol; Lightning claw",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Lightning claw",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Lethal 5+, Rending"
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol; Power fist",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Power fist",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/7",
+           "wr": "Brutal, Shock"
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol; Power weapon",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Power weapon",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Plasma pistol; Lightning claw",
+         "weapons": [
+          {
+           "name": "Plasma pistol (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Range 8\", Piercing 1"
+          },
+          {
+           "name": "Plasma pistol (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Hot, Lethal 5+ Piercing 1"
+          },
+          {
+           "name": "Lightning claw",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Lethal 5+, Rending"
+          }
+         ]
+        },
+        {
+         "name": "Plasma pistol; Power fist",
+         "weapons": [
+          {
+           "name": "Plasma pistol (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Range 8\", Piercing 1"
+          },
+          {
+           "name": "Plasma pistol (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Hot, Lethal 5+ Piercing 1"
+          },
+          {
+           "name": "Power fist",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/7",
+           "wr": "Brutal, Shock"
+          }
+         ]
+        },
+        {
+         "name": "Plasma pistol; Power weapon",
+         "weapons": [
+          {
+           "name": "Plasma pistol (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Range 8\", Piercing 1"
+          },
+          {
+           "name": "Plasma pistol (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Hot, Lethal 5+ Piercing 1"
+          },
+          {
+           "name": "Power weapon",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Relic lightning claws",
+         "weapons": [
+          {
+           "name": "Relic lightning claws",
+           "type": "ranged",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Ceaseless, Lethal 5+, Rending"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Chaos Lord"
+    },
+    "Champion": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Champion"
+     ],
+     "abilities": [
+      {
+       "name": "Path to Glory",
+       "text": "Whenever this operative incapacitates an enemy operative that has your Challenge token, you gain 1CP."
+      },
+      {
+       "name": "Chaos Champion",
+       "text": "**STRATEGIC GAMBIT**. Remove your Challenge token from the enemy operative that has it (if any), then select one enemy operative to gain your Challenge token. Whenever this operative is fighting against or retaliating against an enemy operative that has your Challenge token, in the Select Weapons step, you can select one of the following weapon rules for this operative's melee weapons to have until the end of the sequence: Balanced, Brutal, Punishing, Severe, Shock."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Tir",
+       "options": [
+        {
+         "name": "Plasma pistol",
+         "weapons": [
+          {
+           "name": "Plasma pistol (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Range 8\", Piercing 1"
+          },
+          {
+           "name": "Plasma pistol (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Hot, Lethal 5+ Piercing 1"
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Mêlée",
+       "options": [
+        {
+         "name": "Power fist",
+         "weapons": [
+          {
+           "name": "Power fist",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/7",
+           "wr": "Brutal, Shock"
+          }
+         ]
+        },
+        {
+         "name": "Power weapon",
+         "weapons": [
+          {
+           "name": "Power weapon",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Champion"
+    },
+    "Curseclaw": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Curseclaw"
+     ],
+     "abilities": [
+      {
+       "name": "Frenzied Attack",
+       "text": "If this operative is incapacitated during the **Fight** action, you can strike the enemy operative in that sequence with one of your unresolved successes before this operative is removed from the killzone."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Snatch (1AP)",
+       "text": "▶ **BOOST** action. Select one enemy operative within this operative's **BOOST ZONE**. Both players roll one D6 and add their respective operative's Wounds stat to their result. If your result is higher, remove that enemy operative from the killzone and set it back up within this operative's **BOOST ZONE** or control range. It must be set up in a location it can be placed and cannot be set up further away from this operative than where it began. If that enemy operative is set up within this operative's control range, the **Fall Back** or **Reposition** action ends (allowing this operative to finish that action within control range of enemy operatives).\n\n\n◆ This operative cannot perform this action normally. Instead, it performs this action during the **Fall Back** or **Reposition** action after setting up from a **BOOST**."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Mutated claws",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Rending"
+      },
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Curseclaw"
+    },
+    "Depredator": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Depredator"
+     ],
+     "abilities": [
+      {
+       "name": "Horrifying Dismemberment",
+       "text": "Whenever this operative incapacitates an enemy operative while fighting or retaliating, select one other enemy operative visible to and within 3\" of either this operative or the incapacitated operative. Subtract 1 from that enemy operative's APL stat until the end of its next activation."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Carving Blow (1AP)",
+       "text": "Inflict 2D3 damage on each other operative visible to and within 2\" of this operative in an order of your choice (roll separately for each).\n\n\nThis operative cannot perform this action while it has a Conceal order, or during the same activation in which it performed the **Slice From Above** action (see Bladefins faction equipment), the **Clawed Charge** action (see Clawed Armour faction equipment) or two **Fight** actions (and vice versa)."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Great chainaxe",
+       "type": "melee",
+       "atk": "5",
+       "hit": "4+",
+       "dmg": "5/7",
+       "wr": "Brutal"
+      },
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Depredator"
+    },
+    "Huntmaster": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Huntmaster"
+     ],
+     "abilities": [
+      {
+       "name": "Pinned Prey",
+       "text": "Whenever an enemy operative would perform the **Fall Back** action while within control range of this operative, if no other enemy operatives are within this operative's control range, you can use this rule. If you do, roll two D6, or one D6 if that enemy operative has a higher Wounds stat than this operative. If any result is a 4+, that enemy operative cannot perform that action during that activation/counteration (no AP are spent on it)."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Strike From Above (1AP)",
+       "text": "▶ **BOOST** action. Inflict 2D3+1 damage on one enemy operative within this operative's **BOOST ZONE**.\n\n\n◆ This operative cannot perform this action normally. Instead, it performs this action during the **Fall Back** or **Reposition** action after setting up from a **BOOST**."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Power weapon",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Lethal 5+"
+      }
+     ],
+     "source": "Huntmaster"
+    },
+    "Raptor": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Raptor"
+     ],
+     "abilities": [
+      {
+       "name": "Thrill of Flight",
+       "text": "Whenever this operative does a **BOOST** during its activation:\n- You can remove any changes to its APL stat.\n- You can ignore any changes to its stats from being injured (including its weapons' stats) until the end of the activation."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Bolt pistol; Chainsword",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Chainsword",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Plasma pistol; Chainsword",
+         "weapons": [
+          {
+           "name": "Plasma pistol (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Range 8\", Piercing 1"
+          },
+          {
+           "name": "Plasma pistol (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Hot, Lethal 5+ Piercing 1"
+          },
+          {
+           "name": "Chainsword",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Raptor"
+    },
+    "Shrieker": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Shrieker"
+     ],
+     "abilities": [
+      {
+       "name": "Modified Vox-casters",
+       "text": "Whenever an enemy operative is within 3\" of this operative, your opponent must spend 1 additional AP for that enemy operative to perform the **Pick Up Marker** and mission actions.\n\n\nWhenever determining control of a marker, treat the total APL stat of enemy operatives that contest it as 1 lower if at least one of those enemy operatives is within 3\" of this operative. Note this isn't a change to the APL stat, so any changes are cumulative with this."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Shriek (1AP)",
+       "text": "▶ Select one enemy operative that's visible to and within 6\" of this operative. Alternatively, select one enemy operative within this operative's **BOOST ZONE** (at which point this becomes a **BOOST** action). If enemy operatives are within control range of this operative, you cannot select an enemy operative that isn't. Inflict D3 damage on the selected operative and subtract 1 from its APL stat until the end of its next activation.\n\n\n◆ This operative cannot perform this action while it has a Conceal order. If you're selecting an enemy operative within this operative's **BOOST ZONE**, this operative cannot perform this action normally. Instead, it performs this action during the **Fall Back** or **Reposition** action after setting up from a **BOOST**."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Chainsword",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": ""
+      }
+     ],
+     "source": "Shrieker"
+    },
+    "Skysear": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Skysear"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Flamer",
+         "weapons": [
+          {
+           "name": "Flamer",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "3/3",
+           "wr": "Range 8\", Saturate, Torrent 2\""
+          }
+         ]
+        },
+        {
+         "name": "Meltagun",
+         "weapons": [
+          {
+           "name": "Meltagun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "6/3",
+           "wr": "Range 6\", Devastating 4, Piercing 2"
+          }
+         ]
+        },
+        {
+         "name": "Plasma gun",
+         "weapons": [
+          {
+           "name": "Plasma gun (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Piercing 1"
+          },
+          {
+           "name": "Plasma gun (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/6",
+           "wr": "Hot, Lethal 5+, Piercing 1"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Skysear"
+    },
+    "Warp Talon": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "MURDERWING",
+      "Operative",
+      "Heretic Astartes",
+      "Chaos",
+      "Warp Talon"
+     ],
+     "abilities": [
+      {
+       "name": "Slice the Veil",
+       "text": "When setting up this operative before the battle, you can set it up in the warp instead: place it to one side instead of in the killzone. In the first Firefight phase, when this operative is activated, place one of your Warp markers wholly within your territory, then expend this operative.\n\n\nIn the second Firefight phase, when this operative is activated, set it up with an order of your choice in a location it can be placed either wholly within your drop zone, or wholly within your territory contesting your Warp marker. Continue its activation as normal, but during that activation you cannot spend more than 2AP for it and it cannot use more than 4\" of move distance.\n\n\nWhenever this operative is in the warp, it cannot be the ready friendly MURDERWING operative for the Malicious Narcissism firefight ploy."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Lightning claws",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Ceaseless, Lethal 5+, Rending"
+      }
+     ],
+     "source": "Warp Talon"
+    }
+   }
+  },
+  "Nemesis Claw": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Visionary": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Psyker",
+      "Leader",
+      "Visionary"
+     ],
+     "abilities": [
+      {
+       "name": "Prescience",
+       "text": "PSYCHIC. In the Ready step of each Strategy phase, you gain D3 Prescience points. At the end of each turning point, discard your Prescience points. You can spend your Prescience points in the Firefight phase as follows (you cannot use each of the following rules more than once per turning point): \n- **Foreboding**: PSYCHIC. Whenever it’s your turn to activate a friendly operative, you can spend 1 of your Prescience points to skip that activation. \n- **Portent**: PSYCHIC. Whenever an attack dice inflicts Normal Dmg on this operative, you can spend 1 of your Prescience points to ignore that inflicted damage. You cannot gain or spend your Prescience points if this operative is incapacitated."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Premonition (1AP)",
+       "text": "▶  PSYCHIC. Spend 1 of your Prescience points to gain 1CP. \n◆ This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point."
+      }
+     ],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Bolt pistol; Power fist",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Power fist",
+           "type": "melee",
+           "atk": "5",
+           "hit": "4+",
+           "dmg": "5/7",
+           "wr": "Brutal"
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol; Power maul",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Power maul",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Shock"
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol; Power weapon",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Power weapon",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Plasma pistol; Nostraman chainblade",
+         "weapons": [
+          {
+           "name": "Plasma pistol (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Range 8\", Piercing 1"
+          },
+          {
+           "name": "Plasma pistol (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Hot, Lethal 5+, Piercing 1"
+          },
+          {
+           "name": "Nostraman chainblade",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Rending"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Visionary"
+    },
+    "Fearmonger": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Fearmonger",
+      "Operative"
+     ],
+     "abilities": [
+      {
+       "name": "Terrorchem Poison",
+       "text": "Whenever an operative that has one of your Terrorchem tokens is activated, inflict D3 damage on it."
+      },
+      {
+       "name": "*Terrorchem",
+       "text": "*Terrorchem: In the Resolve Attack Dice step, if you inflict damage with any critical successes (including as a result of the Devastating weapon rule), the operative this weapon is being used against gains one of your Terrorchem tokens (if it doesn’t already have one)."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Poison Objective (1AP)",
+       "text": "▶ Select one objective marker this operative controls to gain one of your Terrorchem tokens. It cannot be an objective marker within control range of an enemy operative, or one that already has one of your Terrorchem tokens. The first time that objective marker is within control range of an enemy operative that doesn’t have one of your Terrorchem tokens, that operative gains that Terrorchem token, then inflict 2D3 damage on it (if it’s during an action, at the end of that action).\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Scoped bolt pistol (short range)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\", Lethal 5+"
+      },
+      {
+       "name": "Scoped bolt pistol (long range)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Terrorchem vial",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "2/0",
+       "wr": "Range 6\", Blast 2\", Devastating 3, Limited 1, Saturate, Terrorchem*"
+      },
+      {
+       "name": "Tainted blade",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "3/5",
+       "wr": "Terrorchem*"
+      }
+     ],
+     "source": "Fearmonger"
+    },
+    "Gunner": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Gunner",
+      "Operative"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Flamer",
+         "weapons": [
+          {
+           "name": "Flamer",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "3/3",
+           "wr": "Range 8\", Saturate, Torrent 2\""
+          }
+         ]
+        },
+        {
+         "name": "Meltagun",
+         "weapons": [
+          {
+           "name": "Meltagun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "6/3",
+           "wr": "Range 6\", Devastating 4, Piercing 2"
+          }
+         ]
+        },
+        {
+         "name": "Plasma gun",
+         "weapons": [
+          {
+           "name": "Plasma gun (standard)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Piercing 1"
+          },
+          {
+           "name": "Plasma gun (supercharge)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/6",
+           "wr": "Hot, Lethal 5+, Piercing 1"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Gunner"
+    },
+    "Heavy Gunner": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Operative",
+      "Heavy Gunner"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Heavy bolter",
+         "weapons": [
+          {
+           "name": "Heavy bolter (focused)",
+           "type": "ranged",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Heavy (Reposition only), Piercing Crits 1"
+          },
+          {
+           "name": "Heavy bolter (sweeping)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Heavy (Reposition only), Piercing Crits 1, Torrent 1\""
+          }
+         ]
+        },
+        {
+         "name": "Missile launcher",
+         "weapons": [
+          {
+           "name": "Missile launcher (frag)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/5",
+           "wr": "Blast 2\", Heavy (Reposition only)"
+          },
+          {
+           "name": "Missile launcher (krak)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/7",
+           "wr": "Heavy (Reposition only), Piercing 1"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Heavy Gunner"
+    },
+    "Screecher": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Screecher",
+      "Operative"
+     ],
+     "abilities": [
+      {
+       "name": "Screecher",
+       "text": "Whenever an enemy operative within 3\" of this operative is shooting, fighting or retaliating, your opponent cannot re-roll their attack dice"
+      },
+      {
+       "name": "Appetite for Cruelty",
+       "text": "Whenever this operative is fighting against a wounded enemy operative, this operative’s lightning claws have the Lethal 4+ weapon rule."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Lightning claws",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Ceaseless, Lethal 5+"
+      }
+     ],
+     "source": "Screecher"
+    },
+    "Skinthief": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Skinthief",
+      "Operative"
+     ],
+     "abilities": [
+      {
+       "name": "Flay Them Alive",
+       "text": "Once per turning point, when this operative incapacitates an enemy operative within its control range, you can select one other enemy operative visible to and within 6\" of either this operative or the incapacitated enemy operative. Until the start of the next turning point, that other enemy operative cannot control markers or perform the **Pick Up Marker** or mission actions."
+      },
+      {
+       "name": "Tyrant of the Skinning Pits",
+       "text": "Whenever this operative is fighting or retaliating, Normal and Critical Dmg of 3 or more inflicts 1 less damage on it."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Nostraman chainglaive",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "Rending"
+      },
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Skinthief"
+    },
+    "Ventrilokar": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Ventriloquar",
+      "Operative",
+      "Psyker"
+     ],
+     "abilities": [
+      {
+       "name": "Icon Bearer",
+       "text": "Whenever determining control of a marker, treat this operative’s APL stat as 1 higher. Note this isn’t a change to its APL stat, so any changes are cumulative with this."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Disconcerting Mimicry (1AP)",
+       "text": "▶ PSYCHIC. Select one enemy operative within 6\" of this operative, then select one of the following for that enemy operative (you can only select each option once per battle): \n- Until the end of its next activation, subtract 1 from its APL stat. \n- Change its order.\n- Perform a free **Dash** action with it (specify the location for your opponent to move it to).\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Chainsword",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": ""
+      }
+     ],
+     "source": "Ventriloquar"
+    },
+    "Warrior": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Nemesis Claw",
+      "Chaos",
+      "Heretic Astartes",
+      "Operative",
+      "Warrior"
+     ],
+     "abilities": [
+      {
+       "name": "Cruel Tormenter",
+       "text": "Whenever this operative is shooting against, fighting against or retaliating against an injured enemy operative, or an enemy operative that has a Wounds stat of 7 or less, this operative’s weapons have the Lethal 5+ weapon rule."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Bolt pistol; Chainsword",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Chainsword",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Boltgun; Fists",
+         "weapons": [
+          {
+           "name": "Boltgun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          },
+          {
+           "name": "Fists",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": [
+      "Warrior with bolt pistol; chainsword",
+      "Warrior with boltgun; fists"
+     ]
+    }
+   }
+  },
+  "Plague Marines": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Champion": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Leader",
+      "Chaos",
+      "Heretic Astartes",
+      "Champion"
+     ],
+     "abilities": [
+      {
+       "name": "Grandfather's Blessing",
+       "text": "Whenever an enemy operative that has one of your Poison tokens loses one or more wounds within 7\" of this operative, this operative regains up to an equal number of lost wounds (to a maximum of 3 lost wounds per turning point, and only if this operative isn’t incapacitated)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Plasma pistol (standard)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/5",
+       "wr": "Range 8\", Piercing 1"
+      },
+      {
+       "name": "Plasma pistol (supercharge)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Range 8\", Hot, Lethal 5+, Piercing 1"
+      },
+      {
+       "name": "Plague sword",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Severe, Poison*, Toxic*"
+      }
+     ],
+     "source": "Plague Marine Champion"
+    },
+    "Bombardier": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Bombardier"
+     ],
+     "abilities": [
+      {
+       "name": "Grenadier",
+       "text": "This operative can use blight and krak grenades (see faction and universal equipment). Doing so doesn’t count towards any limited uses you have (i.e. if you also select those grenades from equipment for other operatives). Whenever it’s doing so, improve the Hit stat of that weapon by 1 and blight grenades have the Toxic weapon rule."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Boltgun",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Plague Marine Bombardier"
+    },
+    "Fighter": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Fighter"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Flail (1AP)",
+       "text": "▶ Inflict D3+2 damage on each other operative that’s both visible to and within 2\" of this operative. Roll separately for each: if it’s an enemy operative, on a 3, that enemy operative also gains one of your Poison tokens (if it doesn’t already have one).\n◆ This operative cannot perform this action while it has a Conceal order, or during an activation in which it has performed more than one **Fight** action, and it cannot perform more than one **Fight** action during an activation in which it performs this action."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Flail of Corruption",
+       "type": "melee",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Brutal Severe, Shock, Poison*"
+      },
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Plague Marine Fighter"
+    },
+    "Heavy Gunner": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Heavy Gunner"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Plague spewer",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "2+",
+       "dmg": "3/3",
+       "wr": "Range 7\", Saturate, Severe, Torrent 2\", Poison*"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      }
+     ],
+     "source": "Plague Marine Heavy Gunner"
+    },
+    "Icon Bearer": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Icon Bearer"
+     ],
+     "abilities": [
+      {
+       "name": "Icon Bearer",
+       "text": "Whenever determining control of a marker, treat this operative’s APL stat as 1 higher. Note this isn’t a change to its APL stat, so any changes are cumulative with this."
+      },
+      {
+       "name": "Icon of Contagion",
+       "text": "Whenever this operative is within your opponent's territory, the Contagion strategy ploy costs you 0CP."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Plague knife",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Severe, Poison*"
+      }
+     ],
+     "source": "Plague Marine Icon Bearer"
+    },
+    "Malignant Plaguecaster": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Psyker",
+      "Malignant Plaguecaster"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Poisonous Miasma (1AP)",
+       "text": "▶ PSYCHIC. Select one enemy operative visible to and within 7\" of this operative, or one enemy operative that’s a valid target for this operative. That enemy operative gains one of your Poison tokens (if it doesn’t already have one). If it already has one, inflict 3 damage on that enemy operative instead.\n◆ An operative cannot perform this action while within control range of an enemy operative."
+      },
+      {
+       "name": "Putrescent Vitality (1AP)",
+       "text": "▶ PSYCHIC. Select one friendly operative visible to and within 3\" of this operative, then roll 2D6: if the result is 7, the selected operative regains 7 lost wounds; otherwise, the selected operative regains lost wounds equal to the highest D6.\n◆ An operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Entropy",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/7",
+       "wr": "PSYCHIC, Range 7\", Saturate, Severe, Poison*"
+      },
+      {
+       "name": "Plague wind",
+       "type": "ranged",
+       "atk": "6",
+       "hit": "3+",
+       "dmg": "2/3",
+       "wr": "PSYCHIC, Saturate, Severe, Torrent 1\", Poison*"
+      },
+      {
+       "name": "Corrupted staff",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "PSYCHIC, Severe, Shock, Stun, Poison*"
+      }
+     ],
+     "source": "Malignant Plaguecaster"
+    },
+    "Warrior": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "3+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "PLAGUE MARINE",
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Warrior"
+     ],
+     "abilities": [
+      {
+       "name": "Repulsive Fortitude",
+       "text": "Whenever an operative is shooting this operative, defence dice results of 5+ are critical successes."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Plague knife",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Severe, Poison*"
+      },
+      {
+       "name": "Boltgun",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Plague Marine Warrior"
+    }
+   }
+  },
+  "Scout Squad": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Sergeant": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "11"
+     },
+     "keywords": [
+      "Leader",
+      "Imperium",
+      "SCOUT SQUAD",
+      "Adeptus Astartes",
+      "Sergeant"
+     ],
+     "abilities": [
+      {
+       "name": "Guidance and Experience",
+       "text": "Once during each of this operative’s activations, you can select one other friendly **SCOUT SQUAD** operative in the killzone. Until the end of that operative’s next activation, add 1 to its APL stat."
+      },
+      {
+       "name": "Astartes",
+       "text": "During this operative’s activation, it can perform either two **Shoot** actions or two **Fight** actions. If it’s two **Shoot** actions, an Astartes shotgun, bolt pistol or boltgun must be selected for at least one of them. This operative can counteract regardless of its order."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Astartes shotgun; Fists",
+         "weapons": [
+          {
+           "name": "Astartes shotgun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "4/4",
+           "wr": "Range 6\""
+          },
+          {
+           "name": "Fists",
+           "type": "melee",
+           "atk": "3",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Boltgun; Fists",
+         "weapons": [
+          {
+           "name": "Boltgun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          },
+          {
+           "name": "Fists",
+           "type": "melee",
+           "atk": "3",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol; Chainsword",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Chainsword",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Scout Sergeant"
+    },
+    "Heavy Gunner (heavy bolter)": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Heavy Gunner",
+      "SCOUT SQUAD"
+     ],
+     "abilities": [
+      {
+       "name": "Heavy Weapon Bipod",
+       "text": "Whenever this operative is shooting with a weapon from its datacard, if it hasn’t moved during the activation, or if it’s a counteraction, that weapon has the Ceaseless weapon rule; if the weapon already has that weapon rule (i.e. from the Ambush strategy ploy), it has the Relentless weapon rule instead. Note that this operative isn’t restricted from moving after shooting."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Heavy bolter (focused)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Heavy (Dash only), Piercing Crits 1"
+      },
+      {
+       "name": "Heavy bolter (sweeping)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Heavy (Dash only), Piercing Crits 1, Torrent 1\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Scout Heavy Gunner"
+    },
+    "Heavy Gunner (missile launcher)": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "Adeptus Astartes",
+      "Heavy Gunner",
+      "SCOUT SQUAD"
+     ],
+     "abilities": [
+      {
+       "name": "Heavy Weapon Bipod",
+       "text": "Whenever this operative is shooting with a weapon from its datacard, if it hasn’t moved during the activation, or if it’s a counteraction, that weapon has the Ceaseless weapon rule; if the weapon already has that weapon rule (i.e. from the Ambush strategy ploy), it has the Relentless weapon rule instead. Note that this operative isn’t restricted from moving after shooting."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Missile launcher (frag)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/5",
+       "wr": "Blast 2\", Heavy (Dash only)"
+      },
+      {
+       "name": "Missile launcher (krak)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "5/7",
+       "wr": "Heavy (Dash only), Piercing 1"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Scout Heavy Gunner"
+    },
+    "Hunter": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Operative",
+      "SCOUT SQUAD",
+      "Adeptus Astartes",
+      "Hunter"
+     ],
+     "abilities": [
+      {
+       "name": "Grapnel Launcher",
+       "text": "Whenever this operative is climbing up, you can treat the vertical distance as 2\" (regardless of how far the operative actually moves vertically)."
+      },
+      {
+       "name": "Grapnel Assault",
+       "text": "Whenever this operative performs the **Charge** action during its activation, if it climbs, drops, jumps or its base moves underneath Vantage terrain during that action, its melee weapons have the Lethal 3+ weapon rule until the end of that activation."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Combat blade",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": ""
+      }
+     ],
+     "source": "Scout Hunter"
+    },
+    "Sniper": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Operative",
+      "SCOUT SQUAD",
+      "Imperium",
+      "Adeptus Astartes",
+      "Sniper"
+     ],
+     "abilities": [
+      {
+       "name": "Camo Cloak",
+       "text": "Whenever an operative is shooting this operative:\n- Ignore the Saturate weapon rule.\n- If you can retain any cover saves, you can retain one additional cover save, or you can retain one cover save as a critical success instead. This isn’t cumulative with improved cover saves from Vantage terrain."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Optics (AP1)",
+       "text": "▶ Until the start of this operative’s next activation, whenever it’s shooting, enemy operatives cannot be obscured.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Sniper rifle (mobile)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Sniper rifle (stationary)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "2+",
+       "dmg": "3/3",
+       "wr": "Devastating 3, Heavy (Dash only), Silent"
+      },
+      {
+       "name": "Bolt pistol",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Range 8\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Scout Sniper"
+    },
+    "Tracker": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Operative",
+      "SCOUT SQUAD",
+      "Imperium",
+      "Adeptus Astartes",
+      "Tracker"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Track Enemy (1AP)",
+       "text": "▶ Select one enemy operative within 8\" of this operative. Until the end of the turning point, whenever a friendly **SCOUT SQUAD** operative is shooting that enemy operative, that friendly operative’s ranged weapons have the Seek Light weapon rule.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      },
+      {
+       "name": "Auspex Scan (1AP)",
+       "text": "▶ Until the start of this operative’s next activation or until it’s incapacitated (whichever comes first), whenever a friendly **SCOUT SQUAD** operative is shooting an enemy operative within 8\" of this operative, that enemy operative cannot be obscured; if that friendly operative is a **SNIPER** that’s currently benefitting from the effects of its **Optics** action, its ranged weapons also have the Seek Light weapon rule.\n◆ This operative cannot perform this action while within control range of an\nenemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Boltgun",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Scout Tracker"
+    },
+    "Warrior": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Operative",
+      "Imperium",
+      "SCOUT SQUAD",
+      "Adeptus Astartes",
+      "Warrior"
+     ],
+     "abilities": [
+      {
+       "name": "Scout Warrior",
+       "text": "You can do each of the following once per turning point:\n- One friendly **SCOUT SQUAD WARRIOR** operative can perform the **Smoke Grenade** action.\n- One friendly **SCOUT SQUAD WARRIOR** operative can perform the **Stun Grenade** action.\nThe rules for these actions are found in universal equipment. Performing these actions using this rule doesn’t count towards their action limits (i.e. if you also select those grenades from equipment)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Astartes shotgun; Fists",
+         "weapons": [
+          {
+           "name": "Astartes shotgun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "4/4",
+           "wr": "Range 6\""
+          },
+          {
+           "name": "Fists",
+           "type": "melee",
+           "atk": "3",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Boltgun; Fists",
+         "weapons": [
+          {
+           "name": "Boltgun",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          },
+          {
+           "name": "Fists",
+           "type": "melee",
+           "atk": "3",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Bolt pistol; Combat blade",
+         "weapons": [
+          {
+           "name": "Bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Combat blade",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Scout Warrior"
+    }
+   }
+  },
+  "Vespid Stingwings": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Strain Leader": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "Leader",
+      "T'au Empire",
+      "VESPID STINGWING",
+      "Strain"
+     ],
+     "abilities": [
+      {
+       "name": "Communion Helm",
+       "text": "Once during each of this operative's activations, you can do one of the following:\n- Spend 1 Communion point for free.\n- Spend 1 Communion point and select one friendly VESPID STINGWING operative within 3\" of this operative. That other friendly operative can immediately perform a free 1AP mission action (you must still spend a Communion point for it to perform that action as normal, and this cannot be ignored using the Convergence Stimulant equipment)."
+      },
+      {
+       "name": "Commune",
+       "text": "When selecting your operatives for the battle, also select one **VESPID STINGWING** strategy ploy. Whenever this operative is in the killzone and not within control range of an enemy operative, that ploy costs you 0CP."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Neutron blaster",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/3",
+       "wr": "Devastating 2"
+      },
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Vespid Strain Leader"
+    },
+    "Oversight Drone": {
+     "stats": {
+      "APL": "2",
+      "Move": "8\"",
+      "Save": "2+",
+      "Wounds": "5"
+     },
+     "keywords": [
+      "Operative",
+      "VESPID STINGWING",
+      "T'au Empire",
+      "Oversight",
+      "Drone"
+     ],
+     "abilities": [
+      {
+       "name": "Evasive Drone",
+       "text": "- This operative cannot perform any action other than **Aerial Guidance**, **Charge**, **Dash**, **Fall Back**, **Fight** and **Reposition**.\n- Whenever determining control of objective markers, treat this operative's APL stat as 1 lower.\n- Whenever determining what's visible to this operative, the round disc at the top of the miniature is its head.\n- Whenever this operative has a Conceal order and is in cover, it cannot be selected as a valid target, taking precedence over all other rules (e.g. Seek, Vantage terrain) except being within 2\".\n- Whenever an operative is shooting this operative, ignore the Piercing weapon rule."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Aerial Guidance (1AP)",
+       "text": "▶ **SUPPORT**. Until the start of this operative's next activation, whenever another friendly **VESPID STINGWING** operative within 6\" of this operative is shooting an enemy operative visible to this operative, that friendly operative's ranged weapons have the Lethal 5+ and Saturate weapon rules. This has no effect while this operative is within control range of an enemy operative.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Ram",
+       "type": "melee",
+       "atk": "3",
+       "hit": "5+",
+       "dmg": "1/2",
+       "wr": ""
+      }
+     ],
+     "source": "Oversight Drone"
+    },
+    "Longsting": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Operative",
+      "T'au Empire",
+      "VESPID STINGWING",
+      "Longsting"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Neutron rail rifle (standard)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "4/4",
+       "wr": "Devastating 2, Neutron Fragment*"
+      },
+      {
+       "name": "Neutron rail rifle (aimed)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/4",
+       "wr": "Devastating 2, Heavy (Dash only), Lethal 5+, Neutron Fragment*"
+      },
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Vespid Longsting"
+    },
+    "Shadestrain": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Operative",
+      "T'au Empire",
+      "VESPID STINGWING",
+      "Shadestrain"
+     ],
+     "abilities": [
+      {
+       "name": "Ghost Rig",
+       "text": "While this operative has a Conceal order, your opponent cannot select it as a valid target unless it's within 6\" of the operative trying to target it. Note that this rule has no effect if this operative is not selected as the valid target, e.g. if it's a secondary target from the Blast weapon rule."
+      },
+      {
+       "name": "Camouflaged",
+       "text": "Whenever an operative is shooting this operative, ignore the Piercing weapon rule and all cover saves are retained as critical successes. This rule has no effect if this operative is not selected as the valid target, e.g. if it's a secondary target from the Blast weapon rule."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Neutron sting",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/3",
+       "wr": "Range 8\", Devastating 2"
+      },
+      {
+       "name": "Neutron grenade",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/3",
+       "wr": "Range 6\", Blast 2\", Devastating 2, Limited 1, Saturate"
+      },
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Vespid Shadestrain"
+    },
+    "Skyblast": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "T'au Empire",
+      "VESPID STINGWING",
+      "Skyblast",
+      "Operative"
+     ],
+     "abilities": [
+      {
+       "name": "Neutron Fallout",
+       "text": "Once during each enemy operative’s activation, as soon as it’s within 2\" of one of your Neutron Fallout markers, inflict D3 damage on it (multiple markers are not cumulative)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Neutron grenade launcher",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/3",
+       "wr": "Blast 2\", Devastating 2, Neutron Bombardment*"
+      },
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Vespid Skyblast"
+    },
+    "Swarmguard": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Operative",
+      "VESPID STINGWING",
+      "Swarmguard",
+      "T'au Empire"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Skytorch Assault (2AP)",
+       "text": "▶ Perform a free **Reposition** action with this operative. During that action, it must **FLY** and can move an additional 2\". Then perform a free **Shoot** action. You can only select a flamer (skytorch) for that **Shoot** action.\n◆ This operative cannot perform this action while it has a Conceal order, or while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Flamer (standard)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "2+",
+       "dmg": "3/3",
+       "wr": "Range 8\", Saturate, Torrent 2\""
+      },
+      {
+       "name": "Flamer (skytorch)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "2+",
+       "dmg": "3/3",
+       "wr": "Saturate, Torrent 0\"*, Skytorch*"
+      },
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Vespid Swarmguard"
+    },
+    "Warrior": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Operative",
+      "T'au Empire",
+      "VESPID STINGWING",
+      "Warrior"
+     ],
+     "abilities": [
+      {
+       "name": "Warrior Instincts",
+       "text": "Whenever this operative is shooting, if you don’t spend Communion points during that sequence, its neutron blaster has the Accurate 1 weapon rule until the end of that sequence."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Claws",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "3/4",
+       "wr": ""
+      },
+      {
+       "name": "Neutron blaster",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/3",
+       "wr": "Devastating 2"
+      }
+     ],
+     "source": "Vespid Warrior"
+    }
+   }
+  },
+  "Void-Dancer Troupe": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Lead Player": {
+     "stats": {
+      "APL": "3",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Void-dancer Troupe",
+      "Aeldari",
+      "Harlequin",
+      "Leader",
+      "Lead Player"
+     ],
+     "abilities": [
+      {
+       "name": "Lead the Performance",
+       "text": "Once per battle STRATEGIC GAMBIT. If this operative is in the killzone, change the ALLEGORY you selected for your kill team. Note that the ACCOLADE rule friendly operatives have will also change."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Tir",
+       "options": [
+        {
+         "name": "Fusion pistol",
+         "weapons": [
+          {
+           "name": "Fusion pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/3",
+           "wr": "Range 3\", Devastating 3, Piercing 2"
+          }
+         ]
+        },
+        {
+         "name": "Neuro disruptor",
+         "weapons": [
+          {
+           "name": "Neuro disruptor",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Piercing 1, Stun"
+          }
+         ]
+        },
+        {
+         "name": "Shuriken pistol",
+         "weapons": [
+          {
+           "name": "Shuriken pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\", Rending"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Mêlée",
+       "options": [
+        {
+         "name": "Blade",
+         "weapons": [
+          {
+           "name": "Blade",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Caress",
+         "weapons": [
+          {
+           "name": "Caress",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Rending"
+          }
+         ]
+        },
+        {
+         "name": "Embrace",
+         "weapons": [
+          {
+           "name": "Embrace",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Brutal"
+          }
+         ]
+        },
+        {
+         "name": "Kiss",
+         "weapons": [
+          {
+           "name": "Kiss",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "3/7",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Power weapon",
+         "weapons": [
+          {
+           "name": "Power weapon",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Lead Player"
+    },
+    "Death Jester": {
+     "stats": {
+      "APL": "3",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Void-dancer Troupe",
+      "Aeldari",
+      "Harlequin",
+      "Death Jester",
+      "Operative"
+     ],
+     "abilities": [],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Shrieker cannon (focused)",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Rending, Heavy (Reposition only), Humbling Cruelty*"
+      },
+      {
+       "name": "Shrieker cannon (sweeping)",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": "Rending, Heavy (Dash only), Torrent 2\", Humbling Cruelty*"
+      },
+      {
+       "name": "Shrieker blade",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Rending"
+      }
+     ],
+     "source": "Death Jester"
+    },
+    "Player": {
+     "stats": {
+      "APL": "3",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "8"
+     },
+     "keywords": [
+      "Void-dancer Troupe",
+      "Aeldari",
+      "Harlequin",
+      "Operative",
+      "Player"
+     ],
+     "abilities": [
+      {
+       "name": "Luck of the Laughing God",
+       "text": "Once per turning point, you can use this rule. If you do, you can use a firefight ploy for 0CP if this is the specified VOID-DANCER TROUPE operative (including Command Re-roll if the attack or defence dice was rolled for this operative). You cannot select the same firefight ploy for this rule more than once per battle."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Tir",
+       "options": [
+        {
+         "name": "Fusion pistol",
+         "weapons": [
+          {
+           "name": "Fusion pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/3",
+           "wr": "Range 3\", Devastating 3, Piercing 2"
+          }
+         ]
+        },
+        {
+         "name": "Neuro disruptor",
+         "weapons": [
+          {
+           "name": "Neuro disruptor",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Piercing 1, Stun"
+          }
+         ]
+        },
+        {
+         "name": "Shuriken pistol",
+         "weapons": [
+          {
+           "name": "Shuriken pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\", Rending"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "Mêlée",
+       "options": [
+        {
+         "name": "Blade",
+         "weapons": [
+          {
+           "name": "Blade",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": ""
+          }
+         ]
+        },
+        {
+         "name": "Caress",
+         "weapons": [
+          {
+           "name": "Caress",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Rending"
+          }
+         ]
+        },
+        {
+         "name": "Embrace",
+         "weapons": [
+          {
+           "name": "Embrace",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Brutal"
+          }
+         ]
+        },
+        {
+         "name": "Kiss",
+         "weapons": [
+          {
+           "name": "Kiss",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "3/7",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Player"
+    },
+    "Shadowseer": {
+     "stats": {
+      "APL": "3",
+      "Move": "7\"",
+      "Save": "4+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Void-dancer Troupe",
+      "Aeldari",
+      "Harlequin",
+      "Shadowseer",
+      "Operative",
+      "Psyker"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Fog of Dreams (1AP)",
+       "text": "▶ PSYCHIC. Select one ready enemy operative visible to this operative and roll one D6. Until the end of the turning point, that enemy operative cannot be activated or perform actions until it's the last enemy operative to be activated, or until your opponent has activated a number of enemy operatives after this action equal to the result of the D6 (whichever comes first). ◆ This operative cannot perform this action while within control range of an enemy operative."
+      },
+      {
+       "name": "Mirror of Minds (1AP)",
+       "text": "▶ PSYCHIC. Select one enemy operative that’s a valid target for and within 8\" of this operative. Both players roll five D6. Pair your dice with your opponent’s dice based on matching results. For each matching pair, inflict D3 damage on that enemy operative (to a maximum of 8). For example, if you rolled 6, 5, 5, 2, 1 and your opponent rolled 6, 5, 4, 3, 1, you would inflict 3D3 damage on that enemy operative. \n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Neuro disruptor",
+         "weapons": [
+          {
+           "name": "Neuro disruptor",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Piercing 1, Stun"
+          }
+         ]
+        },
+        {
+         "name": "Shuriken pistol",
+         "weapons": [
+          {
+           "name": "Shuriken pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\", Rending"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Hallucinogen grenade",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "1/1",
+       "wr": "Range 6\", Blast 2\", Lethal 5+, Seek Light, Silent, Stun"
+      },
+      {
+       "name": "Miststave",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/4",
+       "wr": "Shock"
+      }
+     ],
+     "source": "Shadowseer"
+    }
+   }
+  },
+  "Warpcoven": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Sorcerer of Destiny": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Sorcerer",
+      "Chaos",
+      "Psyker",
+      "Destiny",
+      "Heretic Astartes"
+     ],
+     "abilities": [
+      {
+       "name": "Mutant Appendage",
+       "text": "Having an enemy operative within this operative's control range doesn’t prevent it from performing the **Pick Up Marker** or mission actions. Once per activation, this operative can perform the **Pick Up Marker**, **Place Marker** or a mission action for 1 less AP."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Protected by Fate (1AP)",
+       "text": "▶ **PSYCHIC**. Select one friendly **WARPCOVEN** operative visible to this operative. Until the start of this operative’s next activation, until it's incapacitated or until this action is performed again by a friendly operative (whichever comes first), whenever an operative is shooting that selected operative, you can re-roll any of your defence dice.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      },
+      {
+       "name": "Ravage Destiny (1AP)",
+       "text": "▶ **PSYCHIC**. Select one enemy operative visible to and within 9\" of this operative. Until the start of this operative’s next activation, until it's incapacitated or until this action is performed again by a friendly operative (whichever comes first), whenever that enemy operative is shooting, fighting or retaliating, your opponent must re-roll their attack dice results of 6, and whenever determining control of a marker, treat that enemy operative’s APL stat as 1 lower. Note this isn't a change to its APL stat, so any changes are cumulative with this.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Inferno bolt pistol",
+         "weapons": [
+          {
+           "name": "Inferno bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\", Piercing 1"
+          }
+         ]
+        },
+        {
+         "name": "Prosperine khopesh",
+         "weapons": [
+          {
+           "name": "Prosperine khopesh",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Warpflame pistol",
+         "weapons": [
+          {
+           "name": "Warpflame pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "3/3",
+           "wr": "Range 6\", Piercing 1, Torrent 1\""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Force stave",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "PSYCHIC, Shock"
+      },
+      {
+       "name": "Doombolt",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/2",
+       "wr": "PSYCHIC, Devastating 2, Lethal 5+"
+      }
+     ],
+     "source": "Sorcerer of Destiny"
+    },
+    "Sorcerer of Tempyrion": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Sorcerer",
+      "Chaos",
+      "Psyker",
+      "Heretic Astartes",
+      "Tempyrion"
+     ],
+     "abilities": [
+      {
+       "name": "Mutant Appendage",
+       "text": "Having an enemy operative within this operative's control range doesn’t prevent it from performing the **Pick Up Marker** or mission actions. Once per activation, this operative can perform the **Pick Up Marker**, **Place Marker** or a mission action for 1 less AP."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Temporal Flux (1AP)",
+       "text": "▶ **PSYCHIC**. Select one friendly **WARPCOVEN** operative visible to and within 6\" of this operative and place your Temporal Flux marker within that operative’s control range.\n▶ At the end of that operative’s next activation, if it hasn’t been incapacitated and is still wholly within 6\" of your Temporal Flux marker, remove that operative from the killzone and set it back up in a location it can be placed; when it's set back up, it must have your Temporal Flux marker within its control range (or as close as possible). Then remove your Temporal Flux marker from the killzone. If that operative isn't wholly within 6\" of your Temporal Flux marker (including if it’s incapacitated), remove that marker from the killzone.\n◆ This operative cannot perform this action while within control range of an enemy operative, or if your Temporal Flux marker is currently in the killzone."
+      },
+      {
+       "name": "Reconstitution Ritual",
+       "text": "▶ **PSYCHIC**. Select one friendly **WARPCOVEN** operative visible to and within 6\" of this operative. That operative regains up to 2D3 lost wounds\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Inferno bolt pistol",
+         "weapons": [
+          {
+           "name": "Inferno bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\", Piercing 1"
+          }
+         ]
+        },
+        {
+         "name": "Prosperine khopesh",
+         "weapons": [
+          {
+           "name": "Prosperine khopesh",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Warpflame pistol",
+         "weapons": [
+          {
+           "name": "Warpflame pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "3/3",
+           "wr": "Range 6\", Piercing 1, Torrent 1\""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Force stave",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "PSYCHIC, Shock"
+      },
+      {
+       "name": "Fluxblast",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "PSYCHIC, Blast 2\", Rending"
+      }
+     ],
+     "source": "Sorcerer of Tempyrion"
+    },
+    "Sorcerer of Warpfire": {
+     "stats": {
+      "APL": "3",
+      "Move": "6\"",
+      "Save": "3+",
+      "Wounds": "15"
+     },
+     "keywords": [
+      "Operative",
+      "Sorcerer",
+      "Chaos",
+      "Psyker",
+      "Heretic Astartes",
+      "Warpfire"
+     ],
+     "abilities": [
+      {
+       "name": "Mutant Appendage",
+       "text": "Having an enemy operative within this operative's control range doesn’t prevent it from performing the **Pick Up Marker** or mission actions. Once per activation, this operative can perform the **Pick Up Marker**, **Place Marker** or a mission action for 1 less AP."
+      }
+     ],
+     "actions": [
+      {
+       "name": "Alight (1AP)",
+       "text": "▶ **PSYCHIC**. Select one enemy operative visible to this operative. Until the start of this operative’s next activation, until it's incapacitated or until this action is performed again by a friendly operative (whichever comes first), that enemy operative gains one of your Alight tokens (if it doesn’t already have one). Whenever a friendly **WARPCOVEN** operative is shooting against, fighting against or retaliating against an enemy operative that has one of your Alight tokens, that friendly operative’s weapons have the Ceaseless weapon rule.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Inferno bolt pistol",
+         "weapons": [
+          {
+           "name": "Inferno bolt pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "3/4",
+           "wr": "Range 8\", Piercing 1"
+          }
+         ]
+        },
+        {
+         "name": "Prosperine khopesh",
+         "weapons": [
+          {
+           "name": "Prosperine khopesh",
+           "type": "melee",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/6",
+           "wr": "Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Warpflame pistol",
+         "weapons": [
+          {
+           "name": "Warpflame pistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "3/3",
+           "wr": "Range 6\", Piercing 1, Torrent 1\""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Force stave",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/6",
+       "wr": "PSYCHIC, Shock"
+      },
+      {
+       "name": "Firestorm",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "4+",
+       "dmg": "2/3",
+       "wr": "PSYCHIC, Saturate, Seek Light, Torrent 2\""
+      },
+      {
+       "name": "Mindburn",
+       "type": "ranged",
+       "atk": "5",
+       "hit": "4+",
+       "dmg": "1/1",
+       "wr": "PSYCHIC, Lethal 5+, Saturate, Seek Light, Mindburn*"
+      }
+     ],
+     "source": "Sorcerer of Warpfire"
+    },
+    "Rubric Marine Gunner": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "2+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Operative",
+      "Chaos",
+      "WARPCOVEN",
+      "Heretic Astartes",
+      "Rubric Marine",
+      "Gunner"
+     ],
+     "abilities": [
+      {
+       "name": "Sorcerous Automata",
+       "text": "Whenever this operative is activated, subtract 1 from its APL stat until the end of that activation, unless a friendly **WARPCOVEN SORCERER** operative is within 9\" of it."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Warpflamer",
+         "weapons": [
+          {
+           "name": "Warpflamer",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "2+",
+           "dmg": "4/4",
+           "wr": "Range 8\", Saturate, Piercing 1, Torrent 2\""
+          }
+         ]
+        },
+        {
+         "name": "Soulreaper cannon",
+         "weapons": [
+          {
+           "name": "Soulreaper cannon (focused)",
+           "type": "ranged",
+           "atk": "5",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Piercing 1"
+          },
+          {
+           "name": "Soulreaper cannon (sweeping)",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Piercing 1, Torrent 1\""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Rubric Marine Gunner"
+    },
+    "Rubric Marine Icon Bearer": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "2+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Operative",
+      "Chaos",
+      "Heretic Astartes",
+      "Rubric Marine",
+      "Icon Bearer",
+      "WARPCOVEN"
+     ],
+     "abilities": [
+      {
+       "name": "Icon Bearer",
+       "text": "Whenever determining control of a marker, treat this operative’s APL stat as 1 higher. Note this isn’t a change to its APL stat, so any changes are cumulative with this."
+      },
+      {
+       "name": "Sorcerous Automata",
+       "text": "Whenever this operative is activated, subtract 1 from its APL stat until the end of that activation, unless a friendly **WARPCOVEN SORCERER** operative is within 9\" of it."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Inferno boltgun",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Piercing 1"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Rubric Marine Icon Bearer"
+    },
+    "Rubric Marine Warrior": {
+     "stats": {
+      "APL": "3",
+      "Move": "5\"",
+      "Save": "2+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Operative",
+      "WARPCOVEN",
+      "Chaos",
+      "Heretic Astartes",
+      "Rubric Marine",
+      "Warrior"
+     ],
+     "abilities": [
+      {
+       "name": "Sorcerous Automata",
+       "text": "Whenever this operative is activated, subtract 1 from its APL stat until the end of that activation, unless a friendly **WARPCOVEN SORCERER** operative is within 9\" of it."
+      },
+      {
+       "name": "Slow and Purposeful",
+       "text": "Whenever this operative is shooting, if it hasn’t performed the **Charge** or **Reposition** action during the activation, or if it's a counteraction, its ranged weapons have the Ceaseless weapon rule. Note this operative isn’t restricted from performing these actions after shooting."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Inferno boltgun",
+       "type": "ranged",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": "Piercing 1"
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Rubric Marine Warrior"
+    },
+    "Tzaangor Champion": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "10"
+     },
+     "keywords": [
+      "WARPCOVEN",
+      "Operative",
+      "Chaos",
+      "Tzaangor",
+      "Champion"
+     ],
+     "abilities": [
+      {
+       "name": "Savage Brutality",
+       "text": "The first time this operative performs the **Fight** action during each of its activations, if it isn’t incapacitated, it can immediately perform a free **Fight** action afterwards (you don't have to select the same enemy operative to fight against). This takes precedence over action restrictions."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Greataxe",
+         "weapons": [
+          {
+           "name": "Greataxe",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Brutal, Lethal 5+"
+          }
+         ]
+        },
+        {
+         "name": "Greatblade",
+         "weapons": [
+          {
+           "name": "Greatblade",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": "Lethal 5+, Rending"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Tzaangor Champion"
+    },
+    "Tzaangor Horn Bearer": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "WARPCOVEN",
+      "Operative",
+      "Tzaangor",
+      "Chaos",
+      "Horn Bearer"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Brayhorn (0AP)",
+       "text": "▶ Until the Ready step of the next Strategy phase, add 1\" to the Move stat of friendly **WARPCOVEN TZAANGOR** operatives.\n◆ This operative cannot perform this action while within control range of an enemy operative."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Dagger",
+       "type": "melee",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/5",
+       "wr": ""
+      }
+     ],
+     "source": "Tzaangor Horn Bearer"
+    },
+    "Tzaangor Icon Bearer": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "WARPCOVEN",
+      "Operative",
+      "Tzaangor",
+      "Chaos",
+      "Icon Bearer"
+     ],
+     "abilities": [
+      {
+       "name": "Herd Banner",
+       "text": "Whenever an attack dice inflicts Normal Dmg of 3 or more on a friendly **WARPCOVEN TZAANGOR** operative that’s visible to and within 3\" of this operative, subtract 1 from that inflicted damage."
+      },
+      {
+       "name": "Icon Bearer",
+       "text": "Whenever determining control of a marker, treat this operative’s APL stat as 1 higher. Note this isn't a change to its APL stat, so any changes are cumulative with this."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Dagger",
+       "type": "melee",
+       "atk": "4",
+       "hit": "4+",
+       "dmg": "3/5",
+       "wr": ""
+      }
+     ],
+     "source": "Tzaangor Icon Bearer"
+    },
+    "Tzaangor Warrior": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "9"
+     },
+     "keywords": [
+      "Operative",
+      "Chaos",
+      "Tzaangor",
+      "Warrior",
+      "WARPCOVEN"
+     ],
+     "abilities": [
+      {
+       "name": "Relic Hunters",
+       "text": "Once per battle, one friendly WARPCOVEN TZAANGOR WARRIOR can perform the Pick Up Marker, Place Marker or a mission action for 1 less AP if that friendly operative is within your opponent's territory."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Tzaangor blades",
+         "weapons": [
+          {
+           "name": "Tzaangor blades",
+           "type": "melee",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "4/5",
+           "wr": "Balanced"
+          }
+         ]
+        },
+        {
+         "name": "Tzaangor blade & shield",
+         "weapons": [
+          {
+           "name": "Tzaangor blade & shield",
+           "type": "melee",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "3/4",
+           "wr": "Shield*"
+          }
+         ]
+        },
+        {
+         "name": "Autopistol; Chainsword",
+         "weapons": [
+          {
+           "name": "Autopistol",
+           "type": "ranged",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "2/3",
+           "wr": "Range 8\""
+          },
+          {
+           "name": "Chainsword",
+           "type": "melee",
+           "atk": "4",
+           "hit": "4+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Tzaangor Warrior"
+    }
+   }
+  },
+  "Wrecka Krew": {
+   "factionRules": [],
+   "equipment": [],
+   "operatives": {
+    "Boss Nob": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "14"
+     },
+     "keywords": [
+      "Leader",
+      "WRECKA KREW",
+      "Ork",
+      "Boss Nob"
+     ],
+     "abilities": [
+      {
+       "name": "Wrecka Boss",
+       "text": "Whenever this operative performs a **Fight** or **Shoot** action (excluding **Guard**), you gain 1 Wrecka point."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Rokkit pistol; Smash hammer",
+         "weapons": [
+          {
+           "name": "Rokkit pistol",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "5+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Blast 1\""
+          },
+          {
+           "name": "Smash hammer",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "5/6",
+           "wr": "Brutal"
+          }
+         ]
+        },
+        {
+         "name": "Two rokkit pistols; Choppa",
+         "weapons": [
+          {
+           "name": "Two rokkit pistols (salvo)",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "5+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Blast 1\", Salvo*"
+          },
+          {
+           "name": "Two rokkit pistols (focused)",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "4+",
+           "dmg": "4/5",
+           "wr": "Range 8\", Blast 1\", Ceaseless"
+          },
+          {
+           "name": "Choppa",
+           "type": "melee",
+           "atk": "4",
+           "hit": "3+",
+           "dmg": "4/5",
+           "wr": ""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [],
+     "source": "Wrecka Boss Nob"
+    },
+    "Bomb Squig": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "5+",
+      "Wounds": "5"
+     },
+     "keywords": [
+      "Operative",
+      "Ork",
+      "Bomb Squig",
+      "WRECKA KREW"
+     ],
+     "abilities": [
+      {
+       "name": "Stoopid",
+       "text": "During the Firefight phase, whenever you determine this operative's order, you cannot select Conceal. This operative cannot perform any actions other than **Charge**, **Dash**, **Fight**, **Reposition** and **Shoot**, or use any weapons that aren't on its datacard."
+      },
+      {
+       "name": "Boom!",
+       "text": "Whenever this operative is incapacitated during a battle in which it hasn't used its explosives, roll one D6, or two D6 if you wish.If any result is a 4+, this operative performs a free **Shoot** action with its explosives before it's removed from the killzone."
+      },
+      {
+       "name": "Expendable",
+       "text": "This operative is ignored for your opponent's kill/elimination op (when it's incapacitated, and when determining your starting number of operatives). It's also ignored for victory conditions and scoring VPs if either require operatives to 'escape', 'survive' or be incapacitated by enemy operatives (if it escapes/survives/is incapacitated, determining how many operatives must escape/survive/be incapacitated, etc.)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Explosives",
+       "type": "ranged",
+       "atk": "6",
+       "hit": "4+",
+       "dmg": "4/5",
+       "wr": "Blast 1\", Limited 1, Explosive*"
+      },
+      {
+       "name": "Bite",
+       "type": "melee",
+       "atk": "3",
+       "hit": "4+",
+       "dmg": "4/5",
+       "wr": ""
+      }
+     ],
+     "source": "Wrecka Bomb Squig"
+    },
+    "Breaka Boy Demolisha": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "12"
+     },
+     "keywords": [
+      "Operative",
+      "WRECKA KREW",
+      "Ork",
+      "Demolisha",
+      "Breaka Boy"
+     ],
+     "abilities": [
+      {
+       "name": "Reckless Temperament",
+       "text": "Normal Dmg of 4 or more inflicts 1 less damage on this operative; if this operative has an Engage order, Critical Dmg of 4 or more also inflicts 1 less damage on this operative."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Tankhammer (bash)",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "4/5",
+       "wr": ""
+      },
+      {
+       "name": "Tankhammer (detonate)",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "*",
+       "wr": "Lethal 5+, Limited 1, Detonate*"
+      }
+     ],
+     "source": "Breaka Boy Demolisha"
+    },
+    "Breaka Boy Fighter": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "12"
+     },
+     "keywords": [
+      "Operative",
+      "WRECKA KREW",
+      "Ork",
+      "Fighter",
+      "Breaka Boy"
+     ],
+     "abilities": [],
+     "actions": [
+      {
+       "name": "Break Stuff (1AP)",
+       "text": "▶ Select a terrain feature within this operative's control range. If it's equipment terrain, remove it. Otherwise, place one of your Breach markers within this operative's control range as close as possible to that terrain. Whenever an operative is within 1\" of that marker, it treats parts of that terrain feature that are no more than 1\" thick as Accessible terrain.\n◆ This operative cannot perform this action while within control range of an enemy operative, or if a terrain feature isn't within its control range."
+      }
+     ],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Smash hammer",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "5/6",
+       "wr": "Brutal"
+      }
+     ],
+     "source": "Breaka Boy Fighter"
+    },
+    "Breaka Boy Krusha": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "12"
+     },
+     "keywords": [
+      "Operative",
+      "Ork",
+      "WRECKA KREW",
+      "Breaka Boy",
+      "Krusha"
+     ],
+     "abilities": [
+      {
+       "name": "Armoured Up",
+       "text": "Whenever an enemy operative is shooting this operative, or this operative is fighting or retaliating, you opponent cannot retain attack dice results of less than 6 as critical successes (e.g. as a result of the Lethal, Rending or Severe weapon rules)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [],
+     "weapons": [
+      {
+       "name": "Knucklebustas",
+       "type": "melee",
+       "atk": "4",
+       "hit": "3+",
+       "dmg": "5/6",
+       "wr": "Brutal, Shock, Smash*"
+      }
+     ],
+     "source": "Breaka Boy Krusha"
+    },
+    "Tankbusta Gunner": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "12"
+     },
+     "keywords": [
+      "Tankbusta",
+      "Operative",
+      "WRECKA KREW",
+      "Ork",
+      "Gunner"
+     ],
+     "abilities": [
+      {
+       "name": "Kometitiva Streak",
+       "text": "Once per **Shoot** action, if this operative shoots an enemy operative that another friendly operative has already shot during this turning point, you gain 1 Wrecka point. Determine this when you select a valid target, but you can include any secondary targets when doing so (e.g. from the Blast weapon rule)."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "'Eavy rokkit launcha",
+         "weapons": [
+          {
+           "name": "'Eavy rokkit launcha",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "4+",
+           "dmg": "4/5",
+           "wr": "Blast 1\", Heavy (Dash only)"
+          }
+         ]
+        },
+        {
+         "name": "Rokkit launcha",
+         "weapons": [
+          {
+           "name": "Rokkit launcha",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "5+",
+           "dmg": "4/5",
+           "wr": "Blast 1\""
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Tankbusta Gunner"
+    },
+    "Tankbusta Rokkiteer": {
+     "stats": {
+      "APL": "2",
+      "Move": "6\"",
+      "Save": "4+",
+      "Wounds": "12"
+     },
+     "keywords": [
+      "Operative",
+      "Ork",
+      "WRECKA KREW",
+      "Tankbusta",
+      "Rokkiteer"
+     ],
+     "abilities": [
+      {
+       "name": "Shokkwave",
+       "text": "Whenever an operative is within x\" of your Pulsa marker (see *Pulsa), worsen the Hit stat of its weapons by 1 and subtract 2\" from its Move stat. This is cumulative with being injured. X is that marker's Pulsa points. In the ready step of each Strategy phase, subtract 1 from your Pulsa marker's points. If a Pulsa marker ever has 0 points, remove it."
+      }
+     ],
+     "actions": [],
+     "weaponGroups": [
+      {
+       "name": "Armes",
+       "options": [
+        {
+         "name": "Pulsa rokkit",
+         "weapons": [
+          {
+           "name": "Pulsa rokkit",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "5+",
+           "dmg": "-",
+           "wr": "Heavy (Reposition only), Limited 1, Pulsa*"
+          }
+         ]
+        },
+        {
+         "name": "Rokkit rack",
+         "weapons": [
+          {
+           "name": "Rokkit rack",
+           "type": "ranged",
+           "atk": "6",
+           "hit": "5+",
+           "dmg": "4/5",
+           "wr": "Blast 2\", Heavy (Reposition only), Limited 1, Relentless"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "weapons": [
+      {
+       "name": "Rokkit launcha",
+       "type": "ranged",
+       "atk": "6",
+       "hit": "5+",
+       "dmg": "4/5",
+       "wr": "Blast 1\""
+      },
+      {
+       "name": "Fists",
+       "type": "melee",
+       "atk": "3",
+       "hit": "3+",
+       "dmg": "3/4",
+       "wr": ""
+      }
+     ],
+     "source": "Tankbusta Rokkiteer"
+    }
+   }
+  }
+ }
+}

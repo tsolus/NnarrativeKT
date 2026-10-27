@@ -1,0 +1,4271 @@
+{
+ "Asurmen": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Autarch Skyrunner [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Autarch": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Autarch Wayleaper": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Avatar of Khaine": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Baharroth": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Corsair Voidreavers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Corsair Voidscarred": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Crimson Hunter": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Dark Reapers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Death Jester": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Dire Avengers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Eldrad Ulthran": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Falcon": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Farseer": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Farseer Skyrunner": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Fire Dragons": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Fire Prism": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Fuegan": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Guardian Defenders": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Hemlock Wraithfighter": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Howling Banshees": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Illic Nightspear [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Jain Zar": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Karandras [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Maugan Ra": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Night Spinner": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Prince Yriel [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Rangers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Shadowseer": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Shining Spears": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Shroud Runners": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Skyweavers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Solitaire": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Spiritseer": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Starweaver": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Storm Guardians": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Striking Scorpions": [
+  "aeldari-aeldari-library.json"
+ ],
+ "D-Cannon Platform": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Swooping Hawks": [
+  "aeldari-aeldari-library.json"
+ ],
+ "The Visarch": [
+  "aeldari-aeldari-library.json"
+ ],
+ "The Yncarne": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Troupe": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Troupe Master": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Voidweaver": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Warlock": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Warlock Conclave": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Warp Spiders": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wave Serpent": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Webway Gate [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Windriders": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wraithknight": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wraithlord": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wraithguard": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Yvraine": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wraithblades": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Archon": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Beastmaster [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Court of the Archon [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Cronos": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Drazhar": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Grotesques [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Haemonculus": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Hellions": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Incubi": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Kabalite Warriors": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Lelith Hesperax": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Mandrakes": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Raider": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ravager": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Razorwing Jetfighter": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Reavers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Scourges with Heavy Weapons": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Succubus": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Talos": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Urien Rakarth [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Venom": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Voidraven Bomber": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wracks": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wyches": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Cobra [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Scorpion [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Hornet [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Irillyth [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Lynx [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Nightwing [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Skathach Wraithknight [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Shadow Spectres [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Shadow Spectre Exarch": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Phantom Titan": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Revenant Titan": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Warp Hunter [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wraithseer [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Tantalus [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Amallyn Shadowguide [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Bonesinger [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Corsair Cloud Dancer Band [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Corsair Reaver Band [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Corsair Skyreaver Band [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Firestorm [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Phoenix [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Vampire Hunter [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Vampire Raider [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wasp Assault Walker [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Raven Strike Fighter [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Reaper [Legends]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Warlock Skyrunners": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Archon": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Lhykhis": [
+  "aeldari-aeldari-library.json"
+ ],
+ "War Walker": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Shadow Weaver Platform": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Vibro Cannon Platform": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Vyper": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Wraithknight with Ghostglaive": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Succubus": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Kabalite Warriors": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Wyches": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Incubi": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Reavers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Raider": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ynnari Venom": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Lady Malys": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Scourges with Shardcarbines": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Prince Yriel": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Kharseth": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Starfang": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Corsair Skyreavers": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Archtormentor [Crucible]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Flesh Crafter [Crucible]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Craftworld Warleader [Crucible]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Skyrunner [Crucible]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Ghost Warrior [Crucible]": [
+  "aeldari-aeldari-library.json"
+ ],
+ "Skarbrand": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-world-eaters.json"
+ ],
+ "Bloodthirster": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-world-eaters.json"
+ ],
+ "Skulltaker": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Bloodmaster": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Skullmaster": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Rendmaster on Blood Throne": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Karanak": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Bloodletters": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-world-eaters.json"
+ ],
+ "Bloodcrushers": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-world-eaters.json"
+ ],
+ "Flesh Hounds": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-world-eaters.json"
+ ],
+ "Skull Cannon": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Skull Altar": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Be'lakor": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Khorne Soul Grinder": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Tzeentch Soul Grinder": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Nurgle Soul Grinder": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Slaanesh Soul Grinder": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Daemon Prince of Chaos": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Daemon Prince of Chaos with wings": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Kairos Fateweaver": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Lord of Change": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-thousand-sons.json"
+ ],
+ "The Changeling": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Fateskimmer": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Fluxmaster": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "The Blue Scribes": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Changecaster": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Blue Horrors": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Pink Horrors": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Flamers": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Exalted Flamer": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Screamers": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Burning Chariot": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Rotigus": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-death-guard.json"
+ ],
+ "Great Unclean One": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-death-guard.json"
+ ],
+ "Poxbringer": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Spoilpox Scrivener": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Epidemius": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Sloppity Bilepiper": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Horticulous Slimux": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Plaguebearers": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-death-guard.json"
+ ],
+ "Nurglings": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-death-guard.json"
+ ],
+ "Beast of Nurgle": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-death-guard.json"
+ ],
+ "Plague Drones": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-death-guard.json"
+ ],
+ "Feculent Gnarlmaw": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Shalaxi Helbane": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-emperor-s-children.json"
+ ],
+ "Keeper of Secrets": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-emperor-s-children.json"
+ ],
+ "Infernal Enrapturess": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "The Masque of Slaanesh": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Syll'esske": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Contorted Epitome": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Tormentbringer": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Tranceweaver": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Daemonettes": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-emperor-s-children.json"
+ ],
+ "Fiends": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-emperor-s-children.json"
+ ],
+ "Seekers": [
+  "chaos-chaos-daemons-library.json",
+  "chaos-emperor-s-children.json"
+ ],
+ "Hellflayer": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Seeker Chariot": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Exalted Seeker Chariot [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Giant Chaos Spawn [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Spined Chaos Beast [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Pox Riders [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Plague Toads [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "An'ggrath the Unbound [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Aetaos'rau'keres [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Scabeiathrax the Bloated [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Zarakynel [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Herald of Slaanesh on Steed of Slaanesh [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Furies [Legends]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Daemonic Herald [Crucible]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Daemonic Charioteer [Crucible]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "Immortal Champion [Crucible]": [
+  "chaos-chaos-daemons-library.json"
+ ],
+ "War Dog Executioner": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "War Dog Stalker": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "War Dog Karnivore": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "War Dog Brigand": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "War Dog Huntsman": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Knight Despoiler": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Knight Desecrator": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Knight Rampager": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Knight Abominant": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Knight Tyrant": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Acastus Knight Asterius": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Acastus Knight Porphyrion": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Cerastus Knight Lancer": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Cerastus Knight Castigator": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Cerastus Knight Acheron": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Cerastus Knight Atrapos": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Questoris Knight Magaera": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Chaos Questoris Knight Styrix": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "War Dog Moirax": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Knight Ruinator": [
+  "chaos-chaos-knights-library.json"
+ ],
+ "Abaddon the Despoiler": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Haarken Worldclaimer": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Huron Blackheart": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Heretic Astartes Daemon Prince": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Heretic Astartes Daemon Prince with wings": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Fabius Bile": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Cypher": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Master of Possession": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Lord": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Lord in Terminator Armour": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Sorcerer": [
+  "chaos-chaos-space-marines.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Sorcerer in Terminator Armour": [
+  "chaos-chaos-space-marines.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Lord Discordant on Helstalker": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Warpsmith": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Exalted Champion [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Dark Apostle": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Dark Commune": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Legionaries": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Cultist Mob": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Accursed Cultists": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Terminator Squad": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Master of Executions": [
+  "chaos-chaos-space-marines.json",
+  "chaos-world-eaters.json"
+ ],
+ "Possessed": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chosen": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Venomcrawler": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Bikers": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Raptors": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Warp Talons": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Havocs": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Obliterators": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Noctilith Crown": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Vashtorr the Arkifane": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Traitor Guardsmen Squad": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Fellgor Beastmen": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Traitor Enforcer": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Land Raider": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Chaos Predator Annihilator": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Chaos Predator Destructor": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Chaos Vindicator": [
+  "chaos-chaos-space-marines.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Forgefiend": [
+  "chaos-chaos-space-marines.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Helbrute": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Heldrake": [
+  "chaos-chaos-space-marines.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Maulerfiend": [
+  "chaos-chaos-space-marines.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Chaos Rhino": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Khorne Lord of Skulls": [
+  "chaos-chaos-space-marines.json",
+  "chaos-world-eaters.json"
+ ],
+ "Chaos Spawn": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Khorne Berzerkers": [
+  "chaos-chaos-space-marines.json",
+  "chaos-world-eaters.json"
+ ],
+ "Rubric Marines": [
+  "chaos-chaos-space-marines.json",
+  "chaos-thousand-sons.json"
+ ],
+ "Plague Marines": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json"
+ ],
+ "Hell Talon [Legends]": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Hellblade [Legends]": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Sorcerer on Disc of Tzeentch [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Sorcerer on Palanquin of Nurgle [Legends]": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json"
+ ],
+ "Chaos Lord on Palanquin of Nurgle [Legends]": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json"
+ ],
+ "Chaos Lord on Disc of Tzeentch [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Lord on Juggernaut [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Lord on Steed of Slaanesh [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Sorcerer on Steed of Slaanesh [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Gellerpox Infected [Legends]": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json"
+ ],
+ "Mutoid Vermin [Legends]": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json"
+ ],
+ "Renegade Enforcer [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Renegade Heavy Weapons Squad [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Renegade Plague Ogryns [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Mutilators": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Renegade Ogryn Brutes [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Rogue Psyker [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Negavolt Cultists [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Sorcerer on Bike [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Renegade Ogryn Beast Handler [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Lord on Bike [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Deimos Predator [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Chaos Lord with Jump Pack": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Cultist Firebrand": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Cultist Mob with Firearms [Legends]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Nemesis Claw": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Noise Marines": [
+  "chaos-chaos-space-marines.json",
+  "chaos-emperor-s-children.json"
+ ],
+ "Masters of the Maelstrom": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Red Corsairs Raiders": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Red Corsairs Reave-captain": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Exalted Champion [Crucible]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Sorcerous Champion [Crucible]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Soul Forge Tyrant [Crucible]": [
+  "chaos-chaos-space-marines.json"
+ ],
+ "Defiler": [
+  "chaos-chaos-space-marines.json",
+  "chaos-death-guard.json",
+  "chaos-emperor-s-children.json",
+  "chaos-thousand-sons.json",
+  "chaos-world-eaters.json"
+ ],
+ "Daemon Prince of Nurgle": [
+  "chaos-death-guard.json"
+ ],
+ "Daemon Prince of Nurgle with wings": [
+  "chaos-death-guard.json"
+ ],
+ "Typhus": [
+  "chaos-death-guard.json"
+ ],
+ "Death Guard Chaos Lord [Legends]": [
+  "chaos-death-guard.json"
+ ],
+ "Death Guard Chaos Lord in Terminator Armour [Legends]": [
+  "chaos-death-guard.json"
+ ],
+ "Lord of Virulence": [
+  "chaos-death-guard.json"
+ ],
+ "Lord of Contagion": [
+  "chaos-death-guard.json"
+ ],
+ "Death Guard Sorcerer in Terminator Armour [Legends]": [
+  "chaos-death-guard.json"
+ ],
+ "Malignant Plaguecaster": [
+  "chaos-death-guard.json"
+ ],
+ "Death Guard Cultists [Legends]": [
+  "chaos-death-guard.json"
+ ],
+ "Poxwalkers": [
+  "chaos-death-guard.json"
+ ],
+ "Noxious Blightbringer": [
+  "chaos-death-guard.json"
+ ],
+ "Foul Blightspawn": [
+  "chaos-death-guard.json"
+ ],
+ "Biologus Putrifier": [
+  "chaos-death-guard.json"
+ ],
+ "Tallyman": [
+  "chaos-death-guard.json"
+ ],
+ "Plague Surgeon": [
+  "chaos-death-guard.json"
+ ],
+ "Deathshroud Terminators": [
+  "chaos-death-guard.json"
+ ],
+ "Blightlord Terminators": [
+  "chaos-death-guard.json"
+ ],
+ "Myphitic Blight-hauler": [
+  "chaos-death-guard.json"
+ ],
+ "Foetid Bloat-drone": [
+  "chaos-death-guard.json"
+ ],
+ "Plagueburst Crawler": [
+  "chaos-death-guard.json"
+ ],
+ "Mortarion": [
+  "chaos-death-guard.json"
+ ],
+ "Icon Bearer": [
+  "chaos-death-guard.json"
+ ],
+ "Miasmic Malignifier": [
+  "chaos-death-guard.json"
+ ],
+ "Death Guard Possessed [Legends]": [
+  "chaos-death-guard.json"
+ ],
+ "Lord of Poxes": [
+  "chaos-death-guard.json"
+ ],
+ "Foetid Bloat-drone with heavy blight launcher": [
+  "chaos-death-guard.json"
+ ],
+ "Plague Sorcerer [Crucible]": [
+  "chaos-death-guard.json"
+ ],
+ "Plague Lord [Crucible]": [
+  "chaos-death-guard.json"
+ ],
+ "Tri-lobe Vectors [Crucible]": [
+  "chaos-death-guard.json"
+ ],
+ "Lucius the Eternal": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Fulgrim": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Lord Exultant": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Lord Kakophonist": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Daemon Prince of Slaanesh": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Daemon Prince of Slaanesh with Wings": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Tormentors": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Infractors": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Flawless Blades": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Chaos Terminators": [
+  "chaos-emperor-s-children.json",
+  "chaos-world-eaters.json"
+ ],
+ "Excruciator [Crucible]": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Champion of Excess [Crucible]": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Flawless Champion [Crucible]": [
+  "chaos-emperor-s-children.json"
+ ],
+ "Ahriman": [
+  "chaos-thousand-sons.json"
+ ],
+ "Exalted Sorcerer": [
+  "chaos-thousand-sons.json"
+ ],
+ "Exalted Sorcerer on Disc of Tzeentch": [
+  "chaos-thousand-sons.json"
+ ],
+ "Infernal Master": [
+  "chaos-thousand-sons.json"
+ ],
+ "Magnus the Red": [
+  "chaos-thousand-sons.json"
+ ],
+ "Mutalith Vortex Beast": [
+  "chaos-thousand-sons.json"
+ ],
+ "Scarab Occult Terminators": [
+  "chaos-thousand-sons.json"
+ ],
+ "Daemon Prince of Tzeentch": [
+  "chaos-thousand-sons.json"
+ ],
+ "Daemon Prince of Tzeentch with wings": [
+  "chaos-thousand-sons.json"
+ ],
+ "Tzaangor Enlightened": [
+  "chaos-thousand-sons.json"
+ ],
+ "Tzaangor Shaman": [
+  "chaos-thousand-sons.json"
+ ],
+ "Tzaangors": [
+  "chaos-thousand-sons.json"
+ ],
+ "Sekhetar Robots": [
+  "chaos-thousand-sons.json"
+ ],
+ "Tzaangor Enlightened with Fatecaster greatbows": [
+  "chaos-thousand-sons.json"
+ ],
+ "Chaos Spawn (Flesh Change)": [
+  "chaos-thousand-sons.json"
+ ],
+ "Magister [Crucible]": [
+  "chaos-thousand-sons.json"
+ ],
+ "Brayherd Chieftain [Crucible]": [
+  "chaos-thousand-sons.json"
+ ],
+ "Brayherd Shaman [Crucible]": [
+  "chaos-thousand-sons.json"
+ ],
+ "Angron": [
+  "chaos-world-eaters.json"
+ ],
+ "Khârn the Betrayer": [
+  "chaos-world-eaters.json"
+ ],
+ "Lord Invocatus": [
+  "chaos-world-eaters.json"
+ ],
+ "Daemon Prince of Khorne": [
+  "chaos-world-eaters.json"
+ ],
+ "Daemon Prince of Khorne with wings": [
+  "chaos-world-eaters.json"
+ ],
+ "Lord on Juggernaut": [
+  "chaos-world-eaters.json"
+ ],
+ "Jakhals": [
+  "chaos-world-eaters.json"
+ ],
+ "Eightbound": [
+  "chaos-world-eaters.json"
+ ],
+ "Exalted Eightbound": [
+  "chaos-world-eaters.json"
+ ],
+ "Goremongers": [
+  "chaos-world-eaters.json"
+ ],
+ "Slaughterbound": [
+  "chaos-world-eaters.json"
+ ],
+ "Butcherlord [Crucible]": [
+  "chaos-world-eaters.json"
+ ],
+ "Eight-blessed Lord [Crucible]": [
+  "chaos-world-eaters.json"
+ ],
+ "Bloodcult Champion [Crucible]": [
+  "chaos-world-eaters.json"
+ ],
+ "Aberrants": [
+  "genestealer-cults.json"
+ ],
+ "Abominant": [
+  "genestealer-cults.json"
+ ],
+ "Achilles Ridgerunners": [
+  "genestealer-cults.json"
+ ],
+ "Acolyte Hybrids with Hand Flamers": [
+  "genestealer-cults.json"
+ ],
+ "Acolyte Iconward": [
+  "genestealer-cults.json"
+ ],
+ "Atalan Jackals": [
+  "genestealer-cults.json"
+ ],
+ "Biophagus": [
+  "genestealer-cults.json"
+ ],
+ "Clamavus": [
+  "genestealer-cults.json"
+ ],
+ "Goliath Rockgrinder": [
+  "genestealer-cults.json"
+ ],
+ "Goliath Truck": [
+  "genestealer-cults.json"
+ ],
+ "Hybrid Metamorphs": [
+  "genestealer-cults.json"
+ ],
+ "Jackal Alphus": [
+  "genestealer-cults.json"
+ ],
+ "Kelermorph": [
+  "genestealer-cults.json"
+ ],
+ "Locus": [
+  "genestealer-cults.json"
+ ],
+ "Magus": [
+  "genestealer-cults.json"
+ ],
+ "Neophyte Hybrids": [
+  "genestealer-cults.json"
+ ],
+ "Nexos": [
+  "genestealer-cults.json"
+ ],
+ "Patriarch": [
+  "genestealer-cults.json"
+ ],
+ "Primus": [
+  "genestealer-cults.json"
+ ],
+ "Purestrain Genestealers": [
+  "genestealer-cults.json"
+ ],
+ "Reductus Saboteur": [
+  "genestealer-cults.json"
+ ],
+ "Sanctus": [
+  "genestealer-cults.json"
+ ],
+ "Tectonic Fragdrill [Legends]": [
+  "genestealer-cults.json"
+ ],
+ "Benefictus": [
+  "genestealer-cults.json"
+ ],
+ "Acolyte Hybrids with Autopistols": [
+  "genestealer-cults.json"
+ ],
+ "Cult Insurrectionist [Crucible]": [
+  "genestealer-cults.json"
+ ],
+ "Cult Guerrilla [Crucible]": [
+  "genestealer-cults.json"
+ ],
+ "Voice of the Patriarch [Crucible]": [
+  "genestealer-cults.json"
+ ],
+ "Aestred Thurga and Agathae Dolan": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Arco-Flagellants": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Battle Sisters Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Canoness": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Castigator": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Celestian Sacresants": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Daemonifuge": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Dialogus": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Dogmata": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Dominion Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Exorcist": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Hospitaller": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Imagifier": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Immolator": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Junith Eruita": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Mortifiers": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Morvenn Vahl": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Palatine": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Paragon Warsuits": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Penitent Engines": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Ministorum Priest": [
+  "imperium-adepta-sororitas.json",
+  "imperium-agents-of-the-imperium.json",
+  "imperium-astra-militarum-library.json"
+ ],
+ "Repentia Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Retributor Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Saint Celestine": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Seraphim Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Sisters Novitiate Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Sororitas Rhino": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Triumph of Saint Katherine": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Zephyrim Squad": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Repressor [Legends]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Canoness with Jump Pack": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Death Cult Assassins [Legends]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Crusaders [Legends]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Battle Sanctum [Legends]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Sanctifiers": [
+  "imperium-adepta-sororitas.json",
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Celestian Insidiants": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Militant Commander [Crucible]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Inspiring Devotee [Crucible]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Reliquant Knight [Crucible]": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Intranzia Fraye": [
+  "imperium-adepta-sororitas.json"
+ ],
+ "Aleya": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Allarus Custodians": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Anathema Psykana Rhino": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Blade Champion": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Custodian Guard": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Custodian Wardens": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Knight-Centura": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Prosecutors": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Shield-Captain": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Shield-Captain in Allarus Terminator Armour": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Shield-Captain on Dawneagle Jetbike": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Trajann Valoris": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Valerian": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Venerable Contemptor Dreadnought": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Venerable Land Raider": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Vertus Praetors": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Vigilators": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Witchseekers": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Custodian Guard with Adrasite and Pyrithite spears": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Sagittarum Custodians": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Aquilon Custodians": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Agamatus Custodians": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Venatari Custodians": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Contemptor-Galatus Dreadnought": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Contemptor-Achillus Dreadnought": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Pallas Grav-attack": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Caladius Grav-tank": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Telemon Heavy Dreadnought": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Coronus Grav-carrier": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Orion Assault Dropship": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Ares Gunship": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Guardian of the Throne [Crucible]": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Null Maiden [Crucible]": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Kataphraktoi Exemplar [Crucible]": [
+  "imperium-adeptus-custodes.json"
+ ],
+ "Archaeopter Fusilave": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Archaeopter Stratoraptor": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Archaeopter Transvector": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Belisarius Cawl": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Corpuscarii Electro-Priests": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Fulgurite Electro-Priests": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Ironstrider Ballistarius (Twin cognis autocannon)": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Ironstrider Ballistarius (Twin cognis lascannon)": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Kastelan Robots": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Kataphron Breachers": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Kataphron Destroyers": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Onager Dunecrawler": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Pteraxii Skystalkers": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Pteraxii Sterylizors": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Serberys Raiders": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Serberys Sulphurhounds": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Sicarian Infiltrators": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Sicarian Ruststalkers": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Skitarii Marshal": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Skitarii Rangers": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Skitarii Vanguard": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Skorpius Disintegrator": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Skorpius Dunerider": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Sydonian Dragoon with taser lance": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Tech-Priest Dominus": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Tech-Priest Enginseer": [
+  "imperium-adeptus-mechanicus.json",
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tech-Priest Manipulus": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Technoarcheologist": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Cybernetica Datasmith": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Secutarii Hoplites [Legends]": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Secutarii Peltasts [Legends]": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Terrax-Pattern Termite [Legends]": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Sydonian Skatros": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Sydonian Dragoons with radium jezzails": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Servitors [Legends]": [
+  "imperium-adeptus-mechanicus.json",
+  "imperium-grey-knights.json"
+ ],
+ "Servitor Battleclade": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Magos [Crucible]": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Cohort Commander [Crucible]": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Ironstrider Alpha [Crucible]": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Thulia Ghuld": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Hastarii Exterminators": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Hastarii Fusiliers": [
+  "imperium-adeptus-mechanicus.json"
+ ],
+ "Vindicare Assassin": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Culexus Assassin": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Eversor Assassin": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Callidus Assassin": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Rogue Trader Entourage": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Voidsmen-at-Arms": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Imperial Navy Breachers": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Subductor Squad": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Exaction Squad": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Vigilant Squad": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor Draxus": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor Coteaz": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor Greyfax": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor Karamazov [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor Eisenhorn [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "UR-025 [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Neyam Shai Murad [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Janus Draik [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Damned Legionnaires [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor in Terminator Armour [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Navigator": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitorial Agents": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Grey Knights Terminator Squad": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitorial Chimera": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Imperial Rhino": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Sisters of Battle Squad": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Sisters of Battle Immolator": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Daemonhost": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Jokaero Weaponsmith [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Corvus Blackstar": [
+  "imperium-agents-of-the-imperium.json",
+  "imperium-deathwatch.json"
+ ],
+ "Deathwatch Kill Team": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Deathwatch Terminator Squad [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Fortis Kill Team [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Indomitor Kill Team [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Kill Team Cassius [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Proteus Kill Team [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Spectrus Kill Team [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Veteran Bike Squad [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Watch Captain Artemis": [
+  "imperium-agents-of-the-imperium.json",
+  "imperium-deathwatch.json"
+ ],
+ "Watch Master": [
+  "imperium-agents-of-the-imperium.json",
+  "imperium-deathwatch.json"
+ ],
+ "Inquisitor Ostromandeus [Legends]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Aquila Kill Team": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Martial Agent [Crucible]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Deathwatch Agent [Crucible]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Enthroned Agent [Crucible]": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Inquisitor Kroyle": [
+  "imperium-agents-of-the-imperium.json"
+ ],
+ "Aegis Defence Line": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Armoured Sentinel": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Attilan Rough Riders": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Baneblade": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Banehammer": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Banesword": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Basilisk": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Bullgryn Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Cadian Castellan": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Cadian Command Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Cadian Shock Troops": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Catachan Jungle Fighters": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Chimera": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Commissar": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Death Korps of Krieg": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Deathstrike": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Doomhammer": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Field Ordnance Battery": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Gaunt’s Ghosts": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Cadian Heavy Weapons Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hellhammer": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hellhound": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hydra": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "‘Iron Hand’ Straken [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Kasrkin": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Battle Tank": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Demolisher": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Eradicator": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Executioner": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Exterminator": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Punisher": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Vanquisher": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Lord Solar Leontus": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Manticore": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Militarum Tempestus Command Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Munitorum Servitors [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Nork Deddog": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Ogryn Bodyguard": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Ogryn Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Primaris Psyker": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Regimental Attachés [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Rogal Dorn Battle Tank": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Scout Sentinel": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Sergeant Harker [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Shadowsword": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Sly Marbo": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Stormlord": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Stormsword": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Leman Russ Commander": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Taurox": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Taurox Prime": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tempestus Scions": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Ursula Creed": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Valkyrie": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Wyvern": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Death Riders": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Carnodon [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Cyclops Demolition Vehicle": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Malcador [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Malcador Annihilator [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Malcador Defender [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Malcador Infernus [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Medusa Carriage Battery [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Earthshaker Carriage Battery [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Stormblade [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Macharius [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Macharius Vanquisher [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Macharius Vulcan [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Praetor [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Crassus [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Colossus [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Valdor [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Avenger Strike Fighter": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Voss-pattern Lightning [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Vulture Gunship [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Marauder Bomber [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Marauder Destroyer [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tarantula w/ twin heavy bolter": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tarantula w/ twin lascannon": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Rapier Laser Destroyer": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hades Breaching Drill [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Trojan Support Vehicle [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Valkyrie Sky Talon [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Aquila Lander [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Dominus Armoured Siege Bombard [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Gorgon Heavy Transport [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Death Korps Grenadier Squad [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Centaur Light Carrier [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Macharius Omega [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Stygies Destroyer Tank Hunter [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Rein and Raus [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Quartermaster Cadre Squad [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Atlas Recovery Vehicle [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Sabre Gun Platform": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Elysian Drop Sentinel [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Elysian Sniper Squad [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Heavy Mortar Team [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Armageddon-pattern Medusa [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Heavy Quad Launcher Team [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Arvus Lighter [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Vendetta Gunship [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Minotaur [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Death Rider Commissar [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Sentinel Powerlifter [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Manticore Platform [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hydra Platform [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Griffon Mortar Carrier [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Earthshaker Platform [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Mukaali Riders [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Salamander Scout Vehicle [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tauros Assault Vehicle [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tauros Venator [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Salamander Command Vehicle [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Arkurian Stormhammer [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Storm Chimera [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Tempestus Aquilons": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Ratlings": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Krieg Command Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Lord Marshal Dreir": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Catachan Command Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Rogal Dorn Commander": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Krieg Combat Engineers": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Catachan Heavy Weapons Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Krieg Heavy Weapons Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Artillery Team": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Provisionally Prepared [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hell's Last [Legends]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Front-line Commander [Crucible]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Augmented Bone 'Ead [Crucible]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Sentinel Commander [Crucible]": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Commissar Yarrick": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Commissar Graves": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Commissar Graves on Foot": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Hippogriff AFV": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Centaur RSV": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Cadian Recon Squad": [
+  "imperium-astra-militarum-library.json"
+ ],
+ "Chaplain Grimaldus": [
+  "imperium-black-templars.json"
+ ],
+ "High Marshal Helbrecht": [
+  "imperium-black-templars.json"
+ ],
+ "Crusader Squad": [
+  "imperium-black-templars.json"
+ ],
+ "Sword Brethren Squad": [
+  "imperium-black-templars.json"
+ ],
+ "Emperor's Champion": [
+  "imperium-black-templars.json"
+ ],
+ "Crusader Squad [Legends]": [
+  "imperium-black-templars.json"
+ ],
+ "Gladiator Lancer": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Gladiator Reaper": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Gladiator Valiant": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Impulsor": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Repulsor": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Repulsor Executioner": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Castellan": [
+  "imperium-black-templars.json"
+ ],
+ "Marshal": [
+  "imperium-black-templars.json"
+ ],
+ "Execrator": [
+  "imperium-black-templars.json"
+ ],
+ "Crusade Ancient": [
+  "imperium-black-templars.json"
+ ],
+ "Land Raider Crusader": [
+  "imperium-black-templars.json",
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Sternguard Veteran Squad": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Terminator Squad": [
+  "imperium-black-templars.json",
+  "imperium-space-marines.json"
+ ],
+ "Emperor's Champion (Anointed)": [
+  "imperium-black-templars.json"
+ ],
+ "Astorath": [
+  "imperium-blood-angels.json"
+ ],
+ "Baal Predator": [
+  "imperium-blood-angels.json"
+ ],
+ "Brother Corbulo [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Captain Tycho [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Tycho the Lost [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Chief Librarian Mephiston": [
+  "imperium-blood-angels.json"
+ ],
+ "Commander Dante": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Dreadnought with Magna-Grapple [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Marines with Boltguns [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Marines with Jump Packs": [
+  "imperium-blood-angels.json"
+ ],
+ "Furioso Dreadnought [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Gabriel Seth [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Lemartes": [
+  "imperium-blood-angels.json"
+ ],
+ "Librarian Dreadnought [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Sanguinary Guard": [
+  "imperium-blood-angels.json"
+ ],
+ "Sanguinary Priest": [
+  "imperium-blood-angels.json"
+ ],
+ "The Sanguinor": [
+  "imperium-blood-angels.json"
+ ],
+ "Sanguinary Priest with Jump Pack [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Sanguinary Priest on Bike [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Blood Angels Captain": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Captain": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Captain with Jump Pack": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Marines with Bolt Rifles": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Marines": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Dreadnought": [
+  "imperium-blood-angels.json"
+ ],
+ "Death Company Marines with Boltguns and Jump Packs [Legends]": [
+  "imperium-blood-angels.json"
+ ],
+ "Azrael": [
+  "imperium-dark-angels.json"
+ ],
+ "Belial": [
+  "imperium-dark-angels.json"
+ ],
+ "Sammael": [
+  "imperium-dark-angels.json"
+ ],
+ "Ezekiel": [
+  "imperium-dark-angels.json"
+ ],
+ "Asmodai": [
+  "imperium-dark-angels.json"
+ ],
+ "Lion El'Jonson": [
+  "imperium-dark-angels.json"
+ ],
+ "Lazarus": [
+  "imperium-dark-angels.json"
+ ],
+ "Nephilim Jetfighter": [
+  "imperium-dark-angels.json"
+ ],
+ "Ravenwing Dark Talon": [
+  "imperium-dark-angels.json"
+ ],
+ "Land Speeder Vengeance": [
+  "imperium-dark-angels.json"
+ ],
+ "Ravenwing Darkshroud": [
+  "imperium-dark-angels.json"
+ ],
+ "Ravenwing Black Knights": [
+  "imperium-dark-angels.json"
+ ],
+ "Ravenwing Command Squad": [
+  "imperium-dark-angels.json"
+ ],
+ "Deathwing Knights": [
+  "imperium-dark-angels.json"
+ ],
+ "Deathwing Terminator Squad": [
+  "imperium-dark-angels.json"
+ ],
+ "Inner Circle Companions": [
+  "imperium-dark-angels.json"
+ ],
+ "Ravenwing Talonmaster [Legends]": [
+  "imperium-dark-angels.json"
+ ],
+ "Deathwing Strikemaster [Legends]": [
+  "imperium-dark-angels.json"
+ ],
+ "Deathwing Command Squad [Legends]": [
+  "imperium-dark-angels.json"
+ ],
+ "Deathwatch Terminator Squad": [
+  "imperium-deathwatch.json"
+ ],
+ "Fortis Kill Team": [
+  "imperium-deathwatch.json"
+ ],
+ "Indomitor Kill Team": [
+  "imperium-deathwatch.json"
+ ],
+ "Spectrus Kill Team": [
+  "imperium-deathwatch.json"
+ ],
+ "Deathwatch Veterans": [
+  "imperium-deathwatch.json"
+ ],
+ "Talonstrike Kill Team": [
+  "imperium-deathwatch.json"
+ ],
+ "Decimus Kill Team": [
+  "imperium-deathwatch.json"
+ ],
+ "Brother-Captain": [
+  "imperium-grey-knights.json"
+ ],
+ "Brother-Captain Stern [Legends]": [
+  "imperium-grey-knights.json"
+ ],
+ "Brotherhood Champion": [
+  "imperium-grey-knights.json"
+ ],
+ "Brotherhood Chaplain": [
+  "imperium-grey-knights.json"
+ ],
+ "Brotherhood Librarian": [
+  "imperium-grey-knights.json"
+ ],
+ "Brotherhood Techmarine": [
+  "imperium-grey-knights.json"
+ ],
+ "Brotherhood Terminator Squad": [
+  "imperium-grey-knights.json"
+ ],
+ "Castellan Crowe": [
+  "imperium-grey-knights.json"
+ ],
+ "Grand Master": [
+  "imperium-grey-knights.json"
+ ],
+ "Grand Master in Nemesis Dreadknight": [
+  "imperium-grey-knights.json"
+ ],
+ "Grand Master Voldus": [
+  "imperium-grey-knights.json"
+ ],
+ "Land Raider": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Land Raider Redeemer": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Razorback": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Rhino": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Stormhawk Interceptor": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Stormraven Gunship": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Stormtalon Gunship": [
+  "imperium-grey-knights.json",
+  "imperium-space-marines.json"
+ ],
+ "Venerable Dreadnought": [
+  "imperium-grey-knights.json",
+  "imperium-space-wolves.json"
+ ],
+ "Interceptor Squad": [
+  "imperium-grey-knights.json"
+ ],
+ "Kaldor Draigo [Legends]": [
+  "imperium-grey-knights.json"
+ ],
+ "Nemesis Dreadknight": [
+  "imperium-grey-knights.json"
+ ],
+ "Paladin Squad": [
+  "imperium-grey-knights.json"
+ ],
+ "Purgation Squad": [
+  "imperium-grey-knights.json"
+ ],
+ "Purifier Squad": [
+  "imperium-grey-knights.json"
+ ],
+ "Strike Squad": [
+  "imperium-grey-knights.json"
+ ],
+ "Grey Knights Thunderhawk Gunship": [
+  "imperium-grey-knights.json"
+ ],
+ "Grey Knights Dreadnought [Legends]": [
+  "imperium-grey-knights.json"
+ ],
+ "Grey Knights Relic Razorback [Legends]": [
+  "imperium-grey-knights.json"
+ ],
+ "Champion of Titan [Crucible]": [
+  "imperium-grey-knights.json"
+ ],
+ "Venerable Daemon Slayer [Crucible]": [
+  "imperium-grey-knights.json"
+ ],
+ "Dreadknight Champion [Crucible]": [
+  "imperium-grey-knights.json"
+ ],
+ "Darnath Lysander": [
+  "imperium-imperial-fists.json"
+ ],
+ "Tor Garadon": [
+  "imperium-imperial-fists.json"
+ ],
+ "Pedro Kantor": [
+  "imperium-imperial-fists.json"
+ ],
+ "Canis Rex": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Armiger Warglaive": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Armiger Helverin": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Paladin": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Errant": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Gallant": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Warden": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Crusader": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Preceptor": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Castellan": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Valiant": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Acastus Knight Asterius": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Acastus Knight Porphyrion": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Cerastus Knight Lancer": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Cerastus Knight Castigator": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Cerastus Knight Acheron": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Cerastus Knight Atrapos": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Questoris Knight Magaera": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Questoris Knight Styrix": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Armiger Moirax": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Defender": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Knight Destrier": [
+  "imperium-imperial-knights-library.json"
+ ],
+ "Iron Father Feirros": [
+  "imperium-iron-hands.json"
+ ],
+ "Caanok Var": [
+  "imperium-iron-hands.json"
+ ],
+ "Kayvaan Shrike": [
+  "imperium-raven-guard.json"
+ ],
+ "Aethon Shaan": [
+  "imperium-raven-guard.json"
+ ],
+ "Adrax Agatone": [
+  "imperium-salamanders.json"
+ ],
+ "Vulkan He'stan": [
+  "imperium-salamanders.json"
+ ],
+ "Captain in Gravis Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Captain in Phobos Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Captain in Terminator Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Captain with Jump Pack": [
+  "imperium-space-marines.json"
+ ],
+ "Intercessor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Infernus Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Assault Intercessor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Heavy Intercessor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Infiltrator Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Incursor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Tactical Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Scout Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Scout Sniper Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Bladeguard Veteran Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Vanguard Veteran Squad with Jump Packs": [
+  "imperium-space-marines.json"
+ ],
+ "Vanguard Veteran Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Reiver Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Aggressor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Terminator Assault Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Relic Terminator Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Centurion Assault Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Centurion Devastator Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Invictor Tactical Warsuit": [
+  "imperium-space-marines.json"
+ ],
+ "Dreadnought": [
+  "imperium-space-marines.json"
+ ],
+ "Ironclad Dreadnought [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Redemptor Dreadnought": [
+  "imperium-space-marines.json"
+ ],
+ "Ballistus Dreadnought": [
+  "imperium-space-marines.json"
+ ],
+ "Brutalis Dreadnought": [
+  "imperium-space-marines.json"
+ ],
+ "Assault Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Assault Squad with Jump Packs [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Invader ATV": [
+  "imperium-space-marines.json"
+ ],
+ "Outrider Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Attack Bike": [
+  "imperium-space-marines.json"
+ ],
+ "Bike Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Scout Bike Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Suppressor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Inceptor Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Storm Speeder Hailstrike": [
+  "imperium-space-marines.json"
+ ],
+ "Storm Speeder Thunderstrike": [
+  "imperium-space-marines.json"
+ ],
+ "Storm Speeder Hammerstrike": [
+  "imperium-space-marines.json"
+ ],
+ "Land Speeder Typhoon [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Land Speeder Tornado [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Land Speeder [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Hellblaster Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Eliminator Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Eradicator Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Devastator Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Desolation Squad": [
+  "imperium-space-marines.json"
+ ],
+ "Thunderfire Cannon [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Firestrike Servo-Turret": [
+  "imperium-space-marines.json"
+ ],
+ "Hunter [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Stalker [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Whirlwind": [
+  "imperium-space-marines.json"
+ ],
+ "Predator Destructor": [
+  "imperium-space-marines.json"
+ ],
+ "Predator Annihilator": [
+  "imperium-space-marines.json"
+ ],
+ "Vindicator": [
+  "imperium-space-marines.json"
+ ],
+ "Drop Pod": [
+  "imperium-space-marines.json"
+ ],
+ "Hammerfall Bunker": [
+  "imperium-space-marines.json"
+ ],
+ "Captain on Bike [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Lieutenant": [
+  "imperium-space-marines.json"
+ ],
+ "Lieutenant in Reiver Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Lieutenant in Phobos Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Librarian": [
+  "imperium-space-marines.json"
+ ],
+ "Librarian in Phobos Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Librarian in Terminator Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Librarian with Jump Pack [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Chaplain": [
+  "imperium-space-marines.json"
+ ],
+ "Chaplain in Terminator Armour": [
+  "imperium-space-marines.json"
+ ],
+ "Chaplain on Bike": [
+  "imperium-space-marines.json"
+ ],
+ "Chaplain with Jump Pack": [
+  "imperium-space-marines.json"
+ ],
+ "Techmarine": [
+  "imperium-space-marines.json"
+ ],
+ "Astartes Servitors [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Lieutenant with Combi-weapon": [
+  "imperium-space-marines.json"
+ ],
+ "Primaris Company Champion [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Apothecary": [
+  "imperium-space-marines.json"
+ ],
+ "Apothecary Biologis": [
+  "imperium-space-marines.json"
+ ],
+ "Ancient": [
+  "imperium-space-marines.json"
+ ],
+ "Bladeguard Ancient": [
+  "imperium-space-marines.json"
+ ],
+ "Ancient in Terminator Armor": [
+  "imperium-space-marines.json"
+ ],
+ "Command Squad [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Judiciar": [
+  "imperium-space-marines.json"
+ ],
+ "Captain": [
+  "imperium-space-marines.json"
+ ],
+ "Astraeus": [
+  "imperium-space-marines.json"
+ ],
+ "Thunderhawk Gunship": [
+  "imperium-space-marines.json"
+ ],
+ "Land Raider Helios [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Mortis Dreadnought [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Deimos Predator [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Chaplain Venerable Dreadnought [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Land Speeder Tempest [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Carab Culln the Risen [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Caestus Assault Ram [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Land Raider Prometheus [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Venerable Dreadnought [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Rhino Primaris [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Land Raider Excelsior [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Imperial Space Marine [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Terminus Ultra [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Relic Razorback [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Company Veterans on Bikes [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Company Champion on Bike [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Ancient on Bike [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Apothecary on Bike [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Techmarine on Bike [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Librarian on Bike [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Thunderhawk Transporter [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Tarantula Air Defense Battery [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Assault Intercessors with Jump Packs": [
+  "imperium-space-marines.json"
+ ],
+ "Company Heroes": [
+  "imperium-space-marines.json"
+ ],
+ "Ferren Areios [Legends]": [
+  "imperium-space-marines.json"
+ ],
+ "Champion of the Chapter [Crucible]": [
+  "imperium-space-marines.json"
+ ],
+ "Librarius Adept [Crucible]": [
+  "imperium-space-marines.json"
+ ],
+ "Venerable Battle-Brother [Crucible]": [
+  "imperium-space-marines.json"
+ ],
+ "Logan Grimnar": [
+  "imperium-space-wolves.json"
+ ],
+ "Logan Grimnar on Stormrider [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Njal Stormcaller": [
+  "imperium-space-wolves.json"
+ ],
+ "Bjorn the Fell-Handed": [
+  "imperium-space-wolves.json"
+ ],
+ "Arjac Rockfist": [
+  "imperium-space-wolves.json"
+ ],
+ "Ulrik the Slayer": [
+  "imperium-space-wolves.json"
+ ],
+ "Ragnar Blackmane": [
+  "imperium-space-wolves.json"
+ ],
+ "Krom Dragongaze [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Harald Deathwolf [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Canis Wolfborn [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Battle Leader in Terminator Armour [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Lord on Thunderwolf [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Battle Leader on Thunderwolf [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Blood Claws": [
+  "imperium-space-wolves.json"
+ ],
+ "Grey Hunters": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Lukas the Trickster [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Terminators": [
+  "imperium-space-wolves.json"
+ ],
+ "Hounds of Morkai [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wulfen": [
+  "imperium-space-wolves.json"
+ ],
+ "Wulfen Dreadnought": [
+  "imperium-space-wolves.json"
+ ],
+ "Murderfang": [
+  "imperium-space-wolves.json"
+ ],
+ "Thunderwolf Cavalry": [
+  "imperium-space-wolves.json"
+ ],
+ "Fenrisian Wolves": [
+  "imperium-space-wolves.json"
+ ],
+ "Skyclaws [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Long Fangs [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Stormfang Gunship [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Stormwolf [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Pack Leader [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Pack Leader with Jump Pack [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Pack Leader in Terminator Armour [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Iron Priest": [
+  "imperium-space-wolves.json"
+ ],
+ "Cyberwolf [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Scouts [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Iron Priest on Thunderwolf [Legends]": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Priest": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Battle Leader": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Guard Headtakers": [
+  "imperium-space-wolves.json"
+ ],
+ "Wulfen with Storm Shields": [
+  "imperium-space-wolves.json"
+ ],
+ "Wolf Scouts": [
+  "imperium-space-wolves.json"
+ ],
+ "Chaplain Cassius [Legends]": [
+  "imperium-ultramarines.json"
+ ],
+ "Chief Librarian Tigurius": [
+  "imperium-ultramarines.json"
+ ],
+ "Victrix Honour Guard": [
+  "imperium-ultramarines.json"
+ ],
+ "Roboute Guilliman": [
+  "imperium-ultramarines.json"
+ ],
+ "Sergeant Chronus [Legends]": [
+  "imperium-ultramarines.json"
+ ],
+ "Sergeant Telion [Legends]": [
+  "imperium-ultramarines.json"
+ ],
+ "Tyrannic War Veterans [Legends]": [
+  "imperium-ultramarines.json"
+ ],
+ "Uriel Ventris": [
+  "imperium-ultramarines.json"
+ ],
+ "Lieutenant Titus": [
+  "imperium-ultramarines.json"
+ ],
+ "Marneus Calgar in Armour of Antilochus": [
+  "imperium-ultramarines.json"
+ ],
+ "Cato Sicarius": [
+  "imperium-ultramarines.json"
+ ],
+ "Captain Titus": [
+  "imperium-ultramarines.json"
+ ],
+ "Wardens of Ultramar": [
+  "imperium-ultramarines.json"
+ ],
+ "Kor'sarro Khan": [
+  "imperium-white-scars.json"
+ ],
+ "Suboden Khan": [
+  "imperium-white-scars.json"
+ ],
+ "Ûthar the Destined": [
+  "leagues-of-votann.json"
+ ],
+ "Hearthkyn Warriors": [
+  "leagues-of-votann.json"
+ ],
+ "Kâhl": [
+  "leagues-of-votann.json"
+ ],
+ "Einhyr Champion": [
+  "leagues-of-votann.json"
+ ],
+ "Grimnyr": [
+  "leagues-of-votann.json"
+ ],
+ "Brôkhyr Iron-master": [
+  "leagues-of-votann.json"
+ ],
+ "Einhyr Hearthguard": [
+  "leagues-of-votann.json"
+ ],
+ "Cthonian Beserks": [
+  "leagues-of-votann.json"
+ ],
+ "Hernkyn Pioneers": [
+  "leagues-of-votann.json"
+ ],
+ "Sagitaur": [
+  "leagues-of-votann.json"
+ ],
+ "Brôkhyr Thunderkyn": [
+  "leagues-of-votann.json"
+ ],
+ "Hekaton Land Fortress": [
+  "leagues-of-votann.json"
+ ],
+ "Hernkyn Yaegirs": [
+  "leagues-of-votann.json"
+ ],
+ "Buri Aegnirssen": [
+  "leagues-of-votann.json"
+ ],
+ "Memnyr Strategist": [
+  "leagues-of-votann.json"
+ ],
+ "Arkanyst Evaluator": [
+  "leagues-of-votann.json"
+ ],
+ "Kapricus Defender": [
+  "leagues-of-votann.json"
+ ],
+ "Kapricus Carrier": [
+  "leagues-of-votann.json"
+ ],
+ "Ironkin Steeljacks with Heavy Volkanite Disintegrators": [
+  "leagues-of-votann.json"
+ ],
+ "Ironkin Steeljacks with Melee Weapons": [
+  "leagues-of-votann.json"
+ ],
+ "Cthonian Earthshakers": [
+  "leagues-of-votann.json"
+ ],
+ "Living Ancestor [Crucible]": [
+  "leagues-of-votann.json"
+ ],
+ "Kinhost Commander [Crucible]": [
+  "leagues-of-votann.json"
+ ],
+ "Steeljack Elder [Crucible]": [
+  "leagues-of-votann.json"
+ ],
+ "Berehk Stornbröw": [
+  "leagues-of-votann.json"
+ ],
+ "Kratos [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Deredeo Dreadnought [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Relic Contemptor Dreadnought [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Leviathan Dreadnought [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Javelin Attack Speeder [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Deathstorm Drop Pod [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Land Raider Proteus [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Land Raider Achilles [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Sicaran Battle Tank [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Sicaran Arcus [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Sicaran Venator [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Sicaran Punisher [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Sicaran Omega [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Rapier Carrier [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Whirlwind Scorpius [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Vindicator Laser Destroyer [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Dreadnought Drop Pod [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Terrax-pattern Termite [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Xiphon Interceptor [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Storm Eagle Gunship [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Fire Raptor Gunship [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Typhon [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Cerberus [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Spartan [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Fellblade [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Falchion [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Mastodon [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Sokar-pattern Stormbird [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Tarantula Sentry Battery [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Decimator [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Greater Blight Drone [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Dreadclaw Drop Pod [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Blood Slaughterer [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Greater Brass Scorpion [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Kytan Ravager [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Kharybdis Assault Claw [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Chaos Thunderhawk [Legends]": [
+  "library-astartes-heresy-legends.json"
+ ],
+ "Warhound Titan": [
+  "library-titans.json"
+ ],
+ "Reaver Titan": [
+  "library-titans.json"
+ ],
+ "Warbringer Nemesis Titan": [
+  "library-titans.json"
+ ],
+ "Warlord Titan": [
+  "library-titans.json"
+ ],
+ "Winged Hive Tyrant": [
+  "library-tyranids.json"
+ ],
+ "Winged Tyranid Prime": [
+  "library-tyranids.json"
+ ],
+ "Deathleaper": [
+  "library-tyranids.json"
+ ],
+ "Gargoyles": [
+  "library-tyranids.json"
+ ],
+ "Hyperadapted Raveners": [
+  "library-tyranids.json"
+ ],
+ "Lictor": [
+  "library-tyranids.json"
+ ],
+ "Mawloc": [
+  "library-tyranids.json"
+ ],
+ "Neurolictor": [
+  "library-tyranids.json"
+ ],
+ "Parasite of Mortrex": [
+  "library-tyranids.json"
+ ],
+ "Raveners": [
+  "library-tyranids.json"
+ ],
+ "Trygon": [
+  "library-tyranids.json"
+ ],
+ "Tyrannocyte": [
+  "library-tyranids.json"
+ ],
+ "Von Ryan's Leapers": [
+  "library-tyranids.json"
+ ],
+ "Ripper Swarms": [
+  "library-tyranids.json"
+ ],
+ "Node Organism [Crucible]": [
+  "library-tyranids.json"
+ ],
+ "Prime Organism [Crucible]": [
+  "library-tyranids.json"
+ ],
+ "Macro Organism [Crucible]": [
+  "library-tyranids.json"
+ ],
+ "The Red Terror": [
+  "library-tyranids.json"
+ ],
+ "Orikan the Diviner": [
+  "necrons.json"
+ ],
+ "Imotekh the Stormlord": [
+  "necrons.json"
+ ],
+ "Anrakyr the Traveller [Legends]": [
+  "necrons.json"
+ ],
+ "Vargard Obyron [Legends]": [
+  "necrons.json"
+ ],
+ "Illuminor Szeras": [
+  "necrons.json"
+ ],
+ "Nemesor Zahndrekh [Legends]": [
+  "necrons.json"
+ ],
+ "Trazyn the Infinite": [
+  "necrons.json"
+ ],
+ "Royal Warden": [
+  "necrons.json"
+ ],
+ "Skorpekh Lord": [
+  "necrons.json"
+ ],
+ "Lokhust Lord": [
+  "necrons.json"
+ ],
+ "Lord [Legends]": [
+  "necrons.json"
+ ],
+ "Catacomb Command Barge": [
+  "necrons.json"
+ ],
+ "Overlord": [
+  "necrons.json"
+ ],
+ "Technomancer": [
+  "necrons.json"
+ ],
+ "Psychomancer": [
+  "necrons.json"
+ ],
+ "Chronomancer": [
+  "necrons.json"
+ ],
+ "Plasmancer": [
+  "necrons.json"
+ ],
+ "Necron Warriors": [
+  "necrons.json"
+ ],
+ "Immortals": [
+  "necrons.json"
+ ],
+ "Canoptek Reanimator": [
+  "necrons.json"
+ ],
+ "Hexmark Destroyer": [
+  "necrons.json"
+ ],
+ "Lychguard": [
+  "necrons.json"
+ ],
+ "Deathmarks": [
+  "necrons.json"
+ ],
+ "Flayed Ones": [
+  "necrons.json"
+ ],
+ "Cryptothralls": [
+  "necrons.json"
+ ],
+ "Skorpekh Destroyers": [
+  "necrons.json"
+ ],
+ "Triarch Stalker": [
+  "necrons.json"
+ ],
+ "C'tan Shard of the Deceiver": [
+  "necrons.json"
+ ],
+ "C'tan Shard of the Nightbringer": [
+  "necrons.json"
+ ],
+ "C'tan Shard of the Void Dragon": [
+  "necrons.json"
+ ],
+ "Transcendent C'tan": [
+  "necrons.json"
+ ],
+ "Canoptek Spyder": [
+  "necrons.json"
+ ],
+ "Canoptek Scarab Swarms": [
+  "necrons.json"
+ ],
+ "Ophydian Destroyers": [
+  "necrons.json"
+ ],
+ "Tomb Blades": [
+  "necrons.json"
+ ],
+ "Triarch Praetorians": [
+  "necrons.json"
+ ],
+ "Canoptek Wraiths": [
+  "necrons.json"
+ ],
+ "Annihilation Barge": [
+  "necrons.json"
+ ],
+ "Doomsday Ark": [
+  "necrons.json"
+ ],
+ "Lokhust Destroyers": [
+  "necrons.json"
+ ],
+ "Destroyer w/ enmitic exterminator": [
+  "necrons.json"
+ ],
+ "Destroyer w/ gauss destructor": [
+  "necrons.json"
+ ],
+ "Canoptek Doomstalker": [
+  "necrons.json"
+ ],
+ "Ghost Ark": [
+  "necrons.json"
+ ],
+ "Night Scythe": [
+  "necrons.json"
+ ],
+ "Doom Scythe": [
+  "necrons.json"
+ ],
+ "Obelisk": [
+  "necrons.json"
+ ],
+ "Tesseract Vault": [
+  "necrons.json"
+ ],
+ "Monolith": [
+  "necrons.json"
+ ],
+ "The Silent King": [
+  "necrons.json"
+ ],
+ "Convergence of Dominion Starstele": [
+  "necrons.json"
+ ],
+ "Canoptek Tomb Stalker [Legends]": [
+  "necrons.json"
+ ],
+ "Canoptek Tomb Sentinel [Legends]": [
+  "necrons.json"
+ ],
+ "Canoptek Acanthrites [Legends]": [
+  "necrons.json"
+ ],
+ "Tesseract Ark [Legends]": [
+  "necrons.json"
+ ],
+ "Seraptek Heavy Construct": [
+  "necrons.json"
+ ],
+ "Gauss Pylon [Legends]": [
+  "necrons.json"
+ ],
+ "Sentry Pylon [Legends]": [
+  "necrons.json"
+ ],
+ "Night Shroud [Legends]": [
+  "necrons.json"
+ ],
+ "Overlord with Translocation Shroud": [
+  "necrons.json"
+ ],
+ "Canoptek Macrocytes": [
+  "necrons.json"
+ ],
+ "Canoptek Tomb Crawlers": [
+  "necrons.json"
+ ],
+ "Geomancer": [
+  "necrons.json"
+ ],
+ "Nekrosor Ammentar": [
+  "necrons.json"
+ ],
+ "Dynastic Conqueror [Crucible]": [
+  "necrons.json"
+ ],
+ "Hyperscientist [Crucible]": [
+  "necrons.json"
+ ],
+ "Triarchal Overseer [Crucible]": [
+  "necrons.json"
+ ],
+ "Battlewagon": [
+  "orks.json"
+ ],
+ "Beast Snagga Boyz": [
+  "orks.json"
+ ],
+ "Beastboss": [
+  "orks.json"
+ ],
+ "Beastboss on Squigosaur": [
+  "orks.json"
+ ],
+ "Big Mek in Mega Armour": [
+  "orks.json"
+ ],
+ "Big Mek with Kustom Force Field [Legends]": [
+  "orks.json"
+ ],
+ "Big Mek with Shokk Attack Gun": [
+  "orks.json"
+ ],
+ "Big'ed Bossbunka": [
+  "orks.json"
+ ],
+ "Blitza-bommer": [
+  "orks.json"
+ ],
+ "Boomdakka Snazzwagon": [
+  "orks.json"
+ ],
+ "Boss Snikrot": [
+  "orks.json"
+ ],
+ "Boss Zagstruk [Legends]": [
+  "orks.json"
+ ],
+ "Boyz": [
+  "orks.json"
+ ],
+ "Burna Boyz": [
+  "orks.json"
+ ],
+ "Burna-bommer": [
+  "orks.json"
+ ],
+ "Dakkajet": [
+  "orks.json"
+ ],
+ "Deff Dread": [
+  "orks.json"
+ ],
+ "Deffkilla Wartrike": [
+  "orks.json"
+ ],
+ "Deffkoptas": [
+  "orks.json"
+ ],
+ "Flash Gitz": [
+  "orks.json"
+ ],
+ "Ghazghkull Thraka": [
+  "orks.json"
+ ],
+ "Gorkanaut": [
+  "orks.json"
+ ],
+ "Gretchin": [
+  "orks.json"
+ ],
+ "Hunta Rig": [
+  "orks.json"
+ ],
+ "Kaptin Badrukk [Legends]": [
+  "orks.json"
+ ],
+ "Kill Rig": [
+  "orks.json"
+ ],
+ "Killa Kans": [
+  "orks.json"
+ ],
+ "Kommandos": [
+  "orks.json"
+ ],
+ "Kustom Boosta-blasta": [
+  "orks.json"
+ ],
+ "Lootas": [
+  "orks.json"
+ ],
+ "Mad Dok Grotsnik [Legends]": [
+  "orks.json"
+ ],
+ "Meganobz": [
+  "orks.json"
+ ],
+ "Megatrakk Scrapjet": [
+  "orks.json"
+ ],
+ "Mek": [
+  "orks.json"
+ ],
+ "Mek Gun w/ Smasha gun": [
+  "orks.json"
+ ],
+ "Mek Gun w/ Bubblechukka": [
+  "orks.json"
+ ],
+ "Mek Gun w/ Kustom mega-kannon": [
+  "orks.json"
+ ],
+ "Mek Gun w/ Traktor kannon": [
+  "orks.json"
+ ],
+ "Morkanaut": [
+  "orks.json"
+ ],
+ "Mozrog Skragbad": [
+  "orks.json"
+ ],
+ "Nob with Waaagh! Banner [Legends]": [
+  "orks.json"
+ ],
+ "Nobz": [
+  "orks.json"
+ ],
+ "Painboss": [
+  "orks.json"
+ ],
+ "Painboy": [
+  "orks.json"
+ ],
+ "Rukkatrukk Squigbuggy": [
+  "orks.json"
+ ],
+ "Shokkjump Dragsta": [
+  "orks.json"
+ ],
+ "Squighog Boyz": [
+  "orks.json"
+ ],
+ "Stompa": [
+  "orks.json"
+ ],
+ "Stormboyz": [
+  "orks.json"
+ ],
+ "Tankbustas": [
+  "orks.json"
+ ],
+ "Trukk": [
+  "orks.json"
+ ],
+ "Warbikers": [
+  "orks.json"
+ ],
+ "Warboss": [
+  "orks.json"
+ ],
+ "Warboss in Mega Armour": [
+  "orks.json"
+ ],
+ "Wazbom Blastajet": [
+  "orks.json"
+ ],
+ "Weirdboy": [
+  "orks.json"
+ ],
+ "Wurrboy": [
+  "orks.json"
+ ],
+ "Zodgrod Wortsnagga": [
+  "orks.json"
+ ],
+ "Mekboy Workshop [Legends]": [
+  "orks.json"
+ ],
+ "Grot Tanks [Legends]": [
+  "orks.json"
+ ],
+ "Grot Mega-Tank [Legends]": [
+  "orks.json"
+ ],
+ "Squiggoth [Legends]": [
+  "orks.json"
+ ],
+ "Gargantuan Squiggoth": [
+  "orks.json"
+ ],
+ "Kill Tank [Legends]": [
+  "orks.json"
+ ],
+ "Mega Dread [Legends]": [
+  "orks.json"
+ ],
+ "Meka-Dread [Legends]": [
+  "orks.json"
+ ],
+ "Big Trakk [Legends]": [
+  "orks.json"
+ ],
+ "Warboss on Warbike [Legends]": [
+  "orks.json"
+ ],
+ "Nobz on Warbikes [Legends]": [
+  "orks.json"
+ ],
+ "Kannonwagon [Legends]": [
+  "orks.json"
+ ],
+ "Da Red Gobbo [Legends]": [
+  "orks.json"
+ ],
+ "Painboy on Warbike [Legends]": [
+  "orks.json"
+ ],
+ "Skorchas": [
+  "orks.json"
+ ],
+ "Wartrakks w/ Twin big shoota": [
+  "orks.json"
+ ],
+ "Wartrakks w/ Rack of rokkits": [
+  "orks.json"
+ ],
+ "Warbuggies w/ Twin big shoota": [
+  "orks.json"
+ ],
+ "Warbuggies w/ Rack of rokkits": [
+  "orks.json"
+ ],
+ "Big Gunz w/ Kannon": [
+  "orks.json"
+ ],
+ "Big Gunz w/ Lobba": [
+  "orks.json"
+ ],
+ "Big Gunz w/ Zzap gun": [
+  "orks.json"
+ ],
+ "Deffkoptas with Big Shootas [Legends]": [
+  "orks.json"
+ ],
+ "Kill Krusha [Legends]": [
+  "orks.json"
+ ],
+ "Deff Rolla Battle Fortress [Legends]": [
+  "orks.json"
+ ],
+ "Chinork Warkopta [Legends]": [
+  "orks.json"
+ ],
+ "Fighta-Bommer [Legends]": [
+  "orks.json"
+ ],
+ "Attack Fighta [Legends]": [
+  "orks.json"
+ ],
+ "Lifta Wagon [Legends]": [
+  "orks.json"
+ ],
+ "Grot Bomm Launcha [Legends]": [
+  "orks.json"
+ ],
+ "Big Mek on Warbike [Legends]": [
+  "orks.json"
+ ],
+ "Grotmas Gitz [Legends]": [
+  "orks.json"
+ ],
+ "Ufthak Blackhawk [Legends]": [
+  "orks.json"
+ ],
+ "Big Mek": [
+  "orks.json"
+ ],
+ "Breaka Boyz": [
+  "orks.json"
+ ],
+ "Da Red Gobbo's A-bomb-inable Snowman [Legends]": [
+  "orks.json"
+ ],
+ "Da Red Gobbo's Tinboy [Legends]": [
+  "orks.json"
+ ],
+ "Hordeboss [Crucible]": [
+  "orks.json"
+ ],
+ "Warphead [Crucible]": [
+  "orks.json"
+ ],
+ "Upstart Gretchin [Crucible]": [
+  "orks.json"
+ ],
+ "Wazdakka Gutsmek": [
+  "orks.json"
+ ],
+ "Commander Shadowsun": [
+  "t-au-empire.json"
+ ],
+ "Commander Farsight": [
+  "t-au-empire.json"
+ ],
+ "Commander in Crisis Battlesuit [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Commander in Enforcer Battlesuit": [
+  "t-au-empire.json"
+ ],
+ "Commander in Coldstar Battlesuit": [
+  "t-au-empire.json"
+ ],
+ "Cadre Fireblade": [
+  "t-au-empire.json"
+ ],
+ "Ethereal": [
+  "t-au-empire.json"
+ ],
+ "Aun'va [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Aun'shi [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Darkstrider": [
+  "t-au-empire.json"
+ ],
+ "Longstrike [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Strike Team": [
+  "t-au-empire.json"
+ ],
+ "Breacher Team": [
+  "t-au-empire.json"
+ ],
+ "Kroot Carnivores": [
+  "t-au-empire.json"
+ ],
+ "Krootox Riders": [
+  "t-au-empire.json"
+ ],
+ "Crisis Battlesuits [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Stealth Battlesuits": [
+  "t-au-empire.json"
+ ],
+ "Ghostkeel Battlesuit": [
+  "t-au-empire.json"
+ ],
+ "Firesight Team": [
+  "t-au-empire.json"
+ ],
+ "Pathfinder Team": [
+  "t-au-empire.json"
+ ],
+ "Piranhas": [
+  "t-au-empire.json"
+ ],
+ "Vespid Stingwings": [
+  "t-au-empire.json"
+ ],
+ "Kroot Hounds": [
+  "t-au-empire.json"
+ ],
+ "Broadside Battlesuits": [
+  "t-au-empire.json"
+ ],
+ "Riptide Battlesuit": [
+  "t-au-empire.json"
+ ],
+ "Hammerhead Gunship": [
+  "t-au-empire.json"
+ ],
+ "Sky Ray Gunship": [
+  "t-au-empire.json"
+ ],
+ "Devilfish": [
+  "t-au-empire.json"
+ ],
+ "Razorshark Strike Fighter": [
+  "t-au-empire.json"
+ ],
+ "Sun Shark Bomber": [
+  "t-au-empire.json"
+ ],
+ "Tidewall Shieldline": [
+  "t-au-empire.json"
+ ],
+ "Tidewall Droneport": [
+  "t-au-empire.json"
+ ],
+ "Tidewall Gunrig": [
+  "t-au-empire.json"
+ ],
+ "Stormsurge": [
+  "t-au-empire.json"
+ ],
+ "Tactical Drones [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Kroot Farstalkers": [
+  "t-au-empire.json"
+ ],
+ "R'varna Battlesuit [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Y'vahra Battlesuit [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Tetras [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Remora Stealth Drones [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Ta'unar Supremacy Armour": [
+  "t-au-empire.json"
+ ],
+ "Barracuda [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Tiger Shark": [
+  "t-au-empire.json"
+ ],
+ "AX-1-0 Tiger Shark": [
+  "t-au-empire.json"
+ ],
+ "Manta": [
+  "t-au-empire.json"
+ ],
+ "Orca Dropship [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Heavy Gun Drones [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Great Knarloc [Legends]": [
+  "t-au-empire.json"
+ ],
+ "TX42 Piranha [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Knarloc Riders [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Shas'o R'alai [Legends]": [
+  "t-au-empire.json"
+ ],
+ "XV9 Hazard Battlesuit": [
+  "t-au-empire.json"
+ ],
+ "Remote Sensor Tower [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Drone Sentry Turret [Legends]": [
+  "t-au-empire.json"
+ ],
+ "Crisis Sunforge Battlesuits": [
+  "t-au-empire.json"
+ ],
+ "Crisis Fireknife Battlesuits": [
+  "t-au-empire.json"
+ ],
+ "Crisis Starscythe Battlesuits": [
+  "t-au-empire.json"
+ ],
+ "Kroot Trail Shaper": [
+  "t-au-empire.json"
+ ],
+ "Kroot War Shaper": [
+  "t-au-empire.json"
+ ],
+ "Kroot Flesh Shaper": [
+  "t-au-empire.json"
+ ],
+ "Kroot Lone-spear": [
+  "t-au-empire.json"
+ ],
+ "Krootox Rampagers": [
+  "t-au-empire.json"
+ ],
+ "Shas'nel [Crucible]": [
+  "t-au-empire.json"
+ ],
+ "Battlesuit Veteran [Crucible]": [
+  "t-au-empire.json"
+ ],
+ "Kinband Champion [Crucible]": [
+  "t-au-empire.json"
+ ],
+ "The Twin Lance": [
+  "t-au-empire.json"
+ ],
+ "Tervigon": [
+  "tyranids.json"
+ ],
+ "The Swarmlord": [
+  "tyranids.json"
+ ],
+ "Broodlord": [
+  "tyranids.json"
+ ],
+ "Old One Eye": [
+  "tyranids.json"
+ ],
+ "Tyranid Warriors with Ranged Bio-Weapons": [
+  "tyranids.json"
+ ],
+ "Tyranid Warriors with Melee Bio-Weapons": [
+  "tyranids.json"
+ ],
+ "Termagants": [
+  "tyranids.json"
+ ],
+ "Hormagaunts": [
+  "tyranids.json"
+ ],
+ "Toxicrene": [
+  "tyranids.json"
+ ],
+ "Tyrant Guard": [
+  "tyranids.json"
+ ],
+ "Neurotyrant": [
+  "tyranids.json"
+ ],
+ "Maleceptor": [
+  "tyranids.json"
+ ],
+ "Pyrovores": [
+  "tyranids.json"
+ ],
+ "Haruspex": [
+  "tyranids.json"
+ ],
+ "Venomthropes": [
+  "tyranids.json"
+ ],
+ "Neurogaunts": [
+  "tyranids.json"
+ ],
+ "Zoanthropes": [
+  "tyranids.json"
+ ],
+ "Mucolid Spore": [
+  "tyranids.json"
+ ],
+ "Spore Mines": [
+  "tyranids.json"
+ ],
+ "Exocrine": [
+  "tyranids.json"
+ ],
+ "Biovore": [
+  "tyranids.json"
+ ],
+ "Carnifex": [
+  "tyranids.json"
+ ],
+ "Screamer-killer": [
+  "tyranids.json"
+ ],
+ "Hive Guard": [
+  "tyranids.json"
+ ],
+ "Tyrannofex": [
+  "tyranids.json"
+ ],
+ "Hive Crone": [
+  "tyranids.json"
+ ],
+ "Harpy": [
+  "tyranids.json"
+ ],
+ "Sporocyst": [
+  "tyranids.json"
+ ],
+ "Psychophage": [
+  "tyranids.json"
+ ],
+ "Barbgaunts": [
+  "tyranids.json"
+ ],
+ "Barbed Hierodule [Legends]": [
+  "tyranids.json"
+ ],
+ "Scythed Hierodule [Legends]": [
+  "tyranids.json"
+ ],
+ "Harridan": [
+  "tyranids.json"
+ ],
+ "Hierophant": [
+  "tyranids.json"
+ ],
+ "Genestealers": [
+  "tyranids.json"
+ ],
+ "Dimachaeron [Legends]": [
+  "tyranids.json"
+ ],
+ "Sky-slasher Swarms [Legends]": [
+  "tyranids.json"
+ ],
+ "Malanthrope [Legends]": [
+  "tyranids.json"
+ ],
+ "Norn Assimilator": [
+  "tyranids.json"
+ ],
+ "Norn Emissary": [
+  "tyranids.json"
+ ],
+ "Hive Tyrant": [
+  "tyranids.json"
+ ],
+ "Tyranid Prime with Lash Whip": [
+  "tyranids.json"
+ ],
+ "Ambull [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Aegis Defence Line with Weapon Emplacement [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Bastion [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Firestorm Redoubt [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Fortress of Redemption [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Guardian Drone [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Macro-cannon Aquila Strongpoint [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Plasma Obliterator [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Primaris Redoubt [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Skyshield Landing Pad [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Spindle Drones [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "The Archivist [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Vengeance Weapon Battery [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Void Shield Generator [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Vortex Missile Strongpoint [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Wall of Martyrs Bunker [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Wall of Martyrs Defence Emplacement [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Wall of Martyrs Defence Line [Legends]": [
+  "unaligned-forces.json"
+ ],
+ "Sentry Gun": [
+  "unaligned-forces.json"
+ ],
+ "Searchlight": [
+  "unaligned-forces.json"
+ ],
+ "Breaching Robot": [
+  "unaligned-forces.json"
+ ]
+}

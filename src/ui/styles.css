@@ -95,7 +95,8 @@ input.title-input:hover,input.title-input:focus{border-color:var(--line);backgro
 .grid.two{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
 .full{width:100%}
 .line{padding:4px 0;border-bottom:1px solid var(--line)}
-.pitem.static{cursor:default}
+.pitem.static{cursor:default;flex-wrap:wrap}
+.pitem.static > input[type=text]{min-width:140px}
 .pitem.boxed{border:1px solid var(--line);border-radius:8px;margin-bottom:6px}
 .die.static{cursor:default}
 .step{margin-bottom:12px}
@@ -105,3 +106,40 @@ input.title-input:hover,input.title-input:focus{border-color:var(--line);backgro
 input[type=search]{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:6px 8px;min-width:0}
 td.neg{color:var(--red);white-space:nowrap}
 td.pos{color:var(--ok);white-space:nowrap}
+
+/* Fiche technique */
+.sheets{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:12px;margin-top:12px}
+.sheet-card{display:flex;flex-direction:column;gap:8px}
+.sh-head{align-items:flex-start}
+.stats{display:flex;gap:6px;flex-wrap:wrap}
+.stats div{background:var(--panel2);border:1px solid var(--line);border-radius:6px;padding:3px 9px;text-align:center;min-width:52px}
+.stats span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.stats b{font-size:16px}
+table.wt{font-size:13px}
+table.wt td:first-child{white-space:nowrap}
+.wi{color:var(--gold)}
+.rule{margin-top:4px}
+.rule.red b{color:var(--red)}
+.rich .ln{display:block}
+.rich .ln:empty{display:none}
+.rule .rich,.rule .rich .ln:first-child{display:inline}
+.kw{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);border-top:1px solid var(--line);padding-top:6px}
+.campaign{background:var(--gold-bg);border-radius:6px;padding:6px 8px}
+.loadouts{flex-basis:100%;display:flex;flex-wrap:wrap;gap:6px}
+.loadouts:empty{display:none}
+.loadout select{max-width:100%}
+.wt .wr-inline{display:none}
+@media (max-width:600px){.wt .wr-col{display:none}.wt .wr-inline{display:block;font-size:12px;color:var(--muted);white-space:normal}}
+.tip{border-bottom:1px dotted currentColor;cursor:help}
+.tip:focus{outline:2px solid var(--gold);outline-offset:1px;border-radius:2px}
+.tip-box{position:fixed;z-index:50;background:var(--ink);color:var(--bg);border-radius:8px;padding:8px 10px;font-size:13px;line-height:1.4;box-shadow:0 6px 24px rgba(0,0,0,.25);pointer-events:none;max-height:50vh;overflow:auto}
+.tip-box b{display:block;margin-bottom:2px}
+@media print{
+  header,.tabs,.noprint,.row:has(> .btn),.toast{display:none!important}
+  body{background:#fff;color:#000}
+  main{max-width:none;padding:0}
+  .panel,.card{box-shadow:none;border-color:#999}
+  .sheets{grid-template-columns:1fr 1fr}
+  .sheet-card{break-inside:avoid}
+  .tip{border:0}
+}

@@ -10,6 +10,7 @@ import ranksJson from '../../data/rules/ranks.json';
 import relicsJson from '../../data/rules/relics.json';
 import upgradesJson from '../../data/rules/upgrades.json';
 import explorationJson from '../../data/rules/exploration.json';
+import { loadKillTeamSheets } from './sheets';
 
 /** Toutes les données de référence, validées. Le domaine ne lit jamais les JSON directement. */
 export function loadRules() {
@@ -29,6 +30,7 @@ export function loadRules() {
     relics: S.RelicsFile.parse(relicsJson).relics,
     upgrades: S.UpgradesFile.parse(upgradesJson).upgrades,
     exploration: S.ExplorationFile.parse(explorationJson),
+    sheets: loadKillTeamSheets(),
   };
   checkConsistency(rules);
   return rules;
@@ -56,6 +58,11 @@ export function checkConsistency(r: Omit<Rules, never>): void {
   });
   for (const t of r.exploration.dice.flatMap((d) => d.tables)) {
     if (!r.exploration.tables.some((x) => x.name === t)) errors.push(`Exploration : table inconnue ${t}`);
+  }
+  for (const kt of r.killteams) {
+    const sheets = r.sheets.killteams[kt.name];
+    if (!sheets) { errors.push(`Fiches : kill team absente ${kt.name}`); continue; }
+    for (const o of kt.operatives) if (!sheets.operatives[o.name]) errors.push(`Fiches : ${kt.name} / ${o.name} sans fiche`);
   }
   if (!r.upgrades.some((u) => u.needsEquipment)) errors.push('Améliorations : aucune entrée « équipement attitré »');
   if (errors.length) throw new Error('Données incohérentes :\n- ' + errors.join('\n- '));

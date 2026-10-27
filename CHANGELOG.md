@@ -1,5 +1,15 @@
 # Journal des versions
 
+## 2.3.0 — 27/10/2026
+
+Fiche technique de bande.
+
+- Onglet « Fiche technique » : pour chaque opérateur, profil, armes choisies, capacités, actions uniques, et ce que la campagne ajoute (améliorations, équipement attitré, honneurs, séquelles, relique). Arsenal et règles de faction en tête et en pied de fiche. Impression propre.
+- Infobulles sur les règles d'armes et les mots-clés (survol, clavier ou toucher).
+- Options d'armes choisies par menu déroulant à la création de la bande, au recrutement et dans le registre ; un menu par groupe quand il y a tir et mêlée séparés.
+- Profils des kill teams importés de BSData, options d'armes recopiées des règles d'équipe officielles, écarts corrigés (`data/sheets/`).
+- Fiches des 1491 unités 40k (agents), chargées à la demande.
+
 ## 2.2.0 — 27/10/2026
 
 Appli web publique, sans compte Claude.

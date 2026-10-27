@@ -25,7 +25,7 @@ export const storeKind = signal<Store['kind'] | 'loading' | 'join'>('loading');
 export const campaign = signal<string | null>(null);
 
 export type Route = { view: 'bands' | 'games' | 'ranking' | 'rules' } | { view: 'band'; id: string; tab: BandTab };
-export type BandTab = 'roster' | 'phase' | 'arsenal' | 'log';
+export type BandTab = 'roster' | 'sheet' | 'phase' | 'arsenal' | 'log';
 export const route = signal<Route>({ view: 'bands' });
 export const currentBand = computed(() => {
   const r = route.value;
@@ -43,7 +43,8 @@ let store: Store | null = null;
 export async function boot(): Promise<void> {
   const shared = await connectClaudeDb().catch(() => null);
   if (shared) return use(artifactStore(shared.db, notify), shared.userId);
-  if (!firebaseConfig) return use(localStore(), null);
+  // fichier ouvert depuis le disque (tests, essais) : données dans le navigateur, sans base en ligne
+  if (!firebaseConfig || location.protocol === 'file:') return use(localStore(), null);
   // un lien d'invitation ouvert dans un onglet déjà lancé change de campagne
   window.addEventListener('hashchange', () => {
     const next = currentCampaign();

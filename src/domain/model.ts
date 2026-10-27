@@ -36,6 +36,7 @@ export const Operative = z.object({
   sequelae: z.array(z.string()).default([]),
   honours: z.array(z.string()).default([]),
   upgrades: z.array(Upgrade).default([]),
+  loadout: z.array(z.string()).default([]), // options d'armes retenues (fiche technique), une par groupe
   relic: z.string().default(''),
   status: OperativeStatus.default('active'),
   fielded: z.boolean().default(true), // aligné à la prochaine partie

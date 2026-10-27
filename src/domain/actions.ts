@@ -109,7 +109,7 @@ export function correction(ctx: Ctx, band: Band, delta: { rq: number; glory: num
 
 /* ---------- opérateurs ---------- */
 
-type OpField = Partial<Pick<Operative, 'name' | 'notes' | 'fielded' | 'status' | 'relic'>>;
+type OpField = Partial<Pick<Operative, 'name' | 'notes' | 'fielded' | 'status' | 'relic' | 'loadout'>>;
 export const updateOperative = (ctx: Ctx, band: Band, opId: string, patch: OpField) =>
   edit(ctx, band, (b) => {
     const o = opOf(b, opId);
@@ -118,7 +118,7 @@ export const updateOperative = (ctx: Ctx, band: Band, opId: string, patch: OpFie
     if (patch.status && patch.status !== band.operatives.find((x) => x.id === opId)?.status) return `${o.name} : ${STATUS_LABEL[patch.status]}`;
   });
 
-export function recruit(ctx: Ctx, band: Band, profile: Profile, name: string, free: boolean): Outcome {
+export function recruit(ctx: Ctx, band: Band, profile: Profile, name: string, free: boolean, loadout: string[] = []): Outcome {
   const cost = recruitCost(ctx.r, band, profile);
   if (cost == null && !free) return fail(`${profile.name} n'a pas de coût en points 40k : recrutez-le gratuitement après accord de vos adversaires.`);
   return edit(ctx, band, (b) => {
@@ -126,7 +126,7 @@ export function recruit(ctx: Ctx, band: Band, profile: Profile, name: string, fr
     const agent = isAgent(b, { profile });
     const err = pay(ctx, b, `Recrutement de ${name.trim() || profile.name} (${profile.name})`, price);
     if (err) return err;
-    b.operatives.push(newOperative(profile, name.trim() || profile.name, { elite: false, fielded: false, origin: agent ? 'agent' : 'recruit', cost: price }));
+    b.operatives.push(newOperative(profile, name.trim() || profile.name, { elite: false, fielded: false, origin: agent ? 'agent' : 'recruit', cost: price, loadout }));
     return `Recrutement de ${name.trim() || profile.name} (${profile.name}${agent ? ', agent' : ''})${priceText(price)}`;
   });
 }

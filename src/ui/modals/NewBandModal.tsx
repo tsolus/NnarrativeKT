@@ -4,6 +4,7 @@ import * as A from '../../domain/actions';
 import type { Operative } from '../../domain/model';
 import { defaultRoster, factions, freeName, newOperative, profileFromKillteam, selectionWeight } from '../../domain/roster';
 import { Btn, Modal, Select } from '../components/ui';
+import { LoadoutPicker } from '../components/Loadout';
 
 const FACTIONS = factions(rules);
 
@@ -52,7 +53,7 @@ export function NewBandModal() {
         <label class="small">Faction (modifiable)<br /><Select class="full" value={faction} options={FACTIONS} onChange={setFaction} /></label>
       </div>
       <h3 style="margin-top:14px">Sélection de départ <span class="small muted">{selectionWeight(ops)} / {kt.selectionSize} · {elites} Élite{elites > 1 ? 's' : ''} sur {rules.campaign.start.elites}</span></h3>
-      <p class="tiny muted" style="margin:2px 0 6px">{kt.selectionRule} Préremplie avec la kill team de base : renommez, retirez ou ajoutez. Cochez Élite pour le chef + 1 opérateur.</p>
+      <p class="tiny muted" style="margin:2px 0 6px">{kt.selectionRule} Préremplie avec la kill team de base : renommez, retirez ou ajoutez, et choisissez les armes de chacun. Cochez Élite pour le chef + 1 opérateur.</p>
       <div class="plist" style="max-height:34vh">
         {ops.map((o, i) => (
           <div key={o.id} class="pitem static">
@@ -60,6 +61,7 @@ export function NewBandModal() {
             <span class="tiny muted">{o.profile.name}</span>
             <label class="tiny row" style="gap:3px"><input type="checkbox" checked={o.elite} disabled={o.profile.noUpgrades} onChange={(e) => patchOp(i, { elite: (e.target as HTMLInputElement).checked })} />Élite</label>
             <Btn small aria-label="Retirer" onClick={() => setOps(ops.filter((_, j) => j !== i))}>×</Btn>
+            <div class="loadouts"><LoadoutPicker compact profile={o.profile} loadout={o.loadout} onChange={(l) => patchOp(i, { loadout: l })} /></div>
           </div>
         ))}
       </div>
