@@ -19,7 +19,7 @@ data/          Données de référence (JSON), modifiables sans toucher au code.
 
 3. **L'interface ne calcule rien.** Un écran lit les signaux de `state/app.ts` et appelle `act(band, action)`. `act` relit toujours la version la plus récente de la bande avant d'appliquer l'action, ce qui évite d'écraser une modification arrivée entre-temps.
 
-4. **Le stockage est derrière une interface.** `Store` (dans `src/store/store.ts`) a cinq méthodes. `artifactStore` parle à la base partagée Claude, `localStore` au navigateur, `memoryStore` sert aux tests. Changer d'hébergement (Supabase, Firebase…) revient à écrire une implémentation de plus.
+4. **Le stockage est derrière une interface.** `Store` (dans `src/store/store.ts`) a cinq méthodes. `firebaseStore` parle à la base en ligne, `artifactStore` à la base partagée Claude, `localStore` au navigateur, `memoryStore` sert aux tests. Changer d'hébergement revient à écrire une implémentation de plus.
 
 5. **Les documents sont versionnés.** Chaque bande et chaque partie porte `schemaVersion`. À la lecture, `src/domain/migrations.ts` fait monter les vieux documents version par version, puis le schéma Zod les valide. Un document illisible est signalé dans un bandeau et ignoré, jamais effacé. Il est réécrit au nouveau format à sa prochaine modification.
 
@@ -44,10 +44,13 @@ Une action qui coûte appelle `pay()` (refus si le solde ne suffit pas), une act
 
 ## Base partagée
 
-Deux collections : `bands/{id}` et `games/{id}`. Une bande est un seul document (registre, arsenal, journal inclus). Si deux joueurs modifient la même bande à la même seconde, la dernière écriture gagne. Chacun gérant sa propre bande, le risque est faible.
+En ligne (Firebase), chaque campagne est rangée sous `campaigns/{code}/` ; le code (12 caractères aléatoires) est dans le lien d'invitation (`#c=…`) et le navigateur le retient (`src/state/campaign.ts`). Les joueurs se connectent en anonyme : cela identifie le navigateur (« Ma bande ») sans créer de compte. `firestore.rules` n'autorise que les connexions anonymes établies, sur `bands` et `games` d'un code donné ; la liste des campagnes n'est pas consultable. Qui a le lien peut modifier la campagne.
+
+Dans la campagne : deux collections, `bands/{id}` et `games/{id}`. Une bande est un seul document (registre, arsenal, journal inclus). Si deux joueurs modifient la même bande à la même seconde, la dernière écriture gagne. Chacun gérant sa propre bande, le risque est faible.
 
 ## Tests
 
 - `tests/domain.test.ts` : coûts, sélection de base de chaque kill team, contrôles du registre, seuil de renforts, points et classement, traumatismes, exploration, catalogue de recrutement.
 - `tests/migrations.test.ts` : reprise des documents de la première version, documents illisibles, version future.
 - `scripts/smoke.cjs` : parcours complet dans Chromium sur le fichier construit, y compris des données v1 et l'affichage mobile.
+- `scripts/smoke-online.cjs` (`npm run smoke:online`) : deux joueurs sur la même campagne contre les émulateurs Firebase (création, invitation, mise à jour en direct, règles d'accès).

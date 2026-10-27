@@ -1,6 +1,6 @@
 {
   "name": "killteam-campagne",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "private": true,
   "type": "module",
   "description": "Application de gestion d'une campagne narrative Kill Team (règles inspirées de Trench Crusade).",
@@ -13,7 +13,9 @@
     "data:check": "tsx scripts/check-data.ts",
     "data:units": "tsx scripts/import-units-csv.ts",
     "smoke": "node scripts/smoke.cjs",
-    "check": "npm run typecheck && npm test && npm run build && npm run smoke"
+    "check": "npm run typecheck && npm test && npm run build && npm run smoke",
+    "build:online-test": "VITE_FIREBASE_EMULATOR=1 vite build --outDir dist-online",
+    "smoke:online": "npm run build:online-test && firebase emulators:exec --only auth,firestore --project demo-ktc \"node scripts/smoke-online.cjs\""
   },
   "devDependencies": {
     "@preact/preset-vite": "2.10.1",
@@ -28,6 +30,7 @@
   },
   "dependencies": {
     "@preact/signals": "2.0.5",
+    "firebase": "12.19.0",
     "preact": "10.26.9",
     "zod": "3.25.67"
   }

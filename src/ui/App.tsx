@@ -1,5 +1,7 @@
 import { useEffect } from 'preact/hooks';
-import { modal, route, storeKind, toast, unreadable, type Route } from '../state/app';
+import { campaign, modal, openModal, route, storeKind, toast, unreadable, type Route } from '../state/app';
+import { InviteModal } from './modals/InviteModal';
+import { JoinView } from './views/JoinView';
 import { BandsView } from './views/BandsView';
 import { BandView } from './views/BandView';
 import { GamesView } from './views/GamesView';
@@ -18,6 +20,7 @@ export function App() {
           <h1>Kill Team · Campagne</h1>
           <nav>{NAV.map(([v, l]) => <button type="button" key={v} class={active === v ? 'on' : ''} onClick={() => (route.value = { view: v } as Route)}>{l}</button>)}</nav>
           {storeKind.value === 'local' && <span class="mode">Mode local : données gardées dans ce navigateur</span>}
+          {campaign.value && <button type="button" class="invite" onClick={() => openModal(<InviteModal code={campaign.value!} />)}>Inviter</button>}
         </div>
       </header>
       {unreadable.value.length > 0 && (
@@ -25,6 +28,7 @@ export function App() {
       )}
       <main>
         {storeKind.value === 'loading' ? <p class="muted">Chargement…</p>
+          : storeKind.value === 'join' ? <JoinView />
           : r.view === 'band' ? <BandView id={r.id} tab={r.tab} />
           : r.view === 'games' ? <GamesView />
           : r.view === 'ranking' ? <RankingView />

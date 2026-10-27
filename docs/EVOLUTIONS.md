@@ -1,6 +1,6 @@
 # Faire évoluer l'application
 
-Après chaque modification : `npm run check`, puis publier `dist/index.html` au même lien (voir en bas).
+Après chaque modification : `npm run check`, puis pousser sur `main` : GitHub publie la nouvelle version (voir en bas).
 
 ## Ajuster un prix ou un seuil
 
@@ -70,4 +70,6 @@ Les documents sont convertis à la lecture : aucune opération sur la base n'est
 
 ## Publier
 
-Le fichier `dist/index.html` est publié comme page Claude au même lien que la version en service, avec les capacités `db` et `user`. Garder le même lien conserve la base partagée et le partage avec les joueurs.
+Le workflow `.github/workflows/pages.yml` lance les tests, construit `dist/index.html` et le publie sur GitHub Pages à chaque push sur `main`. Les données ne bougent pas : elles sont dans Firebase.
+
+Les règles d'accès `firestore.rules` se publient à la main dans la console Firebase (Firestore → Règles) quand elles changent ; `npm run smoke:online` les teste avant.

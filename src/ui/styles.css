@@ -27,6 +27,7 @@ nav button{background:none;border:0;color:#CFC9B6;padding:6px 10px;border-radius
 nav button.on{background:#2A2F35;color:#F3EBD3}
 main{max-width:1100px;margin:0 auto;padding:16px}
 .mode{font-size:12px;color:#CFC9B6}
+.invite{background:#E2C778;color:#1A1D21;border:0;border-radius:6px;padding:6px 12px;font-weight:600;cursor:pointer}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:var(--shadow)}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}

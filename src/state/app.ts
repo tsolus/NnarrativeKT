@@ -7,6 +7,8 @@ import type { Band, Game } from '../domain/model';
 import { artifactStore, connectClaudeDb } from '../store/artifactStore';
 import { localStore } from '../store/localStore';
 import type { Store } from '../store/store';
+import { firebaseConfig } from '../firebase.config';
+import { currentCampaign, rememberCampaign } from './campaign';
 
 // État global de l'interface. Les écrans lisent ces signaux et appellent les fonctions ci-dessous ;
 // ils ne parlent jamais directement au stockage.
@@ -17,7 +19,10 @@ export const bands = signal<Band[]>([]);
 export const games = signal<Game[]>([]);
 export const unreadable = signal<string[]>([]);
 export const me = signal<string | null>(null);
-export const storeKind = signal<Store['kind'] | 'loading'>('loading');
+/** 'join' : appli en ligne sans code de campagne, l'écran d'accueil le demande. */
+export const storeKind = signal<Store['kind'] | 'loading' | 'join'>('loading');
+/** Code de la campagne en ligne ouverte, null sur la page Claude ou en mode local. */
+export const campaign = signal<string | null>(null);
 
 export type Route = { view: 'bands' | 'games' | 'ranking' | 'rules' } | { view: 'band'; id: string; tab: BandTab };
 export type BandTab = 'roster' | 'phase' | 'arsenal' | 'log';
@@ -37,14 +42,59 @@ let store: Store | null = null;
 
 export async function boot(): Promise<void> {
   const shared = await connectClaudeDb().catch(() => null);
-  store = shared ? artifactStore(shared.db, notify) : localStore();
-  me.value = shared?.userId ?? null;
-  storeKind.value = store.kind;
-  store.subscribe((s) => {
-    bands.value = s.bands;
-    games.value = s.games;
-    unreadable.value = s.unreadable;
+  if (shared) return use(artifactStore(shared.db, notify), shared.userId);
+  if (!firebaseConfig) return use(localStore(), null);
+  // un lien d'invitation ouvert dans un onglet déjà lancé change de campagne
+  window.addEventListener('hashchange', () => {
+    const next = currentCampaign();
+    if (next && next !== campaign.value) void openCampaign(next);
   });
+  const code = currentCampaign();
+  if (code) return openCampaign(code);
+  storeKind.value = 'join';
+}
+
+let unsubscribe: (() => void) | null = null;
+
+function use(s: Store, userId: string | null): void {
+  unsubscribe?.();
+  store = s;
+  me.value = userId;
+  storeKind.value = s.kind;
+  unsubscribe = s.subscribe((snap) => {
+    bands.value = snap.bands;
+    games.value = snap.games;
+    unreadable.value = snap.unreadable;
+  });
+}
+
+/** Ouvre (ou crée, s'il est nouveau) la campagne en ligne de ce code. */
+export async function openCampaign(code: string): Promise<void> {
+  if (!firebaseConfig) return;
+  storeKind.value = 'loading';
+  try {
+    const { connectFirebase } = await import('../store/firebaseStore');
+    const { store: s, userId } = await connectFirebase(firebaseConfig, code, notify);
+    rememberCampaign(code);
+    campaign.value = code;
+    use(s, userId);
+  } catch (e) {
+    notify(`Connexion impossible : ${(e as Error).message ?? e}`);
+    storeKind.value = 'join';
+  }
+}
+
+/** Quitte la campagne sur ce navigateur (les données restent en ligne). */
+export function leaveCampaign(): void {
+  unsubscribe?.();
+  unsubscribe = null;
+  store = null;
+  rememberCampaign(null);
+  campaign.value = null;
+  bands.value = [];
+  games.value = [];
+  route.value = { view: 'bands' };
+  storeKind.value = 'join';
 }
 
 export const ctx = (): Ctx => ({ r: rules, now: Date.now(), rng: cryptoRng, games: games.value });

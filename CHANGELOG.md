@@ -1,5 +1,15 @@
 # Journal des versions
 
+## 2.2.0 — 27/10/2026
+
+Appli web publique, sans compte Claude.
+
+- Base en ligne Firebase : chaque campagne a un code secret, partagé par un lien d'invitation (bouton « Inviter »).
+- Accueil pour rejoindre une campagne (lien ou code) ou en créer une ; le navigateur retient la campagne.
+- Connexion anonyme : « Ma bande » reconnaît le navigateur, sans compte.
+- Publication automatique sur GitHub Pages à chaque mise à jour.
+- Test à deux joueurs contre les émulateurs Firebase (`npm run smoke:online`).
+
 ## 2.1.0 — 27/10/2026
 
 Trésorerie automatique : plus aucune saisie des Réquisitions ni de la Gloire.
