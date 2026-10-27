@@ -1,5 +1,18 @@
 # Journal des versions
 
+## 2.1.0 — 27/10/2026
+
+Trésorerie automatique : plus aucune saisie des Réquisitions ni de la Gloire.
+
+- Livre de comptes par bande : chaque achat, vente, butin, récompense et correction est un mouvement daté.
+- Gloire des exploits créditée depuis les parties enregistrées (supprimer une partie la retire).
+- Récompenses d'exploration appliquées : RQ, Gloire, équipements et reliques gratuits, XP des Élites, échange Gloire → points (Faveur du commandement).
+- Rang Légendaire : +1 ☼ versé automatiquement.
+- Renforts : les RQ sont vidées par un mouvement.
+- Corrections exceptionnelles avec motif obligatoire, visibles dans le relevé.
+- Onglet « Trésorerie et journal » avec relevé et solde après chaque mouvement.
+- Format v3 : les soldes des versions précédentes sont repris en mouvement d'ouverture.
+
 ## 2.0.0 — 27/10/2026
 
 Réécriture en projet maintenable, mêmes fonctions que la 1.0.

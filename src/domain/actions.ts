@@ -1,15 +1,18 @@
 import type { Rules } from '../data';
-import { Band, Operative, OperativeStatus, Profile, SCHEMA_VERSION, STATUS_LABEL, gone } from './model';
+import { Band, Game, Operative, OperativeStatus, Profile, SCHEMA_VERSION, STATUS_LABEL, Transaction, gone } from './model';
+import type { Reward } from '../data/schema';
 import { Rng } from './dice';
 import { equipmentPrice, recruitCost, sellPrice, upgradeLimit } from './costs';
 import { isAgent, killteamOf, newId, newOperative } from './roster';
 import type { TraumaResult } from './phase';
+import { addTransaction, balance } from './treasury';
 
 // Toutes les modifications d'une bande passent par ces fonctions.
 // Elles ne touchent jamais la bande reçue : elles renvoient une copie modifiée (ou une erreur lisible),
 // et inscrivent l'opération au journal. L'interface ne fait qu'appeler ces fonctions puis enregistrer.
 
-export interface Ctx { r: Rules; now: number; rng: Rng }
+/** games sert à connaître la Gloire gagnée en partie (voir treasury.ts). */
+export interface Ctx { r: Rules; now: number; rng: Rng; games: Game[] }
 export type Outcome = { ok: true; band: Band; message?: string } | { ok: false; error: string };
 
 const MAX_LOG = 300;
@@ -33,12 +36,30 @@ function opOf(b: Band, id: string): Operative {
   return o;
 }
 
-function pay(b: Band, rq: number, glory = 0): { error: string } | null {
-  if (rq > b.requisitions) return { error: `Pas assez de Réquisitions (${b.requisitions} RQ pour ${rq}).` };
-  if (glory > b.glory) return { error: `Pas assez de Gloire (${b.glory} ☼ pour ${glory}).` };
-  b.requisitions -= rq;
-  b.glory -= glory;
+/** Débite la bande si elle a de quoi payer. Un prix nul n'écrit rien. */
+function pay(ctx: Ctx, b: Band, label: string, rq: number, glory = 0, kind: Transaction['kind'] = 'purchase'): { error: string } | null {
+  const bal = balance(ctx.r, b, ctx.games);
+  if (rq > bal.rq) return { error: `Pas assez de Réquisitions (${bal.rq} RQ pour ${rq}).` };
+  if (glory > bal.glory) return { error: `Pas assez de Gloire (${bal.glory} ☼ pour ${glory}).` };
+  if (rq || glory) addTransaction(b, ctx.now, { label, rq: -rq, glory: -glory, kind });
   return null;
+}
+const credit = (ctx: Ctx, b: Band, label: string, t: { rq?: number; glory?: number; points?: number }, kind: Transaction['kind']) => {
+  if (t.rq || t.glory || t.points) addTransaction(b, ctx.now, { label, kind, ...t });
+};
+
+/** Gloire des rangs (Légendaire : +1 ☼), versée en franchissant le seuil d'XP et reprise si l'XP est corrigée à la baisse. */
+function rankGlory(ctx: Ctx, b: Band, o: Operative, oldXp: number) {
+  for (const k of ctx.r.ranks) {
+    if (!k.glory) continue;
+    if (oldXp < k.xp && o.xp >= k.xp) credit(ctx, b, `${o.name} atteint le rang ${k.name}`, { glory: k.glory }, 'rank');
+    if (oldXp >= k.xp && o.xp < k.xp) credit(ctx, b, `${o.name} redescend sous le rang ${k.name} (correction)`, { glory: -k.glory }, 'rank');
+  }
+}
+function gainXp(ctx: Ctx, b: Band, o: Operative, delta: number) {
+  const old = o.xp;
+  o.xp = Math.max(0, o.xp + delta);
+  rankGlory(ctx, b, o, old);
 }
 const priceText = (rq: number, glory = 0) => (rq ? ` : −${rq} RQ` : glory ? ` : −${glory} ☼` : ' (gratuit)');
 
@@ -50,8 +71,10 @@ export function createBand(ctx: Ctx, n: NewBand): Band {
   const s = ctx.r.campaign.start;
   return Band.parse({
     schemaVersion: SCHEMA_VERSION, id: newId(), name: n.name.trim(), player: n.player.trim(), ownerId: n.ownerId,
-    killteam: n.killteam, faction: n.faction, requisitions: s.requisitions, glory: s.glory,
+    killteam: n.killteam, faction: n.faction,
     operatives: n.operatives, arsenal: n.arsenal, createdAt: ctx.now, updatedAt: ctx.now,
+    transactions: s.requisitions || s.glory
+      ? [{ id: newId(), at: ctx.now, label: 'Dotation de départ', rq: s.requisitions, glory: s.glory, points: 0, kind: 'opening' }] : [],
     log: [{ at: ctx.now, text: `Création : ${n.operatives.length} opérateurs, arsenal ${n.arsenal.join(', ') || 'vide'}.` }],
   });
 }
@@ -71,13 +94,18 @@ type BandField = 'name' | 'player' | 'faction' | 'explorationSkills';
 export const setBandField = (ctx: Ctx, band: Band, field: BandField, value: string) =>
   edit(ctx, band, (b) => { b[field] = value; });
 
-export const correctResources = (ctx: Ctx, band: Band, requisitions: number, glory: number) =>
-  edit(ctx, band, (b) => {
-    if (b.requisitions === requisitions && b.glory === glory) return;
-    b.requisitions = Math.max(0, Math.round(requisitions));
-    b.glory = Math.max(0, Math.round(glory));
-    return `Correction manuelle : ${b.requisitions} RQ, ${b.glory} ☼`;
+/** Correction exceptionnelle (rançon, oubli, règle maison) : un mouvement motivé, jamais un solde écrasé. */
+export function correction(ctx: Ctx, band: Band, delta: { rq: number; glory: number; points: number }, reason: string): Outcome {
+  if (!reason.trim()) return fail('Indiquez le motif de la correction.');
+  const d = { rq: Math.round(delta.rq) || 0, glory: Math.round(delta.glory) || 0, points: Math.round(delta.points) || 0 };
+  if (!d.rq && !d.glory && !d.points) return fail('Aucun montant à corriger.');
+  const bal = balance(ctx.r, band, ctx.games);
+  if (bal.rq + d.rq < 0 || bal.glory + d.glory < 0) return fail('La correction rendrait un solde négatif.');
+  return edit(ctx, band, (b) => {
+    addTransaction(b, ctx.now, { label: `Correction : ${reason.trim()}`, kind: 'correction', ...d });
+    return `Correction (${reason.trim()}) : ${[d.rq && `${d.rq > 0 ? '+' : ''}${d.rq} RQ`, d.glory && `${d.glory > 0 ? '+' : ''}${d.glory} ☼`, d.points && `${d.points > 0 ? '+' : ''}${d.points} pts`].filter(Boolean).join(', ')}`;
   });
+}
 
 /* ---------- opérateurs ---------- */
 
@@ -95,16 +123,16 @@ export function recruit(ctx: Ctx, band: Band, profile: Profile, name: string, fr
   if (cost == null && !free) return fail(`${profile.name} n'a pas de coût en points 40k : recrutez-le gratuitement après accord de vos adversaires.`);
   return edit(ctx, band, (b) => {
     const price = free ? 0 : cost!;
-    const err = pay(b, price);
-    if (err) return err;
     const agent = isAgent(b, { profile });
+    const err = pay(ctx, b, `Recrutement de ${name.trim() || profile.name} (${profile.name})`, price);
+    if (err) return err;
     b.operatives.push(newOperative(profile, name.trim() || profile.name, { elite: false, fielded: false, origin: agent ? 'agent' : 'recruit', cost: price }));
     return `Recrutement de ${name.trim() || profile.name} (${profile.name}${agent ? ', agent' : ''})${priceText(price)}`;
   });
 }
 
 export const adjustXp = (ctx: Ctx, band: Band, opId: string, delta: number) =>
-  edit(ctx, band, (b) => { const o = opOf(b, opId); o.xp = Math.max(0, o.xp + delta); });
+  edit(ctx, band, (b) => { gainXp(ctx, b, opOf(b, opId), delta); });
 
 export const adjustScars = (ctx: Ctx, band: Band, opId: string, delta: number) =>
   edit(ctx, band, (b) => { const o = opOf(b, opId); o.scars = Math.max(0, o.scars + delta); });
@@ -148,7 +176,7 @@ export function buyUpgrade(ctx: Ctx, band: Band, opId: string, upgrade: string, 
       if (b.operatives.some((x) => !gone(x) && x.upgrades.some((u) => u.equipment === equipment))) return { error: `${equipment} est déjà attitré dans la bande.` };
     }
     const price = free ? 0 : ctx.r.campaign.upgrades.price;
-    const err = pay(b, price);
+    const err = pay(ctx, b, `${o.name} : ${upgrade}${equipment ? ` (${equipment})` : ''}`, price);
     if (err) return err;
     o.upgrades.push(def.needsEquipment ? { name: upgrade, equipment } : { name: upgrade });
     return `${o.name} : ${upgrade}${equipment ? ` (${equipment})` : ''}${priceText(price)}`;
@@ -161,7 +189,7 @@ export const removeUpgrade = (ctx: Ctx, band: Band, opId: string, index: number,
     const o = opOf(b, opId);
     const [u] = o.upgrades.splice(index, 1);
     if (!u) return;
-    if (refund) b.requisitions += ctx.r.campaign.upgrades.price;
+    if (refund) credit(ctx, b, `Annulation de ${u.name} pour ${o.name}`, { rq: ctx.r.campaign.upgrades.price }, 'correction');
     return refund ? `Amélioration ${u.name} annulée pour ${o.name} : +${ctx.r.campaign.upgrades.price} RQ` : `${o.name} perd ${u.name}`;
   });
 
@@ -177,7 +205,7 @@ export const removeSequela = (ctx: Ctx, band: Band, opId: string, index: number,
     const s = o.sequelae[index];
     if (!s) return;
     const price = surgery ? ctx.r.campaign.prices.surgery : 0;
-    const err = pay(b, price);
+    const err = pay(ctx, b, `Chirurgie : ${o.name} perd ${s}`, price);
     if (err) return err;
     o.sequelae.splice(index, 1);
     return surgery ? `Chirurgie : ${o.name} perd ${s}${priceText(price)}` : `${o.name} perd la Séquelle ${s}`;
@@ -203,7 +231,7 @@ export function applyTrauma(ctx: Ctx, band: Band, opId: string, t: TraumaResult)
       case 'missNextGame': o.sequelae.push(s.name); o.status = 'injured'; break;
       case 'robbed': o.sequelae.push(s.name); o.relic = ''; o.upgrades = o.upgrades.filter((u) => !u.equipment); break;
       case 'trait': case 'sequela': o.sequelae.push(s.name); break;
-      case 'gainXpD3': { const g = ctx.rng(3); o.xp += g; text += ` (+${g} XP)`; break; }
+      case 'gainXpD3': { const g = ctx.rng(3); gainXp(ctx, b, o, g); text += ` (+${g} XP)`; break; }
       case 'none': break;
     }
     if (o.scars >= ctx.r.campaign.trauma.scarsToRetire && !gone(o)) {
@@ -218,20 +246,67 @@ export const xpToFieldedElites = (ctx: Ctx, band: Band) =>
   edit(ctx, band, (b) => {
     const els = b.operatives.filter((o) => !gone(o) && o.elite && o.fielded);
     if (!els.length) return { error: 'Aucune Élite alignée.' };
-    els.forEach((o) => o.xp++);
+    els.forEach((o) => gainXp(ctx, b, o, 1));
     return `+1 XP aux Élites alignées (${els.map((o) => o.name).join(', ')})`;
   });
 
 export const callReinforcements = (ctx: Ctx, band: Band) =>
-  edit(ctx, band, (b) => { b.arsenal = []; b.requisitions = 0; return 'Renforts : arsenal et Réquisitions vidés'; });
-
-export const collectLoot = (ctx: Ctx, band: Band, loot: number, place: string | null) =>
   edit(ctx, band, (b) => {
-    b.requisitions += loot;
-    const isNew = !!place && place !== 'Pillé' && !b.discoveredPlaces.includes(place);
-    if (isNew) b.discoveredPlaces.push(place!);
-    return `Exploration : ${place ?? '?'}${place && !isNew && place !== 'Pillé' ? ' (déjà découvert)' : ''}, butin +${loot} RQ`;
+    const rq = balance(ctx.r, b, ctx.games).rq;
+    b.arsenal = [];
+    if (rq) addTransaction(b, ctx.now, { label: 'Renforts : Réquisitions vidées', rq: -rq, kind: 'reinforcements' });
+    return 'Renforts : arsenal et Réquisitions vidés';
   });
+
+export interface ExplorationChoice {
+  loot: number;
+  place: string | null;
+  reward?: Reward;          // la récompense choisie parmi celles du lieu
+  equipment?: string[];     // équipements gratuits choisis
+  relic?: string;           // relique gratuite choisie
+  gloryToPoints?: number;   // Faveur du commandement
+}
+
+/** Encaisse le butin d'exploration et applique la récompense du lieu (sauf lieu déjà découvert). */
+export function explore(ctx: Ctx, band: Band, c: ExplorationChoice): Outcome {
+  const kt = killteamOf(ctx.r, band);
+  return edit(ctx, band, (b) => {
+    const known = !!c.place && c.place !== 'Pillé' && b.discoveredPlaces.includes(c.place);
+    const parts: string[] = [`butin +${c.loot} RQ`];
+    credit(ctx, b, `Exploration : butin (${c.place ?? '?'})`, { rq: c.loot }, 'loot');
+    const rw = known ? undefined : c.reward;
+    if (rw) {
+      const label = `Exploration : ${c.place}`;
+      if (rw.rq || rw.glory) { credit(ctx, b, label, { rq: rw.rq, glory: rw.glory }, 'reward'); parts.push([rw.rq && `+${rw.rq} RQ`, rw.glory && `+${rw.glory} ☼`].filter(Boolean).join(' ')); }
+      if (rw.equipment) {
+        const allowed = rw.equipment.type === 'faction' ? kt.factionEquipment : ctx.r.universalEquipment.map((e) => e.name);
+        const eq = c.equipment ?? [];
+        if (eq.length !== rw.equipment.count || eq.some((e) => !allowed.includes(e)))
+          return { error: `Choisissez ${rw.equipment.count} équipement(s) ${rw.equipment.type === 'faction' ? 'de faction' : 'universel(s)'}.` };
+        b.arsenal.push(...eq);
+        parts.push(`arsenal : ${eq.join(', ')}`);
+      }
+      if (rw.relic) {
+        const def = ctx.r.relics.find((x) => x.name === c.relic);
+        if (!def || (rw.relic.maxGlory !== null && def.glory > rw.relic.maxGlory)) return { error: 'Choisissez une relique autorisée.' };
+        b.relics.push(def.name);
+        parts.push(`relique ${def.name}`);
+      }
+      if (rw.xpFieldedElites) {
+        const els = b.operatives.filter((o) => !gone(o) && o.elite && o.fielded);
+        els.forEach((o) => gainXp(ctx, b, o, rw.xpFieldedElites!));
+        parts.push(`+${rw.xpFieldedElites} XP à ${els.length} Élite(s)`);
+      }
+      if (rw.gloryToPoints) {
+        const n = Math.max(0, Math.min(rw.gloryToPoints, Math.round(c.gloryToPoints ?? 0)));
+        if (n > balance(ctx.r, b, ctx.games).glory) return { error: 'Pas assez de Gloire à échanger.' };
+        if (n) { credit(ctx, b, `${c.place} : ${n} ☼ échangés`, { glory: -n, points: n }, 'reward'); parts.push(`${n} ☼ → ${n} points`); }
+      }
+    }
+    if (c.place && c.place !== 'Pillé' && !known) b.discoveredPlaces.push(c.place);
+    return `Exploration : ${c.place ?? '?'}${known ? ' (déjà découvert, compte comme Pillé)' : ''}, ${parts.join(', ')}`;
+  });
+}
 
 export const removePlace = (ctx: Ctx, band: Band, index: number) =>
   edit(ctx, band, (b) => { b.discoveredPlaces.splice(index, 1); });
@@ -243,7 +318,7 @@ export function buyEquipment(ctx: Ctx, band: Band, equipment: string, free: bool
   if (!kt.factionEquipment.includes(equipment) && !ctx.r.universalEquipment.some((e) => e.name === equipment)) return fail(`Équipement inconnu : ${equipment}`);
   return edit(ctx, band, (b) => {
     const price = free ? 0 : equipmentPrice(ctx.r, equipment);
-    const err = pay(b, price);
+    const err = pay(ctx, b, `Achat de ${equipment}`, price);
     if (err) return err;
     b.arsenal.push(equipment);
     return `Arsenal : ${equipment}${priceText(price)}`;
@@ -255,7 +330,7 @@ export const sellEquipment = (ctx: Ctx, band: Band, index: number) =>
     const [e] = b.arsenal.splice(index, 1);
     if (!e) return;
     const gain = sellPrice(ctx.r, equipmentPrice(ctx.r, e));
-    b.requisitions += gain;
+    credit(ctx, b, `Vente de ${e}`, { rq: gain }, 'sale');
     return `Vente de ${e} : +${gain} RQ`;
   });
 
@@ -267,7 +342,7 @@ export function buyRelic(ctx: Ctx, band: Band, relic: string, free: boolean): Ou
   if (!def) return fail(`Relique inconnue : ${relic}`);
   return edit(ctx, band, (b) => {
     const price = free ? 0 : def.glory;
-    const err = pay(b, 0, price);
+    const err = pay(ctx, b, `Achat de la relique ${relic}`, 0, price);
     if (err) return err;
     b.relics.push(relic);
     return `Relique ${relic}${priceText(0, price)}`;
@@ -285,7 +360,7 @@ export const discardRelic = (ctx: Ctx, band: Band, index: number) =>
 export const hireMercenary = (ctx: Ctx, band: Band) =>
   edit(ctx, band, (b) => {
     const price = ctx.r.campaign.prices.mercenaryGlory;
-    const err = pay(b, 0, price);
+    const err = pay(ctx, b, 'Location d\u2019un mercenaire', 0, price);
     if (err) return err;
     return `Mercenaire loué pour une partie${priceText(0, price)}`;
   });

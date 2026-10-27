@@ -41,11 +41,21 @@ export function actFor(r: Rules, gameNumber: number) {
   return acts.find((a) => n >= a.fromGame && n <= a.toGame) ?? acts[acts.length - 1]!;
 }
 
+/** Points de campagne hors parties (Faveur du commandement, corrections), tirés du livre de comptes. */
+export const bonusPoints = (b: Band) => b.transactions.reduce((s, t) => s + t.points, 0);
+
+export function campaignPoints(r: Rules, b: Band, games: Game[]) {
+  return bandStats(r, b.id, games).points + bonusPoints(b);
+}
+
 export interface RankingRow { band: Band; stats: BandStats; catchUp: boolean }
 
 /** Classement : points, puis exploits. Le dernier (s'il y a au moins deux bandes) bénéficie du rattrapage. */
 export function ranking(r: Rules, bands: Band[], games: Game[]): RankingRow[] {
-  const rows = bands.map((band) => ({ band, stats: bandStats(r, band.id, games), catchUp: false }));
+  const rows = bands.map((band) => {
+    const stats = bandStats(r, band.id, games);
+    return { band, stats: { ...stats, points: stats.points + bonusPoints(band) }, catchUp: false };
+  });
   rows.sort((a, b) => b.stats.points - a.stats.points || b.stats.exploits - a.stats.exploits);
   if (rows.length > 1) {
     const min = Math.min(...rows.map((x) => x.stats.points));

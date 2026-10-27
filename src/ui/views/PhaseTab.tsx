@@ -3,8 +3,9 @@ import { act, games, notify, openModal, rules } from '../../state/app';
 import * as A from '../../domain/actions';
 import { cryptoRng, rollMany } from '../../domain/dice';
 import { Band, gone } from '../../domain/model';
-import { allHonours, explorationFor, explorationResult, honourLabel, rollExploration, rollHonours, rollTrauma, traumaResult, type HonourRoll, type TraumaResult } from '../../domain/phase';
+import { allHonours, describeReward, explorationFor, explorationResult, honourLabel, rollExploration, rollHonours, rollTrauma, traumaResult, type HonourRoll, type TraumaResult } from '../../domain/phase';
 import { bandStats } from '../../domain/scoring';
+import { killteamOf } from '../../domain/roster';
 import { Btn, Confirm, Select, Tag, TextField } from '../components/ui';
 
 // L'état des jets (dés lancés, résultat en attente) est local à l'écran : il n'est enregistré qu'à la confirmation.
@@ -125,41 +126,84 @@ function Promotion({ band }: { band: Band }) {
 
 function Exploration({ band, played }: { band: Band; played: number }) {
   const ex = explorationFor(rules, played);
+  const kt = killteamOf(rules, band);
   const [table, setTable] = useState(ex.tables[0]!);
   const [nDice, setNDice] = useState(ex.dice);
   const [dice, setDice] = useState<number[] | null>(null);
   const [rerolled, setRerolled] = useState<number[]>([]);
   const [mod, setMod] = useState(0);
   const [looted, setLooted] = useState(false);
+  const [rewardIdx, setRewardIdx] = useState(0);
+  const [equipment, setEquipment] = useState<string[]>([]);
+  const [relic, setRelic] = useState('');
+  const [toPoints, setToPoints] = useState(0);
   const res = dice && explorationResult(rules, table, dice, mod);
-  const known = res?.place && res.place.name !== 'Pillé' && band.discoveredPlaces.includes(res.place.name);
+  const known = !!res?.place && res.place.name !== 'Pillé' && band.discoveredPlaces.includes(res.place.name);
+  const rewards = known ? [] : res?.place?.rewards ?? [];
+  const reward = rewards[rewardIdx] ?? rewards[0];
+  const eqOptions = reward?.equipment ? (reward.equipment.type === 'faction' ? kt.factionEquipment : rules.universalEquipment.map((e) => e.name)) : [];
+  const relicOptions = reward?.relic ? rules.relics.filter((x) => reward.relic!.maxGlory === null || x.glory <= reward.relic!.maxGlory) : [];
+  const eqChosen = reward?.equipment ? Array.from({ length: reward.equipment.count }, (_, i) => equipment[i] ?? eqOptions[0] ?? '') : [];
+  const relicChosen = relic || relicOptions[0]?.name || '';
+  const roll = () => { setDice(rollExploration(cryptoRng, nDice)); setRerolled([]); setMod(0); setLooted(false); setRewardIdx(0); setEquipment([]); setRelic(''); setToPoints(0); };
+  const collect = () => {
+    if (!res) return;
+    const ok = act(band, (c, b) => A.explore(c, b, {
+      loot: res.loot, place: res.place?.name ?? null, reward,
+      equipment: eqChosen, relic: relicChosen, gloryToPoints: toPoints,
+    }), 'Exploration encaissée.');
+    if (ok) setLooted(true);
+  };
   return (
     <div class="panel step">
       <h3>4. Exploration</h3>
-      <p class="small muted">{played} partie{played > 1 ? 's' : ''} jouée{played > 1 ? 's' : ''} : {ex.dice} dés, table {ex.tables.join(' ou ')}. Relancez 1 dé (2 si vous avez gagné) en cliquant dessus. Butin = total ÷ {rules.campaign.exploration.lootDivisor} en RQ.</p>
+      <p class="small muted">{played} partie{played > 1 ? 's' : ''} jouée{played > 1 ? 's' : ''} : {ex.dice} dés, table {ex.tables.join(' ou ')}. Relancez 1 dé (2 si vous avez gagné) en cliquant dessus. Butin = total ÷ {rules.campaign.exploration.lootDivisor} en RQ, crédité avec la découverte.</p>
       <div class="row">
         <Select aria-label="Table" value={table} options={rules.exploration.tables.map((t) => t.name)} onChange={setTable} />
         <span class="small">Dés</span>
         <input type="number" aria-label="Nombre de dés" value={nDice} style="width:60px" onInput={(e) => setNDice(Math.max(1, Math.min(12, Number((e.target as HTMLInputElement).value) || 1)))} />
-        <Btn variant="pri" onClick={() => { setDice(rollExploration(cryptoRng, nDice)); setRerolled([]); setMod(0); setLooted(false); }}>Lancer</Btn>
+        <Btn variant="pri" onClick={roll}>Lancer</Btn>
       </div>
       {dice && res && (
         <>
           <div class="row" style="margin-top:8px">
             {dice.map((x, i) => (
-              <button type="button" key={i} class={`die ${rerolled.includes(i) ? 're' : ''}`} title="Relancer ce dé"
+              <button type="button" key={i} class={`die ${rerolled.includes(i) ? 're' : ''}`} title="Relancer ce dé" disabled={looted}
                 onClick={() => { const d = [...dice]; d[i] = cryptoRng(6); setDice(d); setRerolled([...rerolled, i]); }}>{x}</button>
             ))}
             <span class="small muted">Modificateur</span>
-            <input type="number" aria-label="Modificateur" value={mod} style="width:60px" onInput={(e) => setMod(Number((e.target as HTMLInputElement).value) || 0)} />
+            <input type="number" aria-label="Modificateur" value={mod} style="width:60px" disabled={looted} onInput={(e) => setMod(Number((e.target as HTMLInputElement).value) || 0)} />
           </div>
           <div class="res">
-            <b>Total {res.total}</b> sur la table {table} : <b>{res.place?.name ?? '?'}</b>, {res.place?.discovery}<br />
-            Butin : <b>{res.loot} RQ</b>{known && <> · <Tag tone="red">déjà découvert : compte comme Pillé</Tag></>}
+            <b>Total {res.total}</b> sur la table {table} : <b>{res.place?.name ?? '?'}</b>, {res.place?.discovery}
+            {known && <> · <Tag tone="red">déjà découvert : compte comme Pillé</Tag></>}
+            <div style="margin-top:6px">Butin : <b>{res.loot} RQ</b></div>
+            {rewards.length > 1 && (
+              <div class="row small" style="margin-top:6px">Récompense :
+                {rewards.map((rw, i) => (
+                  <label key={i} class="row" style="gap:3px"><input type="radio" name="reward" checked={rewardIdx === i} disabled={looted} onChange={() => setRewardIdx(i)} />{describeReward(rw)}</label>
+                ))}
+              </div>
+            )}
+            {rewards.length === 1 && reward && <div class="small" style="margin-top:6px">Récompense : <b>{describeReward(reward)}</b></div>}
+            {reward?.equipment && (
+              <div class="row small" style="margin-top:6px">Équipement :
+                {eqChosen.map((e, i) => <Select key={i} aria-label={`Équipement gratuit ${i + 1}`} value={e} options={eqOptions} onChange={(v) => setEquipment(eqChosen.map((x, j) => (j === i ? v : x)))} />)}
+              </div>
+            )}
+            {reward?.relic && (
+              <div class="row small" style="margin-top:6px">Relique :
+                <Select aria-label="Relique gratuite" value={relicChosen} options={relicOptions.map((x) => [x.name, `${x.name} (${x.glory} ☼)`] as [string, string])} onChange={setRelic} />
+              </div>
+            )}
+            {reward?.gloryToPoints && (
+              <div class="row small" style="margin-top:6px">Gloire échangée contre des points :
+                <input type="number" min={0} max={reward.gloryToPoints} aria-label="Gloire échangée" style="width:60px" value={toPoints} onInput={(e) => setToPoints(Math.max(0, Math.min(reward.gloryToPoints!, Number((e.target as HTMLInputElement).value) || 0)))} />
+              </div>
+            )}
+            {!known && res.place && res.place.name !== 'Pillé' && !rewards.length && <div class="tiny muted" style="margin-top:6px">Effet à appliquer à la main sur la fiche (il n'y a rien à créditer).</div>}
             <div class="row" style="margin-top:8px">
-              <Btn variant="pri" disabled={looted} onClick={() => { if (act(band, (c, b) => A.collectLoot(c, b, res.loot, res.place?.name ?? null), `+${res.loot} RQ. Appliquez la découverte à la main si besoin.`)) setLooted(true); }}>
-                {looted ? 'Encaissé' : 'Encaisser le butin et noter le lieu'}
-              </Btn>
+              <Btn variant="pri" disabled={looted} onClick={collect}>{looted ? 'Encaissé' : 'Encaisser et noter le lieu'}</Btn>
             </div>
           </div>
         </>

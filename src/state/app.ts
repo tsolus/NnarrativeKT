@@ -47,7 +47,7 @@ export async function boot(): Promise<void> {
   });
 }
 
-export const ctx = (): Ctx => ({ r: rules, now: Date.now(), rng: cryptoRng });
+export const ctx = (): Ctx => ({ r: rules, now: Date.now(), rng: cryptoRng, games: games.value });
 
 const failed = (e: unknown) => notify(`Échec de l'enregistrement : ${(e as Error).message ?? e}`);
 

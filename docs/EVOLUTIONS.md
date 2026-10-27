@@ -40,6 +40,20 @@ Remplacer `data/sources/points_40k.csv` (export BSData), puis `npm run data:unit
 
 Fichiers de `data/rules/`. Les plages s'écrivent comme dans le livret : `"11"`, `"41-63"`, `"10+"`, `"7 ou moins"`. Pour les séquelles, `kind` dit ce que l'appli fait automatiquement : `dead`, `captured`, `missNextGame`, `robbed`, `gainXpD3`, `trait` (noté, sans cicatrice), `none`, `sequela` (noté, avec cicatrice). Un test vérifie que les 36 résultats du d66 sont couverts.
 
+## Récompenses d'exploration et de rang
+
+Dans `data/rules/exploration.json`, un lieu peut porter `rewards` : une liste de récompenses (s'il y en a plusieurs, le joueur en choisit une). Champs possibles, combinables :
+
+```json
+{ "label": "Le revendre (+3 RQ)", "rq": 3, "glory": 1,
+  "equipment": { "type": "faction", "count": 1 },
+  "relic": { "maxGlory": 3 },
+  "xpFieldedElites": 1,
+  "gloryToPoints": 5 }
+```
+
+`relic.maxGlory: null` = n'importe quelle relique. Un lieu sans `rewards` affiche seulement sa découverte, à appliquer à la main. La Gloire par exploit est dans `data/campaign.json` (`rewards.gloryPerExploit`), celle des rangs dans `data/rules/ranks.json` (`glory`).
+
 ## Ajouter une règle ou une action
 
 1. Écrire la fonction dans `src/domain/` (une action de bande va dans `actions.ts` et passe par `edit()`, qui gère la copie et le journal).

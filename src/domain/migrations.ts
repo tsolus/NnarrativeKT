@@ -55,6 +55,14 @@ const bandSteps: Record<number, Step> = {
     updatedAt: b.updated ?? 0,
     log: (b.log ?? []).map((l: Doc) => ({ at: l.t, text: l.txt })),
   }),
+  /** v2 → v3 : les soldes saisis deviennent un mouvement d'ouverture du livre de comptes. */
+  2: (b) => {
+    const { requisitions = 0, glory = 0, ...rest } = b;
+    const opening = requisitions || glory
+      ? [{ id: `open-${b.id}`, at: b.updatedAt ?? 0, label: 'Solde repris de la version précédente', rq: requisitions, glory, points: 0, kind: 'opening' }]
+      : [];
+    return { ...rest, schemaVersion: 3, transactions: [...opening, ...(b.transactions ?? [])] };
+  },
 };
 
 const RESULT_V1: Record<string, string> = { V: 'win', N: 'draw', D: 'loss' };
@@ -68,6 +76,7 @@ const gameSteps: Record<number, Step> = {
     sides: (g.sides ?? []).map((s: Doc) => ({ bandId: s.band, result: RESULT_V1[s.res] ?? 'loss', exploits: +s.ex || 0 })),
     createdAt: g.created ?? 0,
   }),
+  2: (g) => ({ ...g, schemaVersion: 3 }),
 };
 
 function migrate(doc: Doc, steps: Record<number, Step>): Doc {

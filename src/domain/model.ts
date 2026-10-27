@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 // Documents enregistrés dans la base partagée. Chaque document porte schemaVersion :
 // quand le format change, on monte la version et on ajoute une étape dans migrations.ts.
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 export const Profile = z.object({
   source: z.enum(['killteam', 'unit40k']),
@@ -47,6 +47,21 @@ export type Operative = z.infer<typeof Operative>;
 
 export const LogEntry = z.object({ at: z.number(), text: z.string() });
 
+/**
+ * Mouvement du livre de comptes. Les soldes (RQ, Gloire, points bonus) ne sont jamais saisis :
+ * ils sont la somme des mouvements, plus la Gloire des exploits tirée des parties (voir treasury.ts).
+ */
+export const Transaction = z.object({
+  id: z.string(),
+  at: z.number(),
+  label: z.string(),
+  rq: z.number().int().default(0),
+  glory: z.number().int().default(0),
+  points: z.number().int().default(0),
+  kind: z.enum(['purchase', 'sale', 'loot', 'reward', 'rank', 'reinforcements', 'correction', 'opening']).default('correction'),
+});
+export type Transaction = z.infer<typeof Transaction>;
+
 export const Band = z.object({
   schemaVersion: z.literal(SCHEMA_VERSION),
   id: z.string(),
@@ -55,8 +70,6 @@ export const Band = z.object({
   ownerId: z.string().nullable().default(null),
   killteam: z.string(),
   faction: z.string(),
-  requisitions: z.number().default(0),
-  glory: z.number().default(0),
   operatives: z.array(Operative).default([]),
   arsenal: z.array(z.string()).default([]),
   relics: z.array(z.string()).default([]),
@@ -65,6 +78,7 @@ export const Band = z.object({
   createdAt: z.number().default(0),
   updatedAt: z.number().default(0),
   log: z.array(LogEntry).default([]),
+  transactions: z.array(Transaction).default([]),
 });
 export type Band = z.infer<typeof Band>;
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { rules, ctx, band, ok } from './helpers';
+import { rules, ctx, band, ok, money, funded } from './helpers';
 import * as A from '../src/domain/actions';
 import { agentValue, recruitCost, upgradeLimit } from '../src/domain/costs';
 import { lineup, rosterChecks } from '../src/domain/checks';
@@ -64,20 +64,20 @@ describe('actions', () => {
   it('recruter débite les RQ et marque les agents', () => {
     const b = band('Nemesis Claw');
     const r1 = ok(A.recruit(ctx(), b, def('Nemesis Claw', 'Warrior'), 'Krull', false));
-    expect(r1.band.requisitions).toBe(0);
+    expect(money(r1.band).rq).toBe(0);
     expect(r1.band.operatives.at(-1)).toMatchObject({ name: 'Krull', origin: 'recruit', cost: 5, fielded: false });
-    expect(b.requisitions).toBe(5); // l'original n'est pas modifié
+    expect(money(b).rq).toBe(5); // l'original n'est pas modifié
     const r2 = A.recruit(ctx(), b, def('Murderwing', 'Raptor'), 'Vol', false);
     expect(r2.ok).toBe(false);
     const r3 = ok(A.recruit(ctx(), b, def('Murderwing', 'Raptor'), 'Vol', true));
     expect(r3.band.operatives.at(-1)!.origin).toBe('agent');
   });
   it('améliorations : prix, limite, doublon, équipement attitré unique', () => {
-    let b = { ...band('Nemesis Claw'), requisitions: 20 };
+    let b = funded(20);
     const troop = b.operatives.find((o) => !o.elite)!.id;
     const elite = b.operatives.find((o) => o.elite && !o.profile.leader)!.id;
     b = ok(A.buyUpgrade(ctx(), b, troop, 'Entraînement au tir', undefined, false)).band;
-    expect(b.requisitions).toBe(17);
+    expect(money(b).rq).toBe(17);
     expect(A.buyUpgrade(ctx(), b, troop, 'Entraînement physique', undefined, false).ok).toBe(false);
     b = ok(A.buyUpgrade(ctx(), b, elite, 'Équipement attitré', 'Chain Snare', false)).band;
     expect(A.buyUpgrade(ctx(), b, elite, 'Équipement attitré', 'Flayed Skin', false).ok).toBe(false); // déjà prise
@@ -110,11 +110,11 @@ describe('actions', () => {
     expect(after.operatives.find((x) => x.id === fe.id)!).toMatchObject({ xp: 2, scars: 0 });
   });
   it('vente d’équipement à moitié prix arrondi au supérieur', () => {
-    let b = { ...band(), requisitions: 10 };
+    let b = funded(10);
     b = ok(A.buyEquipment(ctx(), b, 'Chain Snare', false)).band;
-    expect(b.requisitions).toBe(7);
+    expect(money(b).rq).toBe(7);
     b = ok(A.sellEquipment(ctx(), b, 0)).band;
-    expect(b.requisitions).toBe(9);
+    expect(money(b).rq).toBe(9);
   });
 });
 
@@ -127,7 +127,7 @@ describe('contrôles et seuil', () => {
     expect(rosterChecks(rules, b).some((m) => m.includes('agents'))).toBe(true);
   });
   it('seuil de renforts : agents alignés + améliorations', () => {
-    let b = { ...band(), requisitions: 10 };
+    let b = funded(10);
     b = ok(A.recruit(ctx(), b, def('Murderwing', 'Raptor'), 'Vol', true)).band;
     b.operatives.at(-1)!.fielded = true;
     const L = lineup(rules, b, []);
@@ -176,5 +176,72 @@ describe('catalogue de recrutement', () => {
     expect(own.every((p) => p.faction === 'Chaos Space Marines')).toBe(true);
     expect(catalogue(rules, b, { faction: 'alliance' }).every((p) => p.alliance === 'Chaos')).toBe(true);
     expect(catalogue(rules, b, { faction: '*', text: 'intercessor' }).length).toBeGreaterThan(0);
+  });
+});
+
+describe('trésorerie automatique', () => {
+  const game = (bandId: string, other: string, exploits: number, i = 0) => createGame(i, { date: `2027-01-0${i + 1}`, mission: 'M', notes: '',
+    sides: [{ bandId, result: 'win', exploits }, { bandId: other, result: 'loss', exploits: 0 }] });
+
+  it('départ : 5 RQ, 0 ☼, sans saisie', () => {
+    expect(money(band())).toEqual({ rq: 5, glory: 0, points: 0 });
+  });
+  it('la Gloire des exploits vient des parties et disparaît avec elles', () => {
+    const b = band();
+    const games = [game(b.id, 'x', 2)];
+    expect(money(b, games).glory).toBe(2);
+    expect(money(b, []).glory).toBe(0);
+  });
+  it('une relique se paie avec la Gloire des parties', () => {
+    const b = band();
+    const games = [game(b.id, 'x', 2), game(b.id, 'x', 1, 1)];
+    const after = ok(A.buyRelic(ctx(undefined, games), b, 'Arme de maître', false)).band;
+    expect(money(after, games).glory).toBe(0);
+    expect(A.buyRelic(ctx(undefined, games), after, 'Amulette porte-bonheur', false).ok).toBe(false);
+  });
+  it('exploration : butin + récompense, une seule fois par lieu', () => {
+    let b = band();
+    const prisoner = rules.exploration.tables[0]!.places.find((p) => p.name === 'Prisonnier')!;
+    b = ok(A.explore(ctx(), b, { loot: 2, place: 'Prisonnier', reward: prisoner.rewards![1] })).band; // revendu : +3 RQ
+    expect(money(b)).toMatchObject({ rq: 10, glory: 0 });
+    b = ok(A.explore(ctx(), b, { loot: 2, place: 'Prisonnier', reward: prisoner.rewards![0] })).band; // déjà découvert
+    expect(money(b)).toMatchObject({ rq: 12, glory: 0 });
+  });
+  it('exploration : équipement et relique gratuits contrôlés', () => {
+    const b = band();
+    const depot = { rq: 2, equipment: { type: 'faction' as const, count: 1 } };
+    expect(A.explore(ctx(), b, { loot: 3, place: 'Dépôt intact', reward: depot, equipment: ['Mines'] }).ok).toBe(false);
+    const ok1 = ok(A.explore(ctx(), b, { loot: 3, place: 'Dépôt intact', reward: depot, equipment: ['Chain Snare'] })).band;
+    expect(ok1.arsenal).toContain('Chain Snare');
+    expect(money(ok1).rq).toBe(10);
+    expect(A.explore(ctx(), b, { loot: 4, place: 'Archive scellée', reward: { relic: { maxGlory: 3 } }, relic: 'Arme légendaire' }).ok).toBe(false);
+  });
+  it('Faveur du commandement : Gloire échangée contre des points de campagne', () => {
+    const b = band();
+    const games = [game(b.id, 'x', 3)];
+    const after = ok(A.explore(ctx(undefined, games), b, { loot: 5, place: 'Faveur du commandement', reward: { gloryToPoints: 5 }, gloryToPoints: 3 })).band;
+    expect(money(after, games)).toMatchObject({ glory: 0, points: 3 });
+    expect(ranking(rules, [after], games)[0]!.stats.points).toBe(3 + 3 + 3);
+  });
+  it('rang Légendaire : +1 ☼ en franchissant 20 XP, repris si l\u2019XP est corrigée', () => {
+    let b = band();
+    const e = b.operatives.find((o) => o.elite)!.id;
+    b = ok(A.adjustXp(ctx(), b, e, 19)).band;
+    expect(money(b).glory).toBe(0);
+    b = ok(A.adjustXp(ctx(), b, e, 1)).band;
+    expect(money(b).glory).toBe(1);
+    b = ok(A.adjustXp(ctx(), b, e, -1)).band;
+    expect(money(b).glory).toBe(0);
+  });
+  it('renforts : les RQ tombent à zéro par un mouvement', () => {
+    const b = ok(A.callReinforcements(ctx(), funded(8))).band;
+    expect(money(b).rq).toBe(0);
+    expect(b.transactions.at(-1)!.kind).toBe('reinforcements');
+  });
+  it('correction : motif obligatoire, pas de solde négatif', () => {
+    const b = band();
+    expect(A.correction(ctx(), b, { rq: 2, glory: 0, points: 0 }, ' ').ok).toBe(false);
+    expect(A.correction(ctx(), b, { rq: -6, glory: 0, points: 0 }, 'rançon').ok).toBe(false);
+    expect(money(ok(A.correction(ctx(), b, { rq: -3, glory: 0, points: 0 }, 'rançon')).band).rq).toBe(2);
   });
 });

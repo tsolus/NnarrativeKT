@@ -1,6 +1,7 @@
 import { bands, games, openBand, rules } from '../../state/app';
 import { gone } from '../../domain/model';
 import { ranking } from '../../domain/scoring';
+import { balance } from '../../domain/treasury';
 import { Tag } from '../components/ui';
 
 export function RankingView() {
@@ -22,7 +23,7 @@ export function RankingView() {
                     <div class="tiny muted">{r.band.killteam}{r.band.player && ` · ${r.band.player}`}{r.catchUp && <> · <Tag tone="gold">rattrapage</Tag></>}</div>
                   </td>
                   <td><b>{r.stats.points}</b></td><td>{r.stats.played}</td><td>{r.stats.win}</td><td>{r.stats.draw}</td><td>{r.stats.loss}</td>
-                  <td>{r.stats.exploits}</td><td>{r.band.operatives.filter((o) => !gone(o) && o.elite).length}</td><td>{r.band.requisitions}</td><td>{r.band.glory}</td>
+                  <td>{r.stats.exploits}</td><td>{r.band.operatives.filter((o) => !gone(o) && o.elite).length}</td><td>{balance(rules, r.band, games.value).rq}</td><td>{balance(rules, r.band, games.value).glory}</td>
                 </tr>
               ))}
             </tbody>

@@ -23,6 +23,7 @@ const v1 = { bands: { b1: { name: 'Ancienne', kt: 'Warpcoven', faction: 'Thousan
   await step('données v1 relues', async () => {
     await p.getByText('Ancienne').click();
     await p.getByText('2 Honneurs à tirer').waitFor({ timeout: 2000 });
+    await p.locator('.stat', { hasText: 'Réquisitions' }).getByText('4', { exact: true }).waitFor(); // solde v1 repris
   });
   await step('création avec kill team préremplie', async () => {
     await p.getByRole('button', { name: '← Bandes' }).click();
@@ -68,8 +69,20 @@ const v1 = { bands: { b1: { name: 'Ancienne', kt: 'Warpcoven', faction: 'Thousan
     await p.getByRole('button', { name: 'Lancer 2 × 2d6' }).click();
     await p.getByRole('button', { name: 'Lancer', exact: true }).last().click();
     await p.getByRole('button', { name: /Encaisser/ }).click();
-    await p.getByRole('tab', { name: 'Journal' }).click();
-    await p.getByText(/Exploration :/).waitFor({ timeout: 2000 });
+    await p.getByRole('tab', { name: 'Trésorerie et journal' }).click();
+    await p.getByText(/Exploration : butin/).first().waitFor({ timeout: 2000 });
+  });
+  await step('trésorerie automatique et correction motivée', async () => {
+    await p.getByText(/1 exploit glorieux/).waitFor();      // Gloire de la partie créditée
+    await p.getByText('Dotation de départ').waitFor();
+    await p.getByText(/: Entraînement au tir/).first().waitFor(); // achat débité
+    await p.getByRole('button', { name: 'Corriger' }).click();
+    await p.getByRole('dialog').getByRole('button', { name: 'Enregistrer' }).click();
+    await p.getByText('Indiquez le motif de la correction.').waitFor();
+    await p.getByLabel('Gloire (±)').fill('2');
+    await p.getByLabel('Motif (obligatoire)').fill('Rançon reçue');
+    await p.getByRole('dialog').getByRole('button', { name: 'Enregistrer' }).click();
+    await p.getByText('Correction : Rançon reçue').waitFor();
   });
   await p.screenshot({ path: 'smoke-journal.png' });
   await p.setViewportSize({ width: 390, height: 844 });

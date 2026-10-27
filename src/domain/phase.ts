@@ -1,5 +1,5 @@
 import type { Rules } from '../data';
-import type { Sequela } from '../data/schema';
+import type { Reward, Sequela } from '../data/schema';
 import type { Operative } from './model';
 import { Rng, d6, d66, inRange, isD66, rollMany, twoD6 } from './dice';
 
@@ -57,4 +57,17 @@ export function explorationResult(r: Rules, table: string, dice: number[], modif
   const total = dice.reduce((s, x) => s + x, 0) + modifier;
   const place = r.exploration.tables.find((t) => t.name === table)?.places.find((p) => inRange(p.total, total)) ?? null;
   return { total, place, loot: Math.max(0, Math.floor(total / r.campaign.exploration.lootDivisor)) };
+}
+
+/** Texte court d'une récompense d'exploration, pour l'écran. */
+export function describeReward(rw: Reward): string {
+  if (rw.label) return rw.label;
+  const p: string[] = [];
+  if (rw.rq) p.push(`+${rw.rq} RQ`);
+  if (rw.glory) p.push(`+${rw.glory} ☼`);
+  if (rw.equipment) p.push(`${rw.equipment.count} équipement${rw.equipment.count > 1 ? 's' : ''} ${rw.equipment.type === 'faction' ? 'de faction' : 'universel'} gratuit${rw.equipment.count > 1 ? 's' : ''}`);
+  if (rw.relic) p.push(rw.relic.maxGlory === null ? 'une relique au choix' : `une relique de ${rw.relic.maxGlory} ☼ ou moins`);
+  if (rw.xpFieldedElites) p.push(`+${rw.xpFieldedElites} XP aux Élites alignées`);
+  if (rw.gloryToPoints) p.push(`jusqu'à ${rw.gloryToPoints} ☼ échangés contre des points`);
+  return p.join(', ');
 }

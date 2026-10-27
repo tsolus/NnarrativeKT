@@ -102,3 +102,5 @@ input.title-input:hover,input.title-input:focus{border-color:var(--line);backgro
 .link:hover{text-decoration:underline}
 .nowrap{white-space:nowrap}
 input[type=search]{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:6px 8px;min-width:0}
+td.neg{color:var(--red);white-space:nowrap}
+td.pos{color:var(--ok);white-space:nowrap}

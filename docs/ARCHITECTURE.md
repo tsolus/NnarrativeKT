@@ -33,6 +33,15 @@ clic → ui (RosterTab) → act(band, A.buyUpgrade)       state/app.ts
                          ← onSnapshot                  les autres joueurs reçoivent la mise à jour
 ```
 
+## Trésorerie
+
+Les soldes (RQ, Gloire, points bonus) ne sont jamais enregistrés ni saisis. `src/domain/treasury.ts` les calcule :
+
+- **livre de comptes** de la bande (`band.transactions`) : dotation de départ, achats, ventes, butins, récompenses d'exploration, Gloire des rangs, renforts, corrections motivées ;
+- **Gloire des exploits**, recalculée depuis les parties : supprimer ou corriger une partie met les comptes à jour sans rien réécrire dans la bande.
+
+Une action qui coûte appelle `pay()` (refus si le solde ne suffit pas), une action qui rapporte appelle `credit()`. Le relevé de l'onglet « Trésorerie et journal » affiche les deux sources.
+
 ## Base partagée
 
 Deux collections : `bands/{id}` et `games/{id}`. Une bande est un seul document (registre, arsenal, journal inclus). Si deux joueurs modifient la même bande à la même seconde, la dernière écriture gagne. Chacun gérant sa propre bande, le risque est faible.

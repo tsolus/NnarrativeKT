@@ -1,19 +1,87 @@
 {
   "$comment": "Paramètres de la campagne. Ajuster ici les prix et seuils sans toucher au code.",
-  "start": { "requisitions": 5, "glory": 0, "elites": 2, "universalEquipment": 2, "factionEquipment": 2 },
-  "roster": { "reserves": 4, "maxAgents": 4, "maxElitesRatio": 0.5 },
-  "recruit": { "base": 30, "leaderMultiplier": 2 },
-  "agent": { "pointsDivisor": 4, "minimum": 2, "surcharge": 1 },
-  "upgrades": { "price": 3, "perTroop": 1, "perElite": 2 },
-  "prices": { "universalEquipment": 2, "factionEquipment": 3, "surgery": 5, "mercenaryGlory": 3, "sellRatio": 0.5 },
+  "start": {
+    "requisitions": 5,
+    "glory": 0,
+    "elites": 2,
+    "universalEquipment": 2,
+    "factionEquipment": 2
+  },
+  "roster": {
+    "reserves": 4,
+    "maxAgents": 4,
+    "maxElitesRatio": 0.5
+  },
+  "recruit": {
+    "base": 30,
+    "leaderMultiplier": 2
+  },
+  "agent": {
+    "pointsDivisor": 4,
+    "minimum": 2,
+    "surcharge": 1
+  },
+  "upgrades": {
+    "price": 3,
+    "perTroop": 1,
+    "perElite": 2
+  },
+  "prices": {
+    "universalEquipment": 2,
+    "factionEquipment": 3,
+    "surgery": 5,
+    "mercenaryGlory": 3,
+    "sellRatio": 0.5
+  },
   "acts": [
-    { "name": "Acte I", "fromGame": 1, "toGame": 4, "threshold": 4 },
-    { "name": "Acte II", "fromGame": 5, "toGame": 8, "threshold": 10 },
-    { "name": "Acte III", "fromGame": 9, "toGame": 11, "threshold": 18 },
-    { "name": "Finale", "fromGame": 12, "toGame": 12, "threshold": 25 }
+    {
+      "name": "Acte I",
+      "fromGame": 1,
+      "toGame": 4,
+      "threshold": 4
+    },
+    {
+      "name": "Acte II",
+      "fromGame": 5,
+      "toGame": 8,
+      "threshold": 10
+    },
+    {
+      "name": "Acte III",
+      "fromGame": 9,
+      "toGame": 11,
+      "threshold": 18
+    },
+    {
+      "name": "Finale",
+      "fromGame": 12,
+      "toGame": 12,
+      "threshold": 25
+    }
   ],
   "compensationStep": 5,
-  "scoring": { "win": 3, "draw": 2, "loss": 1, "perExploit": 1, "finalGame": 12, "finalMultiplier": 2 },
-  "trauma": { "troopDeadOn": [1], "troopMissNextGameOn": [2], "scarsToRetire": 3, "scarsForVoluntaryRetirement": 2 },
-  "exploration": { "lootDivisor": 5 }
+  "scoring": {
+    "win": 3,
+    "draw": 2,
+    "loss": 1,
+    "perExploit": 1,
+    "finalGame": 12,
+    "finalMultiplier": 2
+  },
+  "trauma": {
+    "troopDeadOn": [
+      1
+    ],
+    "troopMissNextGameOn": [
+      2
+    ],
+    "scarsToRetire": 3,
+    "scarsForVoluntaryRetirement": 2
+  },
+  "exploration": {
+    "lootDivisor": 5
+  },
+  "rewards": {
+    "gloryPerExploit": 1
+  }
 }

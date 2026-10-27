@@ -19,7 +19,8 @@ const v1Game = { id: 'g1', date: '2026-10-26', mission: 'M', notes: '', sides: [
 describe('migrations', () => {
   it('v1 → v2 : bande', () => {
     const b = readBand('b1', v1Band);
-    expect(b).toMatchObject({ schemaVersion: 2, id: 'b1', killteam: 'Nemesis Claw', requisitions: 3, ownerId: 'u_1', discoveredPlaces: ['Prisonnier'], explorationSkills: 'Relance' });
+    expect(b).toMatchObject({ schemaVersion: 3, id: 'b1', killteam: 'Nemesis Claw', ownerId: 'u_1', discoveredPlaces: ['Prisonnier'], explorationSkills: 'Relance' });
+    expect(b.transactions).toMatchObject([{ rq: 3, glory: 1, kind: 'opening' }]);
     expect(b.operatives[0]).toMatchObject({ status: 'injured', fielded: true, sequelae: ['Jambe blessée'], upgrades: [{ name: 'Équipement attitré', equipment: 'Chain Snare' }], origin: 'start' });
     expect(b.operatives[1]!.profile).toMatchObject({ source: 'unit40k', faction: "Emperor's Children", pts40k: 36 });
     expect(b.log[0]).toEqual({ at: 7, text: 'Création' });
@@ -27,7 +28,12 @@ describe('migrations', () => {
   it('v1 → v2 : partie', () => {
     expect(readGame('g1', v1Game).sides).toEqual([{ bandId: 'b1', result: 'win', exploits: 2 }, { bandId: 'b2', result: 'loss', exploits: 0 }]);
   });
-  it('v2 relu tel quel', () => {
+  it('v2 → v3 : soldes saisis repris en mouvement d\u2019ouverture', () => {
+    const v2 = { ...JSON.parse(JSON.stringify(band())), schemaVersion: 2, requisitions: 7, glory: 0 };
+    delete v2.transactions;
+    expect(readBand(v2.id, v2).transactions).toMatchObject([{ rq: 7, glory: 0, kind: 'opening' }]);
+  });
+  it('v3 relu tel quel', () => {
     const b = band();
     expect(readBand(b.id, JSON.parse(JSON.stringify(b)))).toEqual(b);
   });

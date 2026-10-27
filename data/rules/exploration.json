@@ -47,12 +47,25 @@
         {
           "total": "8-9",
           "name": "Munitions abandonnées",
-          "discovery": "1 équipement universel gratuit dans l'arsenal."
+          "discovery": "1 équipement universel gratuit dans l'arsenal.",
+          "rewards": [
+            {
+              "equipment": {
+                "type": "universal",
+                "count": 1
+              }
+            }
+          ]
         },
         {
           "total": "10",
           "name": "Poste de garde",
-          "discovery": "+2 RQ."
+          "discovery": "+2 RQ.",
+          "rewards": [
+            {
+              "rq": 2
+            }
+          ]
         },
         {
           "total": "11",
@@ -62,7 +75,17 @@
         {
           "total": "12",
           "name": "Prisonnier",
-          "discovery": "+1 ☼, ou +3 RQ si vous le revendez."
+          "discovery": "+1 ☼, ou +3 RQ si vous le revendez.",
+          "rewards": [
+            {
+              "label": "Le garder (+1 ☼)",
+              "glory": 1
+            },
+            {
+              "label": "Le revendre (+3 RQ)",
+              "rq": 3
+            }
+          ]
         },
         {
           "total": "13",
@@ -77,22 +100,51 @@
         {
           "total": "15",
           "name": "Atelier abandonné",
-          "discovery": "1 équipement de faction gratuit dans l'arsenal."
+          "discovery": "1 équipement de faction gratuit dans l'arsenal.",
+          "rewards": [
+            {
+              "equipment": {
+                "type": "faction",
+                "count": 1
+              }
+            }
+          ]
         },
         {
           "total": "16",
           "name": "Sanctuaire",
-          "discovery": "+2 ☼."
+          "discovery": "+2 ☼.",
+          "rewards": [
+            {
+              "glory": 2
+            }
+          ]
         },
         {
           "total": "17-18",
           "name": "Dépôt intact",
-          "discovery": "1 équipement de faction et +2 RQ."
+          "discovery": "1 équipement de faction et +2 RQ.",
+          "rewards": [
+            {
+              "rq": 2,
+              "equipment": {
+                "type": "faction",
+                "count": 1
+              }
+            }
+          ]
         },
         {
           "total": "19+",
           "name": "Archive scellée",
-          "discovery": "1 relique de 3 ☼ ou moins."
+          "discovery": "1 relique de 3 ☼ ou moins.",
+          "rewards": [
+            {
+              "relic": {
+                "maxGlory": 3
+              }
+            }
+          ]
         }
       ]
     },
@@ -107,7 +159,12 @@
         {
           "total": "12-13",
           "name": "Rations de campagne",
-          "discovery": "+3 RQ."
+          "discovery": "+3 RQ.",
+          "rewards": [
+            {
+              "rq": 3
+            }
+          ]
         },
         {
           "total": "14",
@@ -142,7 +199,14 @@
         {
           "total": "20",
           "name": "Cache de reliques",
-          "discovery": "1 relique de 4 ☼ ou moins."
+          "discovery": "1 relique de 4 ☼ ou moins.",
+          "rewards": [
+            {
+              "relic": {
+                "maxGlory": 4
+              }
+            }
+          ]
         },
         {
           "total": "21-22",
@@ -152,12 +216,23 @@
         {
           "total": "23-24",
           "name": "Trésor de guerre",
-          "discovery": "+5 RQ et +2 ☼."
+          "discovery": "+5 RQ et +2 ☼.",
+          "rewards": [
+            {
+              "rq": 5,
+              "glory": 2
+            }
+          ]
         },
         {
           "total": "25+",
           "name": "Lieu de mémoire",
-          "discovery": "Chaque Élite qui a joué gagne 1 XP."
+          "discovery": "Chaque Élite qui a joué gagne 1 XP.",
+          "rewards": [
+            {
+              "xpFieldedElites": 1
+            }
+          ]
         }
       ]
     },
@@ -172,7 +247,15 @@
         {
           "total": "18-19",
           "name": "Arsenal oublié",
-          "discovery": "2 équipements de faction gratuits."
+          "discovery": "2 équipements de faction gratuits.",
+          "rewards": [
+            {
+              "equipment": {
+                "type": "faction",
+                "count": 2
+              }
+            }
+          ]
         },
         {
           "total": "20-21",
@@ -182,7 +265,14 @@
         {
           "total": "22-23",
           "name": "Archéotech",
-          "discovery": "1 relique de 6 ☼ ou moins."
+          "discovery": "1 relique de 6 ☼ ou moins.",
+          "rewards": [
+            {
+              "relic": {
+                "maxGlory": 6
+              }
+            }
+          ]
         },
         {
           "total": "24-25",
@@ -197,12 +287,24 @@
         {
           "total": "28-29",
           "name": "Faveur du commandement",
-          "discovery": "Échangez jusqu'à 5 ☼ contre autant de points de campagne."
+          "discovery": "Échangez jusqu'à 5 ☼ contre autant de points de campagne.",
+          "rewards": [
+            {
+              "gloryToPoints": 5
+            }
+          ]
         },
         {
           "total": "30+",
           "name": "Relique légendaire",
-          "discovery": "1 relique au choix, quel que soit son coût."
+          "discovery": "1 relique au choix, quel que soit son coût.",
+          "rewards": [
+            {
+              "relic": {
+                "maxGlory": null
+              }
+            }
+          ]
         }
       ]
     }
