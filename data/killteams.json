@@ -1,0 +1,665 @@
+{
+  "$comment": "Kill teams jouées. Sources : règles d'équipe GW (oct. 2026) ; points 40k BSData wh40k-10e. max null = plusieurs.",
+  "killteams": [
+    {
+      "id": "canoptek-circle",
+      "name": "Canoptek Circle",
+      "faction": "Necrons",
+      "alliance": "Xenos",
+      "selectionSize": 8,
+      "selectionRule": "1 Geomancer, 2 Tomb Crawlers, 1 Accelerator, 1 Reanimator, 3 Warriors. 1 transdimensional isolator au plus.",
+      "operatives": [
+        {
+          "name": "Geomancer",
+          "max": 1,
+          "pts40k": 75,
+          "leader": true,
+          "notes": "Cryptek"
+        },
+        {
+          "name": "Tomb Crawler",
+          "max": 2,
+          "pts40k": 25,
+          "leader": false,
+          "notes": "Twin gauss reapers ou transdimensional isolator (1 isolator au plus), claws",
+          "noUpgrades": true
+        },
+        {
+          "name": "Accelerator",
+          "max": 1,
+          "pts40k": 17,
+          "leader": false
+        },
+        {
+          "name": "Reanimator",
+          "max": 1,
+          "pts40k": 17,
+          "leader": false
+        },
+        {
+          "name": "Warrior",
+          "max": 3,
+          "pts40k": 17,
+          "leader": false,
+          "notes": "Gauss scalpel ou tesla caster ; claws & tail"
+        }
+      ],
+      "factionEquipment": [
+        "Matrix Manipulator",
+        "Awakened Obelisk Nodes",
+        "Nanoscarab Caskets",
+        "Phase Shifter"
+      ]
+    },
+    {
+      "id": "deathwatch",
+      "name": "Deathwatch",
+      "faction": "Space Marines",
+      "alliance": "Imperium",
+      "selectionSize": 5,
+      "selectionRule": "5 opérateurs différents dont le Watch Sergeant ; 1 GRAVIS au plus (Bombard, Breacher, Horde-slayer).",
+      "operatives": [
+        {
+          "name": "Watch Sergeant",
+          "max": 1,
+          "pts40k": 20,
+          "leader": true
+        },
+        {
+          "name": "Aegis",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Blademaster",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Bombard",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false,
+          "notes": "GRAVIS",
+          "keywords": [
+            "GRAVIS"
+          ]
+        },
+        {
+          "name": "Breacher",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false,
+          "notes": "GRAVIS",
+          "keywords": [
+            "GRAVIS"
+          ]
+        },
+        {
+          "name": "Demolisher",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Disruptor",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Gunner",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Headtaker",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Horde-slayer",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false,
+          "notes": "GRAVIS",
+          "keywords": [
+            "GRAVIS"
+          ]
+        },
+        {
+          "name": "Marksman",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        }
+      ],
+      "factionEquipment": [
+        "Digital Weapons",
+        "Scrutavore Servo-thrall",
+        "Sanctus-V Bioscryer Cuffs",
+        "Ammunition Reserve"
+      ]
+    },
+    {
+      "id": "murderwing",
+      "name": "Murderwing",
+      "faction": "Chaos Space Marines",
+      "alliance": "Chaos",
+      "selectionSize": 6,
+      "selectionRule": "1 Chaos Lord + 5 opérateurs ; chacun une fois sauf Raptor ; 2 au plus parmi plasma pistol, meltagun, plasma gun.",
+      "operatives": [
+        {
+          "name": "Chaos Lord",
+          "max": 1,
+          "pts40k": 80,
+          "leader": true,
+          "notes": "Bolt pistol ou plasma pistol + lightning claw, power fist ou power weapon ; ou relic lightning claws"
+        },
+        {
+          "name": "Champion",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false,
+          "notes": "Plasma pistol ou bolt pistol + power fist ou power weapon"
+        },
+        {
+          "name": "Curseclaw",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Depredator",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Huntmaster",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Raptor",
+          "max": null,
+          "pts40k": 22,
+          "leader": false,
+          "notes": "Bolt pistol ou plasma pistol ; chainsword"
+        },
+        {
+          "name": "Shrieker",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Skysear",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false,
+          "notes": "Flamer, meltagun ou plasma gun ; bolt pistol ; fists"
+        },
+        {
+          "name": "Warp Talon",
+          "max": 1,
+          "pts40k": 25,
+          "leader": false
+        }
+      ],
+      "factionEquipment": [
+        "Bladefins",
+        "Clawed Armour",
+        "Warp Fuel",
+        "Vox-casters"
+      ]
+    },
+    {
+      "id": "nemesis-claw",
+      "name": "Nemesis Claw",
+      "faction": "Chaos Space Marines",
+      "alliance": "Chaos",
+      "selectionSize": 6,
+      "selectionRule": "1 Visionary + 5 opérateurs ; chacun une fois sauf Warrior.",
+      "operatives": [
+        {
+          "name": "Visionary",
+          "max": 1,
+          "pts40k": 22,
+          "leader": true,
+          "notes": "Bolt pistol + power fist, power maul ou power weapon ; ou plasma pistol + Nostraman chainblade"
+        },
+        {
+          "name": "Fearmonger",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Gunner",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false,
+          "notes": "Bolt pistol ; flamer, meltagun ou plasma gun ; fists"
+        },
+        {
+          "name": "Heavy Gunner",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false,
+          "notes": "Bolt pistol ; heavy bolter ou missile launcher ; fists"
+        },
+        {
+          "name": "Screecher",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Skinthief",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Ventrilokar",
+          "max": 1,
+          "pts40k": 22,
+          "leader": false
+        },
+        {
+          "name": "Warrior",
+          "max": null,
+          "pts40k": 22,
+          "leader": false,
+          "notes": "Bolt pistol ; chainsword, ou boltgun ; fists"
+        }
+      ],
+      "factionEquipment": [
+        "Flayed Skin",
+        "Chain Snare",
+        "Grisly Trophy",
+        "Comms Jammers"
+      ]
+    },
+    {
+      "id": "plague-marines",
+      "name": "Plague Marines",
+      "faction": "Death Guard",
+      "alliance": "Chaos",
+      "selectionSize": 6,
+      "selectionRule": "1 Champion + 5 opérateurs différents.",
+      "operatives": [
+        {
+          "name": "Champion",
+          "max": 1,
+          "pts40k": 19,
+          "leader": true
+        },
+        {
+          "name": "Bombardier",
+          "max": 1,
+          "pts40k": 19,
+          "leader": false
+        },
+        {
+          "name": "Fighter",
+          "max": 1,
+          "pts40k": 19,
+          "leader": false
+        },
+        {
+          "name": "Heavy Gunner",
+          "max": 1,
+          "pts40k": 19,
+          "leader": false
+        },
+        {
+          "name": "Icon Bearer",
+          "max": 1,
+          "pts40k": 19,
+          "leader": false
+        },
+        {
+          "name": "Malignant Plaguecaster",
+          "max": 1,
+          "pts40k": 19,
+          "leader": false
+        },
+        {
+          "name": "Warrior",
+          "max": 1,
+          "pts40k": 19,
+          "leader": false
+        }
+      ],
+      "factionEquipment": [
+        "Plague Bells",
+        "Blight Grenades",
+        "Plague Rounds",
+        "Poison Vents"
+      ]
+    },
+    {
+      "id": "scout-squad",
+      "name": "Scout Squad",
+      "faction": "Space Marines",
+      "alliance": "Imperium",
+      "selectionSize": 9,
+      "selectionRule": "1 Sergeant + 8 opérateurs ; chacun une fois sauf Warrior.",
+      "operatives": [
+        {
+          "name": "Sergeant",
+          "max": 1,
+          "pts40k": 14,
+          "leader": true,
+          "notes": "Astartes shotgun ; fists, boltgun ; fists, ou bolt pistol ; chainsword"
+        },
+        {
+          "name": "Heavy Gunner (heavy bolter)",
+          "max": 1,
+          "pts40k": 14,
+          "leader": false,
+          "notes": "Fists, bolt pistol, heavy bolter"
+        },
+        {
+          "name": "Heavy Gunner (missile launcher)",
+          "max": 1,
+          "pts40k": 14,
+          "leader": false,
+          "notes": "Fists, bolt pistol, missile launcher"
+        },
+        {
+          "name": "Hunter",
+          "max": 1,
+          "pts40k": 14,
+          "leader": false
+        },
+        {
+          "name": "Sniper",
+          "max": 1,
+          "pts40k": 14,
+          "leader": false
+        },
+        {
+          "name": "Tracker",
+          "max": 1,
+          "pts40k": 14,
+          "leader": false
+        },
+        {
+          "name": "Warrior",
+          "max": null,
+          "pts40k": 14,
+          "leader": false,
+          "notes": "Astartes shotgun ; fists, boltgun ; fists, ou bolt pistol ; combat blade"
+        }
+      ],
+      "factionEquipment": [
+        "Camo Cloak",
+        "Targeting Oculars",
+        "Combat Blades",
+        "Tactical Vox-link"
+      ]
+    },
+    {
+      "id": "vespid-stingwings",
+      "name": "Vespid Stingwings",
+      "faction": "T'au Empire",
+      "alliance": "Xenos",
+      "selectionSize": 11,
+      "selectionRule": "1 Strain Leader, 1 Oversight Drone + 9 opérateurs ; chacun une fois sauf Warrior.",
+      "operatives": [
+        {
+          "name": "Strain Leader",
+          "max": 1,
+          "pts40k": 13,
+          "leader": true
+        },
+        {
+          "name": "Oversight Drone",
+          "max": 1,
+          "pts40k": null,
+          "leader": false,
+          "noUpgrades": true,
+          "mandatory": true
+        },
+        {
+          "name": "Longsting",
+          "max": 1,
+          "pts40k": 13,
+          "leader": false
+        },
+        {
+          "name": "Shadestrain",
+          "max": 1,
+          "pts40k": 13,
+          "leader": false
+        },
+        {
+          "name": "Skyblast",
+          "max": 1,
+          "pts40k": 13,
+          "leader": false
+        },
+        {
+          "name": "Swarmguard",
+          "max": 1,
+          "pts40k": 13,
+          "leader": false
+        },
+        {
+          "name": "Warrior",
+          "max": null,
+          "pts40k": 13,
+          "leader": false
+        }
+      ],
+      "factionEquipment": [
+        "Neurostimulant",
+        "Convergence Stimulant",
+        "Accelerant Stimulant",
+        "Aggression Stimulant"
+      ]
+    },
+    {
+      "id": "void-dancer-troupe",
+      "name": "Void-Dancer Troupe",
+      "faction": "Aeldari",
+      "alliance": "Xenos",
+      "selectionSize": 8,
+      "selectionRule": "1 Lead Player + 7 opérateurs ; chacun une fois sauf Player ; 1 fusion pistol et 1 neuro disruptor au plus.",
+      "operatives": [
+        {
+          "name": "Lead Player",
+          "max": 1,
+          "pts40k": 17,
+          "leader": true,
+          "notes": "Fusion pistol, neuro disruptor ou shuriken pistol + blade, caress, embrace, kiss ou power weapon"
+        },
+        {
+          "name": "Death Jester",
+          "max": 1,
+          "pts40k": 90,
+          "leader": false
+        },
+        {
+          "name": "Player",
+          "max": null,
+          "pts40k": 17,
+          "leader": false,
+          "notes": "Fusion pistol, neuro disruptor ou shuriken pistol + blade, caress, embrace ou kiss"
+        },
+        {
+          "name": "Shadowseer",
+          "max": 1,
+          "pts40k": 60,
+          "leader": false,
+          "notes": "Hallucinogen grenade ; neuro disruptor ou shuriken pistol ; miststave"
+        }
+      ],
+      "factionEquipment": [
+        "Wraithbone Talisman",
+        "Shrieker Toxin Rounds",
+        "Death Mask",
+        "Understudy's Mask"
+      ]
+    },
+    {
+      "id": "warpcoven",
+      "name": "Warpcoven",
+      "faction": "Thousand Sons",
+      "alliance": "Chaos",
+      "selectionSize": 5,
+      "selectionRule": "5 sélections ; chaque Tzaangor compte pour une demi-sélection ; un Sorcerer devient LEADER pour la bataille ; 1 warpflame pistol et 1 soulreaper cannon au plus.",
+      "operatives": [
+        {
+          "name": "Sorcerer of Destiny",
+          "max": 1,
+          "pts40k": 80,
+          "leader": true,
+          "notes": "Force stave + inferno bolt pistol, prosperine khopesh ou warpflame pistol"
+        },
+        {
+          "name": "Sorcerer of Tempyrion",
+          "max": 1,
+          "pts40k": 80,
+          "leader": true,
+          "notes": "Idem"
+        },
+        {
+          "name": "Sorcerer of Warpfire",
+          "max": 1,
+          "pts40k": 80,
+          "leader": true,
+          "notes": "Idem"
+        },
+        {
+          "name": "Rubric Marine Gunner",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false,
+          "notes": "Warpflamer ou soulreaper cannon ; fists"
+        },
+        {
+          "name": "Rubric Marine Icon Bearer",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Rubric Marine Warrior",
+          "max": 1,
+          "pts40k": 20,
+          "leader": false
+        },
+        {
+          "name": "Tzaangor Champion",
+          "max": 1,
+          "pts40k": 7,
+          "leader": false,
+          "notes": "Demi-sélection ; greataxe ou greatblade",
+          "halfSelection": true
+        },
+        {
+          "name": "Tzaangor Horn Bearer",
+          "max": 1,
+          "pts40k": 7,
+          "leader": false,
+          "notes": "Demi-sélection",
+          "halfSelection": true
+        },
+        {
+          "name": "Tzaangor Icon Bearer",
+          "max": 1,
+          "pts40k": 7,
+          "leader": false,
+          "notes": "Demi-sélection",
+          "halfSelection": true
+        },
+        {
+          "name": "Tzaangor Warrior",
+          "max": 1,
+          "pts40k": 7,
+          "leader": false,
+          "notes": "Demi-sélection ; Tzaangor blades, blade & shield, ou autopistol ; chainsword",
+          "halfSelection": true
+        }
+      ],
+      "factionEquipment": [
+        "Ensorcelled Rounds",
+        "Daemonmaw Weapons",
+        "Arcane Robes",
+        "Sorcerous Scrolls"
+      ]
+    },
+    {
+      "id": "wrecka-krew",
+      "name": "Wrecka Krew",
+      "faction": "Orks",
+      "alliance": "Xenos",
+      "selectionSize": 8,
+      "selectionRule": "1 Boss Nob, 2 Bomb Squigs + 5 opérateurs ; chacun une fois sauf Breaka Boy Fighter et Tankbusta Gunner.",
+      "operatives": [
+        {
+          "name": "Boss Nob",
+          "max": 1,
+          "pts40k": 23,
+          "leader": true,
+          "notes": "Rokkit pistol ; smash hammer, ou deux rokkit pistols ; choppa"
+        },
+        {
+          "name": "Bomb Squig",
+          "max": 2,
+          "pts40k": null,
+          "leader": false,
+          "noUpgrades": true,
+          "mandatory": true
+        },
+        {
+          "name": "Breaka Boy Demolisha",
+          "max": 1,
+          "pts40k": 23,
+          "leader": false
+        },
+        {
+          "name": "Breaka Boy Fighter",
+          "max": null,
+          "pts40k": 23,
+          "leader": false
+        },
+        {
+          "name": "Breaka Boy Krusha",
+          "max": 1,
+          "pts40k": 23,
+          "leader": false
+        },
+        {
+          "name": "Tankbusta Gunner",
+          "max": null,
+          "pts40k": 23,
+          "leader": false,
+          "notes": "'Eavy rokkit launcha ou rokkit launcha ; fists"
+        },
+        {
+          "name": "Tankbusta Rokkiteer",
+          "max": 1,
+          "pts40k": 23,
+          "leader": false,
+          "notes": "Rokkit launcha ; pulsa rokkit ou rokkit rack ; fists"
+        }
+      ],
+      "factionEquipment": [
+        "Drill Rokkits",
+        "Extra Armour",
+        "Engine Oil",
+        "Glyphs"
+      ]
+    }
+  ]
+}

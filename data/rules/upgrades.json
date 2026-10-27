@@ -1,0 +1,21 @@
+{
+  "upgrades": [
+    {
+      "name": "Entraînement au tir",
+      "effect": "Améliorez de 1 la Touche d'une de ses armes de tir (2+ au mieux)."
+    },
+    {
+      "name": "Entraînement au corps à corps",
+      "effect": "Améliorez de 1 la Touche d'une de ses armes de mêlée (2+ au mieux)."
+    },
+    {
+      "name": "Entraînement physique",
+      "effect": "+1\" de Mouvement."
+    },
+    {
+      "name": "Équipement attitré",
+      "effect": "Un équipement universel ou de votre faction qui s'applique à un opérateur (grenades, munitions spéciales, armes de faction…). Il l'a à chaque partie, en plus des 4 équipements de la bande. Pas de marqueurs ni de barricades ; un même équipement attitré une seule fois par bande.",
+      "needsEquipment": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "relics": [
+    {
+      "name": "Amulette porte-bonheur",
+      "glory": 2,
+      "effect": "Relancez un jet de Traumatisme de son porteur, une fois."
+    },
+    {
+      "name": "Stimulants de combat",
+      "glory": 2,
+      "effect": "Une fois par partie, +1 PA pour une activation."
+    },
+    {
+      "name": "Carte d'état-major",
+      "glory": 3,
+      "effect": "Compétence d'exploration Chanceux tant que le porteur est dans le registre."
+    },
+    {
+      "name": "Arme de maître",
+      "glory": 3,
+      "effect": "Une arme du porteur gagne Équilibrée."
+    },
+    {
+      "name": "Implant augétique",
+      "glory": 3,
+      "effect": "Annule une Séquelle physique (Main, Œil, Bras, Jambe)."
+    },
+    {
+      "name": "Bannière de la bande",
+      "glory": 4,
+      "effect": "+1 dé de promotion après chaque partie où le porteur a joué."
+    },
+    {
+      "name": "Armure artisanale",
+      "glory": 4,
+      "effect": "Le porteur conserve un dé de défense normal supplémentaire une fois par partie."
+    },
+    {
+      "name": "Champ de protection",
+      "glory": 6,
+      "effect": "Une fois par partie, ignorez tous les dégâts d'une attaque."
+    },
+    {
+      "name": "Arme légendaire",
+      "glory": 8,
+      "effect": "Une arme du porteur gagne Létale 5+ et Brutale."
+    }
+  ]
+}

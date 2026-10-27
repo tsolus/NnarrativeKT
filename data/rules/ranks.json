@@ -1,0 +1,29 @@
+{
+  "ranks": [
+    {
+      "name": "Éprouvé",
+      "xp": 2,
+      "gain": "1 Honneur"
+    },
+    {
+      "name": "Aguerri",
+      "xp": 5,
+      "gain": "1 Honneur"
+    },
+    {
+      "name": "Vétéran",
+      "xp": 9,
+      "gain": "1 Honneur"
+    },
+    {
+      "name": "Redouté",
+      "xp": 14,
+      "gain": "1 Honneur"
+    },
+    {
+      "name": "Légendaire",
+      "xp": 20,
+      "gain": "1 Honneur et +1 ☼"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "equipment": [
+    {
+      "name": "Ammo Cache",
+      "assignable": false
+    },
+    {
+      "name": "Razor Wire",
+      "assignable": false
+    },
+    {
+      "name": "Comms Device",
+      "assignable": false
+    },
+    {
+      "name": "Mines",
+      "assignable": false
+    },
+    {
+      "name": "Light Barricades",
+      "assignable": false
+    },
+    {
+      "name": "Ladders",
+      "assignable": false
+    },
+    {
+      "name": "Utility Grenades",
+      "assignable": true
+    },
+    {
+      "name": "Explosive Grenades",
+      "assignable": true
+    },
+    {
+      "name": "Breaching Charge",
+      "assignable": true
+    },
+    {
+      "name": "Portable Barricade",
+      "assignable": false
+    }
+  ]
+}

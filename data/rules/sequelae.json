@@ -1,0 +1,139 @@
+{
+  "die": "d66",
+  "noScarFrom": 41,
+  "sequelae": [
+    {
+      "roll": "11",
+      "name": "Mort",
+      "effect": "Retirez l'opérateur du registre avec son équipement.",
+      "kind": "dead"
+    },
+    {
+      "roll": "12",
+      "name": "Capturé",
+      "effect": "Négociez une rançon en RQ avec l'adversaire. Payée : transférez les RQ et traitez comme Récupération totale. Refusée : l'opérateur est exécuté.",
+      "kind": "captured"
+    },
+    {
+      "roll": "13",
+      "name": "Nerfs à vif",
+      "effect": "Il ne peut plus effectuer de contre-action.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "14",
+      "name": "Main blessée",
+      "effect": "Aggravez de 1 la Touche de ses armes de mêlée.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "15",
+      "name": "Œil crevé",
+      "effect": "Aggravez de 1 la Touche de ses armes de tir. Une seconde fois : aveugle, retirez-le.",
+      "kind": "sequela",
+      "repeatable": true
+    },
+    {
+      "roll": "16",
+      "name": "Poitrine perforée",
+      "effect": "Aggravez de 1 sa Sauvegarde.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "21",
+      "name": "Insomniaque",
+      "effect": "Il ne peut utiliser aucune règle de redéploiement ou d'infiltration, et commence chaque partie en ordre Engagement.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "22",
+      "name": "Blessure à la tête",
+      "effect": "Il ne gagne plus d'XP. Il peut recevoir des dés de promotion comme une troupe ; sur un 6, il retrouve l'XP et garde la Séquelle.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "23",
+      "name": "Stress post-traumatique",
+      "effect": "À sa première activation de chaque partie, lancez un d6 : sur 1-2, il est traité comme Blessé jusqu'à la fin de la partie.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "24",
+      "name": "Ombre du souvenir",
+      "effect": "Notez la bande adverse. Contre elle, aggravez de 1 la Touche de ses armes de mêlée.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "25",
+      "name": "Paranoïa",
+      "effect": "Il doit être déployé à plus de 3\" de tout opérateur ami.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "26",
+      "name": "Bras perdu",
+      "effect": "Il ne peut plus effectuer l'action Ramasser un marqueur ni utiliser d'arme Lourde, et n'utilise qu'une seule arme par partie (choisie au déploiement).",
+      "kind": "sequela"
+    },
+    {
+      "roll": "31",
+      "name": "Jambe blessée",
+      "effect": "Mouvement réduit de 1\" ; ses actions de Course sont limitées à 2\".",
+      "kind": "sequela"
+    },
+    {
+      "roll": "32",
+      "name": "Traitement coûteux",
+      "effect": "Payez 1 RQ avant chaque partie où il est aligné, sinon il ne peut pas jouer.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "33",
+      "name": "Fureur incontrôlable",
+      "effect": "Quand il est activé avec un ennemi visible, il doit terminer son activation plus près de l'ennemi le plus proche si possible.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "34",
+      "name": "Muscles déchirés",
+      "effect": "Il ne peut plus utiliser d'arme Lourde ; une telle arme est perdue s'il n'en a pas d'autre option légale.",
+      "kind": "sequela"
+    },
+    {
+      "roll": "35",
+      "name": "Blessure mineure",
+      "effect": "Il ne peut pas jouer la prochaine partie.",
+      "kind": "missNextGame"
+    },
+    {
+      "roll": "36",
+      "name": "Dévalisé",
+      "effect": "Il perd ses reliques et l'équipement de campagne qui lui était attribué (ses Honneurs restent).",
+      "kind": "robbed"
+    },
+    {
+      "roll": "41-63",
+      "name": "Récupération totale",
+      "effect": "Ni Séquelle ni Cicatrice.",
+      "kind": "none"
+    },
+    {
+      "roll": "64",
+      "name": "Endurci",
+      "effect": "Il ignore le malus de Touche de l'état Blessé. Ni Séquelle ni Cicatrice.",
+      "kind": "trait"
+    },
+    {
+      "roll": "65",
+      "name": "Amères leçons",
+      "effect": "Il gagne d3 XP. Ni Séquelle ni Cicatrice.",
+      "kind": "gainXpD3"
+    },
+    {
+      "roll": "66",
+      "name": "Rancune tenace",
+      "effect": "Notez la bande adverse. Contre elle, il peut relancer un dé d'attaque par combat. Ni Séquelle ni Cicatrice.",
+      "kind": "trait"
+    }
+  ]
+}

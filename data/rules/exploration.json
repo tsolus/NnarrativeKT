@@ -1,0 +1,210 @@
+{
+  "dice": [
+    {
+      "fromGames": 1,
+      "toGames": 2,
+      "dice": 3,
+      "tables": [
+        "Courante"
+      ]
+    },
+    {
+      "fromGames": 3,
+      "toGames": 5,
+      "dice": 4,
+      "tables": [
+        "Courante",
+        "Rare"
+      ]
+    },
+    {
+      "fromGames": 6,
+      "toGames": 9,
+      "dice": 5,
+      "tables": [
+        "Rare"
+      ]
+    },
+    {
+      "fromGames": 10,
+      "toGames": 99,
+      "dice": 6,
+      "tables": [
+        "Rare",
+        "Légendaire"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "name": "Courante",
+      "places": [
+        {
+          "total": "7 ou moins",
+          "name": "Pillé",
+          "discovery": "Rien."
+        },
+        {
+          "total": "8-9",
+          "name": "Munitions abandonnées",
+          "discovery": "1 équipement universel gratuit dans l'arsenal."
+        },
+        {
+          "total": "10",
+          "name": "Poste de garde",
+          "discovery": "+2 RQ."
+        },
+        {
+          "total": "11",
+          "name": "Carte de secteur",
+          "discovery": "Compétence d'exploration Relance."
+        },
+        {
+          "total": "12",
+          "name": "Prisonnier",
+          "discovery": "+1 ☼, ou +3 RQ si vous le revendez."
+        },
+        {
+          "total": "13",
+          "name": "Trousse médicale",
+          "discovery": "Une relance de Traumatisme à utiliser plus tard."
+        },
+        {
+          "total": "14",
+          "name": "Journal de bord",
+          "discovery": "Une Élite gagne 1 XP."
+        },
+        {
+          "total": "15",
+          "name": "Atelier abandonné",
+          "discovery": "1 équipement de faction gratuit dans l'arsenal."
+        },
+        {
+          "total": "16",
+          "name": "Sanctuaire",
+          "discovery": "+2 ☼."
+        },
+        {
+          "total": "17-18",
+          "name": "Dépôt intact",
+          "discovery": "1 équipement de faction et +2 RQ."
+        },
+        {
+          "total": "19+",
+          "name": "Archive scellée",
+          "discovery": "1 relique de 3 ☼ ou moins."
+        }
+      ]
+    },
+    {
+      "name": "Rare",
+      "places": [
+        {
+          "total": "11 ou moins",
+          "name": "Pillé",
+          "discovery": "Rien."
+        },
+        {
+          "total": "12-13",
+          "name": "Rations de campagne",
+          "discovery": "+3 RQ."
+        },
+        {
+          "total": "14",
+          "name": "Spécialiste égaré",
+          "discovery": "Recrutez gratuitement une troupe."
+        },
+        {
+          "total": "15",
+          "name": "Banque de données",
+          "discovery": "Compétence d'exploration Recherche."
+        },
+        {
+          "total": "16",
+          "name": "Hôpital de campagne",
+          "discovery": "Retirez une Séquelle d'un opérateur."
+        },
+        {
+          "total": "17",
+          "name": "Prototype",
+          "discovery": "Une arme d'un opérateur gagne Équilibrée de façon permanente."
+        },
+        {
+          "total": "18",
+          "name": "Instructeur",
+          "discovery": "Une troupe devient Élite (si le maximum le permet), sinon une Élite gagne 2 XP."
+        },
+        {
+          "total": "19",
+          "name": "Largage",
+          "discovery": "5 équipements au lieu de 4 lors de la prochaine partie."
+        },
+        {
+          "total": "20",
+          "name": "Cache de reliques",
+          "discovery": "1 relique de 4 ☼ ou moins."
+        },
+        {
+          "total": "21-22",
+          "name": "Renseignements",
+          "discovery": "+1 PC au TP1 de la prochaine partie."
+        },
+        {
+          "total": "23-24",
+          "name": "Trésor de guerre",
+          "discovery": "+5 RQ et +2 ☼."
+        },
+        {
+          "total": "25+",
+          "name": "Lieu de mémoire",
+          "discovery": "Chaque Élite qui a joué gagne 1 XP."
+        }
+      ]
+    },
+    {
+      "name": "Légendaire",
+      "places": [
+        {
+          "total": "17 ou moins",
+          "name": "Pillé",
+          "discovery": "Rien."
+        },
+        {
+          "total": "18-19",
+          "name": "Arsenal oublié",
+          "discovery": "2 équipements de faction gratuits."
+        },
+        {
+          "total": "20-21",
+          "name": "Armure de maître",
+          "discovery": "Améliorez de 1 la Sauvegarde d'un opérateur (2+ au mieux)."
+        },
+        {
+          "total": "22-23",
+          "name": "Archéotech",
+          "discovery": "1 relique de 6 ☼ ou moins."
+        },
+        {
+          "total": "24-25",
+          "name": "Codex tactique",
+          "discovery": "Compétence d'exploration Résultat choisi."
+        },
+        {
+          "total": "26-27",
+          "name": "Héros oublié",
+          "discovery": "Un opérateur gagne un Honneur au choix, dans n'importe quelle table."
+        },
+        {
+          "total": "28-29",
+          "name": "Faveur du commandement",
+          "discovery": "Échangez jusqu'à 5 ☼ contre autant de points de campagne."
+        },
+        {
+          "total": "30+",
+          "name": "Relique légendaire",
+          "discovery": "1 relique au choix, quel que soit son coût."
+        }
+      ]
+    }
+  ]
+}

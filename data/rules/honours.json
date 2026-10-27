@@ -1,0 +1,159 @@
+{
+  "die": "2d6",
+  "freeChoiceOn": [
+    2,
+    12
+  ],
+  "tables": [
+    {
+      "name": "Mêlée",
+      "honours": [
+        {
+          "roll": 3,
+          "name": "Tenace",
+          "effect": "Une fois par partie, quand il devrait être neutralisé, lancez un d6 : sur 5+, il reste avec 1 Blessure."
+        },
+        {
+          "roll": 4,
+          "name": "Parade experte",
+          "effect": "Une fois par combat, il peut parer une réussite critique avec une réussite normale."
+        },
+        {
+          "roll": 5,
+          "name": "Combat rapproché",
+          "effect": "À 1\" ou moins d'un élément de terrain, ses armes de mêlée gagnent Équilibrée."
+        },
+        {
+          "roll": 6,
+          "name": "Charge implacable",
+          "effect": "Ses armes de mêlée gagnent +1 Attaque lors d'un combat qui suit une Charge dans la même activation."
+        },
+        {
+          "roll": 7,
+          "name": "Maître d'armes",
+          "effect": "Améliorez de 1 la Touche d'une de ses armes de mêlée."
+        },
+        {
+          "roll": 8,
+          "name": "Force brute",
+          "effect": "+1 aux dégâts normaux de ses armes de mêlée."
+        },
+        {
+          "roll": 9,
+          "name": "Dur à cuire",
+          "effect": "Il ignore le malus de Mouvement de l'état Blessé."
+        },
+        {
+          "roll": 10,
+          "name": "Frappe chirurgicale",
+          "effect": "Une fois par partie, une de ses armes de mêlée gagne Létale 5+ pour un combat."
+        },
+        {
+          "roll": 11,
+          "name": "Champion",
+          "effect": "Ses armes de mêlée gagnent Incessante."
+        }
+      ]
+    },
+    {
+      "name": "Tir",
+      "honours": [
+        {
+          "roll": 3,
+          "name": "Chasseur",
+          "effect": "Une fois par TP, la cible de son tir ne peut pas conserver de réussite grâce au couvert."
+        },
+        {
+          "roll": 4,
+          "name": "Pistolero",
+          "effect": "Ses armes de tir avec Portée 8\" ou moins gagnent Équilibrée."
+        },
+        {
+          "roll": 5,
+          "name": "Tir de loin",
+          "effect": "Ses armes de tir avec une règle de Portée gagnent +2\" de portée."
+        },
+        {
+          "roll": 6,
+          "name": "Regard d'aigle",
+          "effect": "Une fois par partie, une de ses armes de tir gagne Précise 1 pour une action de Tir."
+        },
+        {
+          "roll": 7,
+          "name": "Maîtrise du tir",
+          "effect": "Améliorez de 1 la Touche d'une de ses armes de tir."
+        },
+        {
+          "roll": 8,
+          "name": "Tir de suppression",
+          "effect": "Une fois par TP, après qu'il a tiré sur un ennemi, aggravez de 1 la Touche de cet ennemi jusqu'à la fin de sa prochaine activation."
+        },
+        {
+          "roll": 9,
+          "name": "Sang-froid",
+          "effect": "Il ignore le malus de Touche de l'état Blessé pour ses armes de tir."
+        },
+        {
+          "roll": 10,
+          "name": "Tir précis",
+          "effect": "Une de ses armes de tir gagne Perforante sur critique 1."
+        },
+        {
+          "roll": 11,
+          "name": "Tireur d'élite",
+          "effect": "Une fois par partie, une action de Tir de cet opérateur gagne Sévère."
+        }
+      ]
+    },
+    {
+      "name": "Ruse",
+      "honours": [
+        {
+          "roll": 3,
+          "name": "Éclaireur",
+          "effect": "Après le déploiement, il peut effectuer un mouvement gratuit de 2\"."
+        },
+        {
+          "roll": 4,
+          "name": "Coureur",
+          "effect": "+1\" de Mouvement."
+        },
+        {
+          "roll": 5,
+          "name": "Acrobate",
+          "effect": "Il ne paie pas de distance supplémentaire pour escalader ou descendre."
+        },
+        {
+          "roll": 6,
+          "name": "Insaisissable",
+          "effect": "Contre les tirs à plus de 6\", il conserve une réussite de couvert même hors couvert."
+        },
+        {
+          "roll": 7,
+          "name": "Infatigable",
+          "effect": "Une fois par partie, +1 PA pour une activation."
+        },
+        {
+          "roll": 8,
+          "name": "Saboteur",
+          "effect": "Une fois par TP, une action de mission ou de marqueur lui coûte 1 PA de moins (minimum 0)."
+        },
+        {
+          "roll": 9,
+          "name": "Décrochage",
+          "effect": "L'action de Repli lui coûte 1 PA de moins."
+        },
+        {
+          "roll": 10,
+          "name": "Pilleur",
+          "effect": "Compétence d'exploration : +1 au jet d'exploration s'il a joué et survécu."
+        },
+        {
+          "roll": 11,
+          "name": "Tacticien",
+          "effect": "S'il est sur la table au début d'un TP, lancez un d6 : sur 5+, gagnez 1 PC."
+        }
+      ]
+    }
+  ]
+}
